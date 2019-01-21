@@ -1,13 +1,13 @@
 <?php
 include ('Connect.php');
 
-$sql = "CREATE DATABASE lectioscraping";
+$sql = "CREATE DATABASE webshop";
 
 if (!$conn->query($sql)) {
     echo "Error creating database: " . $conn->error;
 }
 
-$sql = "ALTER DATABASE lectioscraping
+$sql = "ALTER DATABASE webshop
 COLLATE latin1_danish_ci";
 
 if (!$conn->query($sql)) {
@@ -15,7 +15,7 @@ if (!$conn->query($sql)) {
 }
 
 include('Create_Table.php');
-header("location: Lectio-Scraping.php");
+header("home.php");
 
 $conn->close();
 ?>
