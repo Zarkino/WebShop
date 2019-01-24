@@ -1,5 +1,5 @@
 <?php
-include ('Connect.php');
+include ('connect.php');
 
 $sql = 'DROP DATABASE webshop';
 if (!$conn->query($sql)) {
