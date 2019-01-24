@@ -12,16 +12,16 @@ $formue = mysqli_real_escape_string($conn, $_POST['formue']);
 //Tjekker for tomme felter
 if (empty($firstname) || empty($lastname) || empty($email) || empty($username) || empty($password)) {
     echo $firstname . "<br>" . $lastname . "<br>" . $email . "<br>" . $username . "<br>" . $password . "<br>" . $formue;
-    //header("location: ./index.html?=empty");
+    header("location: ./login.php?=empty");
     exit();
 } else if (!preg_match("/^[a-zA-Z]*$/", $firstname) || !preg_match("/^[a-zA-Z]*$/", $lastname)) {
-        header("Location: ./index.html?=invalidname");
+        header("Location: ./login.php?=invalidname");
         exit();
 } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header("Location: ./index.html?signup=invalidemail");
+    header("Location: ./login.php?signup=invalidemail");
     exit();
   } else if (preg_match("/(admin)/", $username)) {
-      header("Location: ./index.html?signup=invalidusername");
+      header("Location: ./login.php?signup=invalidusername");
       exit();
       // Får forbindels til databasen og får data med navne
 } else {
@@ -29,16 +29,16 @@ if (empty($firstname) || empty($lastname) || empty($email) || empty($username) |
     $result = $conn->query($sql);
     $resultCheck = mysqli_num_rows($result);
 
-// Tjekker for om navnet er taget i databasen
+    // Tjekker for om navnet er taget i databasen
     if ($resultCheck > 0) {
-        header("location: ./index.html?singup=usertaken");
+        header("location: ./login.php?singup=usertaken");
         exit();
     } else {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         //Tilføj dataen i databasen
         $sql = "INSERT INTO webshop.brugere (Firstname, Lastname, Email, Username, Password, Formue)
         VALUES ('$firstname', '$lastname', '$email', '$username', '$hashed_password' , '$formue')";
-// Efter oprettelsen af bruger logger man ind
+        // Efter oprettelsen af bruger logger man ind
         if ($conn->query($sql) === false) {
             echo "Error: " . $sql . "<br>" . $conn->error;
             exit();
@@ -64,6 +64,6 @@ if (empty($firstname) || empty($lastname) || empty($email) || empty($username) |
 }
 // Hvis man går ind på koden via URL kommer man tilbage til index.html
 } else {
-  header("location: ./index.html");
+  header("location: ./login.php");
   exit();
 }
