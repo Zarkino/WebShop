@@ -6,7 +6,7 @@ if (!$conn->query($sql)) {
     echo 'Error dropping database: ' . $conn->error();
 }
 
-header("location: Webshop.php");
+header("location: home.php");
 
 $conn->close();
 ?>
