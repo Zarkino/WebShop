@@ -1,61 +1,69 @@
 <?php
-//Personer
-$sql = "CREATE TABLE lectioscraping.person (
-personID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-skoleID VARCHAR(50) NOT NULL,
-fornavn VARCHAR(50) NOT NULL,
-efternavn VARCHAR(50) NOT NULL)
+//Brugere
+$sql = "CREATE TABLE webshop.brugere (
+BrugerID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Firstname VARCHAR(50) NOT NULL,
+Lastname VARCHAR(50) NOT NULL,
+Email VARCHAR(50) NOT NULL,
+Username VARCHAR(50) NOT NULL,
+Password VARCHAR(50) NOT NULL,
+Formue INT(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 if (!$conn->query($sql)) {
     echo "Error creating table: " . $conn->error;
 }
 
-//Fag
-$sql = "CREATE TABLE lectioscraping.fag (
-fagID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-fagNavn VARCHAR(50) NOT NULL,
-fagLink VARCHAR(50) NOT NULL)
+//Produkts
+$sql = "CREATE TABLE webshop.produkter (
+ProduktID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Produktnavn VARCHAR(50) NOT NULL,
+Prdouktkategori VARCHAR(50) NOT NULL,
+Produktpris FLOAT(50) NOT NULL,
+Stock FLOAT(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 if (!$conn->query($sql)) {
     echo "Error creating table: " . $conn->error;
 }
 
-//Hold
-$sql = "CREATE TABLE lectioscraping.hold (
-holdID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-holdNavn VARCHAR(50) NOT NULL,
-holdLink VARCHAR(50) NOT NULL)
+//Transactions
+$sql = "CREATE TABLE webshop.transactioner (
+TransactionID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+FOREIGN KEY(BrugerID) REFERENCES webbruger(BrugerID),
+FOREIGN KEY(PRODUKTID) REFERENCES produkt(ProduktID),
+TranscationTime dateTime NOT NULL,
+Totalprice FLOAT(50) NOT NULL
+)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 if (!$conn->query($sql)) {
     echo "Error creating table: " . $conn->error;
 }
 
-//Relation Fag og Hold
-$sql = "CREATE TABLE lectioscraping.faghold (
-fagID INT(50) UNSIGNED,
-holdID INT(50) UNSIGNED,
-FOREIGN KEY (fagID) REFERENCES fag(fagID),
-FOREIGN KEY (holdID) REFERENCES hold(holdID),
-CONSTRAINT fag_hold UNIQUE (fagID,holdID))
+//Adresse
+$sql = "CREATE TABLE webshop.adresser (
+Name INT(50) NOT NULL,
+DeliveringAdress INT(50) NOT NULL,
+Postnumber FLOAT(4) NOT NULL,
+City INT(50) NOT NULL)
+
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 if (!$conn->query($sql)) {
     echo "Error creating table: " . $conn->error;
 }
 
-//Relation Hold og Person
-$sql = "CREATE TABLE lectioscraping.holdperson (
-holdID INT(50) UNSIGNED,
-personID INT(50) UNSIGNED,
-FOREIGN KEY (holdID) REFERENCES hold(holdID),
-FOREIGN KEY (personID) REFERENCES person(personID),
-CONSTRAINT hold_person UNIQUE (holdID,PersonID))
-CHARACTER SET latin1 COLLATE latin1_danish_ci";
+//Garanti
+$sql = "CREATE TABLE webshop.garanti (
+GarantiID INT(50) UNSIGNED,
+FOREIGN KEY(TransactionID) REFERENCES transactoion(TransactionID),
+ProductList INT(50) NOT NULL,
+Timeexpire dateTime)
 
+CHARACTER SET latin1 COLLATE latin1_danish_ci";
 if (!$conn->query($sql)) {
     echo "Error creating table: " . $conn->error;
 }
 ?>
+

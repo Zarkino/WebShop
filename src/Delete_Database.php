@@ -1,12 +1,12 @@
 <?php
 include ('Connect.php');
 
-$sql = 'DROP DATABASE lectioscraping';
+$sql = 'DROP DATABASE webshop';
 if (!$conn->query($sql)) {
     echo 'Error dropping database: ' . $conn->error();
 }
 
-header("location: Lectio-Scraping.php");
+header("location: Webshop.php");
 
 $conn->close();
 ?>
