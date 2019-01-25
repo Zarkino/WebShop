@@ -11,7 +11,7 @@ Formue INT(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 if (!$conn->query($sql)) {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating table: " . $conn->error . "<br>";
 }
 
 //Produkts
@@ -24,7 +24,7 @@ Stock FLOAT(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 if (!$conn->query($sql)) {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating table: " . $conn->error . "<br>";
 }
 
 //Transactions
@@ -38,7 +38,7 @@ Totalprice FLOAT(50) NOT NULL
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 if (!$conn->query($sql)) {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating table: " . $conn->error . "<br>";
 }
 
 //Adresse
@@ -51,7 +51,7 @@ City INT(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 if (!$conn->query($sql)) {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating table: " . $conn->error . "<br>";
 }
 
 //Garanti
@@ -63,7 +63,7 @@ Timeexpire dateTime)
 
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 if (!$conn->query($sql)) {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating table: " . $conn->error . "<br>";
 }
 ?>
 

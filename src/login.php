@@ -1,9 +1,8 @@
 <?php
-include ('connect.php');
-include "database.php";
+include ('database.php');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    login($conn, $_POST['username'], $_POST['password']);
+    login($_POST['username'], $_POST['password']);
 }
 ?>
 

@@ -26,7 +26,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
         
         <H2>Logget ind som: <?php echo htmlspecialchars($_SESSION["username"]);?></H2>
 
-        <?php product("Product", "Information about the product:") ?>
+        <DIV style="display: flex; justify-content: space-between;">
+            <?php product("Product1", "Information about the product:") ?>
+            <?php product("Product2", "Information about the product:") ?>
+            <?php product("Product3", "Information about the product:") ?>
+            <?php product("Product4", "Information about the product:") ?>
+        <DIV>
 
         <p>
             <a href="logout.php">Logout</a>
