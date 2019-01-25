@@ -11,19 +11,18 @@ $formue = mysqli_real_escape_string($conn, $_POST['formue']);
 
 //Tjekker for tomme felter
 if (empty($firstname) || empty($lastname) || empty($email) || empty($username) || empty($password)) {
-    echo $firstname . "<br>" . $lastname . "<br>" . $email . "<br>" . $username . "<br>" . $password . "<br>" . $formue;
     header("location: ./login.php?=empty");
     exit();
 } else if (!preg_match("/^[a-zA-Z]*$/", $firstname) || !preg_match("/^[a-zA-Z]*$/", $lastname)) {
-        header("Location: ./login.php?=invalidname");
-        exit();
+    header("Location: ./login.php?=invalidname");
+    exit();
 } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     header("Location: ./login.php?signup=invalidemail");
     exit();
-  } else if (preg_match("/(admin)/", $username)) {
-      header("Location: ./login.php?signup=invalidusername");
-      exit();
-      // Får forbindels til databasen og får data med navne
+} else if (preg_match("/(admin)/", $username)) {
+    header("Location: ./login.php?signup=invalidusername");
+    exit();
+    // Får forbindels til databasen og får data med navne
 } else {
     $sql = "SELECT * FROM webshop.brugere WHERE username='$username'";
     $result = $conn->query($sql);
@@ -62,7 +61,7 @@ if (empty($firstname) || empty($lastname) || empty($email) || empty($username) |
         }
     }
 }
-// Hvis man går ind på koden via URL kommer man tilbage til index.html
+// Hvis man går ind på koden via URL kommer man tilbage til login.php
 } else {
   header("location: ./login.php");
   exit();

@@ -16,7 +16,7 @@ function buttonHeader() {
 function login($username, $password) {
     $sql = "SELECT * FROM webshop.brugere WHERE username = ?";
 
-    $stmt = $conn->prepare($sql);
+    $stmt = $GLOBALS['conn']->prepare($sql);
 
     $stmt->bind_param('s', $username);
 

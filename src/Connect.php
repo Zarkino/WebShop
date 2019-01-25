@@ -3,6 +3,8 @@ $servername = "localhost";
 $username = "root";
 $password = "yes1";
 
+GLOBAL $conn;
+
 $conn = new mysqli($servername, $username, $password);
 
 if ($conn->connect_error) {
