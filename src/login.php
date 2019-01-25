@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<LINK rel="stylesheet" type="text/css" href="../Styles/Style.css">
 		<META charset="utf-8">
 		<TITLE>Webshop</TITLE>
-		<LINK rel="icon" type="image/gif" href="Icon/dollar.png"/>
+		<LINK rel="icon" type="image/gif" href="../Icon/dollar.png"/>
 		
 		<SCRIPT>
 		</SCRIPT>
