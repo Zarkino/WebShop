@@ -17,21 +17,22 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
 		<TITLE>Webshop</TITLE>
 		<LINK rel="icon" type="image/gif" href="Icon/dollar.png"/>
     </head>
+
     <body>
         <?php
         buttonHeader();
         ?>
         
-        <H1>Webshop</H1>
+        <h1>Webshop</h1>
         
-        <H2>Logget ind som: <?php echo htmlspecialchars($_SESSION["username"]);?></H2>
+        <h2>Logget ind som: <?php echo htmlspecialchars($_SESSION["username"]);?></h2>
 
-        <DIV style="display: flex; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between;">
             <?php product("Product1", "Information about the product:") ?>
             <?php product("Product2", "Information about the product:") ?>
             <?php product("Product3", "Information about the product:") ?>
             <?php product("Product4", "Information about the product:") ?>
-        <DIV>
+        </div>
 
         <p>
             <a href="logout.php">Logout</a>
