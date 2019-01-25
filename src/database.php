@@ -41,8 +41,8 @@ function login($username, $password) {
 
 function product($name, $info) {
     ?>
-	<DIV class="container">
-        <IMG class="image" style="width:250px; height:250px" alt="Product" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">
+	<DIV class="container" onclick="location.href='<?php //Link to product-page ?>'">
+        <IMG class="image" style="width:250px; height:250px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">
 
 	    <DIV class="overlay">
 	        <a style="font-size:200%"><?php echo $name ?></a><br>
