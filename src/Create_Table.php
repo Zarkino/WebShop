@@ -10,7 +10,7 @@ Password VARCHAR(50) NOT NULL,
 Formue INT(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
-if (!$conn->query($sql)) {
+if (!$GLOBALS['conn']->query($sql)) {
     echo "Error creating table: " . $conn->error . "<br>";
 }
 
@@ -23,7 +23,7 @@ Produktpris FLOAT(50) NOT NULL,
 Stock FLOAT(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
-if (!$conn->query($sql)) {
+if (!$GLOBALS['conn']->query($sql)) {
     echo "Error creating table: " . $conn->error . "<br>";
 }
 
@@ -37,7 +37,7 @@ Totalprice FLOAT(50) NOT NULL
 )
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
-if (!$conn->query($sql)) {
+if (!$GLOBALS['conn']->query($sql)) {
     echo "Error creating table: " . $conn->error . "<br>";
 }
 
@@ -50,7 +50,7 @@ City INT(50) NOT NULL)
 
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
-if (!$conn->query($sql)) {
+if (!$GLOBALS['conn']->query($sql)) {
     echo "Error creating table: " . $conn->error . "<br>";
 }
 
@@ -62,7 +62,7 @@ ProductList INT(50) NOT NULL,
 Timeexpire dateTime)
 
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
-if (!$conn->query($sql)) {
+if (!$GLOBALS['conn']->query($sql)) {
     echo "Error creating table: " . $conn->error . "<br>";
 }
 ?>

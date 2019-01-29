@@ -4,7 +4,7 @@ include('database.php');
 session_start();
  
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
-    header("location: login.php");
+    header("location: signup.php");
     exit;
 }
 ?>
@@ -27,12 +27,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
         
         <h2>Logget ind som: <?php echo htmlspecialchars($_SESSION["username"]);?></h2>
 
-        <div style="display: flex; justify-content: space-between;">
-            <?php product("Product1", "Information about the product:") ?>
-            <?php product("Product2", "Information about the product:") ?>
-            <?php product("Product3", "Information about the product:") ?>
-            <?php product("Product4", "Information about the product:") ?>
-        </div>
+        <?php
+        listProducts();
+        ?>
 
         <p>
             <a href="logout.php">Logout</a>

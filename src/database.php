@@ -39,16 +39,35 @@ function login($username, $password) {
     }
 }
 
-function product($name, $info) {
-    ?>
-	<DIV class="container" onclick="location.href='<?php //Link to product-page ?>'">
-        <IMG class="image" style="width:250px; height:250px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">
+function listProducts() {
+    $sql = "SELECT * FROM webshop.produkter";
 
-	    <DIV class="overlay">
-	        <a style="font-size:200%"><?php echo $name ?></a><br>
-	        <a><?php echo $info ?></a>
-	    </DIV>
-	</DIV>
-	<?php
+    $result = $GLOBALS['conn']->query($sql);
+
+    echo '<div style="display: flex; justify-content: space-between;">';
+
+    $i = 0;
+    while($row = $result->fetch_assoc()) {
+        product($row['Produktnavn'], $row['Produktpris']);
+        $i++;
+        if($i === 4) {
+            $i = 0;
+            echo '</div>';
+            echo '<div style="display: flex; justify-content: space-between;">';
+        }
+    }
+
+    echo '</div>';
+}
+
+function product($name, $info) {
+	echo '<div class="container" onclick="location.href=">';
+        echo '<img class="image" style="width:250px; height:250px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
+
+	    echo '<div class="overlay">';
+	        echo '<a style="font-size:200%">'.$name.'</a><br>';
+	        echo '<a>'.$info.'</a>';
+	    echo '</div>';
+	echo '</div>';
 }
 ?>
