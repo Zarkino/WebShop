@@ -2,15 +2,13 @@
 include('connect.php');
 
 function buttonHeader() {
-	?>
-	<DIV style="width:100%; margin:auto;">
-		<INPUT class="button" style="width:19%" type="button" onclick="window.location = '';" value="">
-		<INPUT class="button" style="width:19%" type="button" onclick="window.location = '';" value="">
-		<INPUT class="button" style="width:19%" type="button" onclick="window.location = '';" value="">
-		<INPUT class="button" style="width:19%" type="button" onclick="window.location = '';" value="">
-		<INPUT class="button" style="width:19%" type="button" onclick="window.location = 'login.php';" value="Login">
-	</DIV>
-	<?php
+	echo '<DIV style="width:100%; margin:auto;">';
+        echo '<INPUT class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
+		echo '<INPUT class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
+		echo '<INPUT class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
+		echo '<INPUT class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
+		echo '<INPUT class="button" style="width:19%" type="button" onclick="window.location = \'login.php\';" value="Login">';
+	echo '</DIV>';
 }
 
 function login($username, $password) {
