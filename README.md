@@ -1,8 +1,7 @@
 # WebShop
 
 TODO:
-- Produkt box function
-  - Vis produktinformation
+- Fix login
 - Hent og display fra database (SQL)
 - Din konto
 - Køb produkt
