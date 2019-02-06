@@ -5,7 +5,7 @@ function buttonHeader() {
 	echo '<div style="width:100%; margin:auto;">';
         echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
 		echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
-		echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
+		echo '<input class="button" style="width:19%" type="button" onclick="window.location = \'home.php\';" value="Home">';
 		echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
 		echo '<input class="button" style="width:19%" type="button" onclick="window.location = \'login.php\';" value="Login">';
 	echo '</div>';
