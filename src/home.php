@@ -3,10 +3,12 @@ include('database.php');
 
 session_start();
  
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
+/*
+ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
     header("location: signup.php");
     exit;
 }
+ */
 ?>
 
 <!DOCTYPE html>
@@ -19,17 +21,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
     </head>
 
     <body>
-        <?php
-        buttonHeader();
-        ?>
+        <?php buttonHeader(); ?>
         
         <h1>Webshop</h1>
-        
-        <h2>Logget ind som: <?php echo htmlspecialchars($_SESSION["username"]);?></h2>
 
-        <?php
-        listProducts();
-        ?>
+        <?php listProducts(); ?>
 
         <p>
             <a href="logout.php">Logout</a>

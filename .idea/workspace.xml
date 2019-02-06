@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc31cbbc-8569-4dda-9e17-38f5c7cb2ae0" name="Default Changelist" comment="Fixed database stuff&#10;Added listProducts function to display all products in database">
+    <list default="true" id="fc31cbbc-8569-4dda-9e17-38f5c7cb2ae0" name="Default Changelist" comment="Minor change to lowercase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+            <state relative-caret-position="493">
+              <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#DIV#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#INPUT#0;n#!!top" expanded="true" />
@@ -73,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="442">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -121,8 +121,8 @@
         <option value="$PROJECT_DIR$/src/login.php" />
         <option value="$PROJECT_DIR$/src/Create_Table.php" />
         <option value="$PROJECT_DIR$/src/Create_Database.php" />
-        <option value="$PROJECT_DIR$/src/home.php" />
         <option value="$PROJECT_DIR$/src/database.php" />
+        <option value="$PROJECT_DIR$/src/home.php" />
       </list>
     </option>
   </component>
@@ -157,11 +157,6 @@
               <item name="WebShop" type="b2602c69:ProjectViewProjectNode" />
               <item name="WebShop" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WebShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebShop" type="462c0819:PsiDirectoryNode" />
-              <item name="Styles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -207,7 +202,7 @@
       <workItem from="1548503361848" duration="22000" />
       <workItem from="1548754258921" duration="7473000" />
       <workItem from="1548768148218" duration="455000" />
-      <workItem from="1549455971887" duration="839000" />
+      <workItem from="1549455971887" duration="1376000" />
     </task>
     <task id="LOCAL-00001" summary="Basic PHP">
       <created>1548072930071</created>
@@ -307,11 +302,25 @@
       <option name="project" value="LOCAL" />
       <updated>1548761648403</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fixed link to login on click on header">
+      <created>1549456843597</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1549456843597</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Minor change to lowercase">
+      <created>1549457181876</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1549457181876</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10718000" />
+    <option name="totallyTimeSpent" value="11255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -400,7 +409,9 @@
     <MESSAGE value="Made Product-box clickable" />
     <MESSAGE value="Small stuff" />
     <MESSAGE value="Fixed database stuff&#10;Added listProducts function to display all products in database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed database stuff&#10;Added listProducts function to display all products in database" />
+    <MESSAGE value="Fixed link to login on click on header" />
+    <MESSAGE value="Minor change to lowercase" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor change to lowercase" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Styles/Style.css">
@@ -683,13 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/connect.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -699,8 +703,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+        <state relative-caret-position="493">
+          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
           <folding>
             <element signature="n#style#0;n#DIV#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#INPUT#0;n#!!top" expanded="true" />
@@ -713,6 +717,13 @@
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
