@@ -7,7 +7,7 @@ $result = $GLOBALS['conn']->query($sql);
 
 while($row = $result->fetch_assoc()) {
     $name = $row['Produktnavn'];
-    $kategori = $row['Produktkategori'];
+    $category = $row['Produktkategori'];
     $price = $row['Produktpris'];
     $stock = $row['Stock'];
 }
@@ -28,9 +28,12 @@ while($row = $result->fetch_assoc()) {
 
         <h1><?php echo $name; ?></h1>
 
-        <a><?php echo $price . "<br>";
-            echo $stock . "<br>";
-            echo $kategori . "<br>" ?></a>
+        <a id="nohover"><?php echo 'Price: ' . $price . "<br>";
+            echo 'Stock: ' . $stock . "<br>";
+            echo 'Category: ' . $category . "<br>" ?></a>
 
+        <br>
+
+        <a href="buy.php">Køb</a>
     </body>
 </html>
