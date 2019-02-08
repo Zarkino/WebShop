@@ -2,7 +2,12 @@
 include('database.php');
 
 session_start();
- 
+
+//Skal bruges, når der skal søges efter kategori
+if(!empty($_GET)) {
+    //$sql = "SELECT * FROM webshop.produkter WHERE Produktkategori =" . $_GET["category"];
+}
+
 /*
  if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
     header("location: signup.php");

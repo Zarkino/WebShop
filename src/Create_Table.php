@@ -18,7 +18,7 @@ if (!$GLOBALS['conn']->query($sql)) {
 $sql = "CREATE TABLE webshop.produkter (
 ProduktID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Produktnavn VARCHAR(50) NOT NULL,
-Prdouktkategori VARCHAR(50) NOT NULL,
+Produktkategori VARCHAR(50) NOT NULL,
 Produktpris FLOAT(50) NOT NULL,
 Stock FLOAT(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";

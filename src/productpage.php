@@ -11,7 +11,6 @@ while($row = $result->fetch_assoc()) {
     $price = $row['Produktpris'];
     $stock = $row['Stock'];
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +27,31 @@ while($row = $result->fetch_assoc()) {
 
         <h1><?php echo $name; ?></h1>
 
-        <a id="nohover"><?php echo 'Price: ' . $price . "<br>";
-            echo 'Stock: ' . $stock . "<br>";
-            echo 'Category: ' . $category . "<br>" ?></a>
+        <a href="home.php">Home</a>-><a href="home.php?category=<?php echo $category ?>"><?php echo $category ?></a>
+
+        <br><br><br>
+
+        <div style="width:25%; background-color:white">
+            <img class="image" style="width:100%;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">
+        </div>
+
+        <br>
+
+        <div style="width:25%; background-color:white">
+            <h2>Description</h2>
+
+            <a id="nohover" style="color:black">
+                <?php echo 'Description'; ?>
+            </a>
+        </div>
+
+        <br>
+
+        <div style="width:25%; background-color:white">
+            <a id="nohover" style="color:black"><?php echo 'Price: ' . $price . ' kr.' . "<br>";
+                echo 'Stock: ' . $stock . "<br>";
+                echo 'Category: ' . $category . "<br>" ?></a>
+        </div>
 
         <br>
 
