@@ -29,7 +29,7 @@ while($row = $result->fetch_assoc()) {
 
         <a href="home.php">Home</a>-><a href="home.php?category=<?php echo $category ?>"><?php echo $category ?></a>
 
-        <br><br><br>
+        <br><br>
 
         <div style="width:25%; background-color:white">
             <img class="image" style="width:100%;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">
@@ -38,7 +38,7 @@ while($row = $result->fetch_assoc()) {
         <br>
 
         <div style="width:25%; background-color:white">
-            <h2><?php echo $name; ?>:</h2>
+            <h2><?php echo $name; ?></h2>
 
             <a id="nohover" style="color:black">
                 <?php echo 'Description'; ?>
@@ -55,6 +55,6 @@ while($row = $result->fetch_assoc()) {
 
         <br>
 
-        <a href="buy.php">Køb</a>
+        <a href="">Add To Cart</a>
     </body>
 </html>
