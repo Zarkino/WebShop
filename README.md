@@ -1,6 +1,7 @@
 # WebShop
 
 TODO:
+* New page background
 * Fix login
 * Fix database
   * Rename tablenames
