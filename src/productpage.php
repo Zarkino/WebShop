@@ -38,7 +38,7 @@ while($row = $result->fetch_assoc()) {
         <br>
 
         <div style="width:25%; background-color:white">
-            <h2><?php echo $name; ?></h2>
+            <h2 style="color:black"><?php echo $name; ?></h2>
 
             <a id="nohover" style="color:black">
                 <?php echo 'Description'; ?>

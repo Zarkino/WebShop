@@ -1,5 +1,4 @@
 <?php
-include('connect.php');
 include('database.php');
 ?>
 
@@ -8,7 +7,7 @@ include('database.php');
 		<LINK rel="stylesheet" type="text/css" href="../Styles/Style.css">
 		<META charset="utf-8">
 		<TITLE>Webshop</TITLE>
-		<LINK rel="icon" type="image/gif" href="Icon/dollar.png"/>
+		<LINK rel="icon" type="image/gif" href="../Icons/dollar.png"/>
 
 		<SCRIPT>
 		</SCRIPT>
@@ -32,6 +31,6 @@ include('database.php');
                 <BUTTON type="submit" class="buttonHead" name="submit" >Opret Bruger</BUTTON>
             </form>
             <br>
-            <a>Har du allerede en bruger?</a> <a class="link" href="login.php">Log ind her!</a>
+            <a id="nohover">Har du allerede en bruger?</a> <a href="login.php">Log ind her!</a>
 	</BODY>
 </HTML>

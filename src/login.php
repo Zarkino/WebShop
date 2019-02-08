@@ -25,11 +25,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 		<H1>Webshop</H1>
 		
-            <H2>Login</H2>    
-            <form method="POST">
-                <INPUT type="text" placeholder="Username" name="username" required><br>
-                <INPUT type="password" placeholder="Password" name="password" required><br>
-                <BUTTON type="submit" class="buttonHead" name="submit" >Login</BUTTON>
-            </form>
+        <H2>Login</H2>
+
+        <form method="POST">
+            <INPUT type="text" placeholder="Username" name="username" required><br>
+            <INPUT type="password" placeholder="Password" name="password" required><br>
+            <BUTTON type="submit" class="buttonHead" name="submit" >Login</BUTTON>
+        </form>
+
+        <a id="nohover">Har du ikke en bruger?</a> <a href="signup.php">Lav en her!</a>
 	</BODY>
 </HTML>

@@ -30,8 +30,9 @@ function login($username, $password) {
             $_SESSION["username"] = $username;
             $_SESSION["formue"] = $row['Formue'];
 
-            header("location: home.php");
+            //header("location: home.php");
         } else {
+            echo $GLOBALS['conn']->connect_error . '<br>';
             echo "Du har indtastet et forkert brugernavn eller password";
         }
     }
