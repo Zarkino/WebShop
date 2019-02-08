@@ -62,7 +62,7 @@ function product($id, $name, $info) {
 	echo '<div class="container" onclick="location.href=\'productpage.php?id='.$id.'\';">';
         echo '<img class="image" style="width:250px; height:250px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
 
-	    echo '<div class="overlay">';
+	    echo '<div class="overlay" style="text-align:center">';
 	        echo '<a id="nohover" style="font-size:200%">'.$name.'</a><br>';
 	        echo '<a id="nohover">'.$info.'</a>';
 	    echo '</div>';

@@ -25,7 +25,7 @@ while($row = $result->fetch_assoc()) {
     <body>
         <?php buttonHeader(); ?>
 
-        <h1><?php echo $name; ?></h1>
+        <h1>Webshop</h1>
 
         <a href="home.php">Home</a>-><a href="home.php?category=<?php echo $category ?>"><?php echo $category ?></a>
 
@@ -38,7 +38,7 @@ while($row = $result->fetch_assoc()) {
         <br>
 
         <div style="width:25%; background-color:white">
-            <h2>Description</h2>
+            <h2><?php echo $name; ?>:</h2>
 
             <a id="nohover" style="color:black">
                 <?php echo 'Description'; ?>
@@ -49,7 +49,7 @@ while($row = $result->fetch_assoc()) {
 
         <div style="width:25%; background-color:white">
             <a id="nohover" style="color:black"><?php echo 'Price: ' . $price . ' kr.' . "<br>";
-                echo 'Stock: ' . $stock . "<br>";
+                echo 'Stock: ' . $stock . ' stk.' . "<br>";
                 echo 'Category: ' . $category . "<br>" ?></a>
         </div>
 

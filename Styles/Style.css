@@ -14,6 +14,64 @@ body {
 	background-size: cover;
 }
 
+#nohover {
+    color:#FFF;
+}
+
+#underline {
+    text-decoration: underline;
+}
+
+body {
+    font-size: 100%;
+    font-family: BebasNeue;
+    color:#FFF;
+}
+
+a {
+    font-size: 150%;
+    font-family: BebasNeue;
+    color:#FFF;
+}
+
+a:hover {
+    color:#000;
+}
+
+table {
+    font-size: 150%;
+}
+
+h1 {
+    font-size:800%;
+    font-family:BebasNeue;
+    color:#000;
+    text-align: center;
+    margin-top:0;
+    margin-bottom:0;
+}
+
+h2 {
+    font-size:250%;
+    font-family:BebasNeue;
+    color:#000;
+    margin-top:0;
+    margin-bottom:0;
+}
+
+h3 {
+    font-size:125%;
+    font-family:BebasNeue;
+    color:#FFF;
+    margin-top:0;
+    margin-bottom:0;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+}
+
 .container {
     position: relative;
     display: flex;
@@ -64,64 +122,4 @@ body {
 
 .button:hover {
 	color:#FFF;
-}
-
-a {
-    font-size: 150%;
-    font-family: BebasNeue;
-    color:#FFF;
-}
-
-a:hover {
-    color:#000;
-}
-
-#nohover {
-    color:#FFF;
-}
-
-body {
-    font-size: 100%;
-    font-family: BebasNeue;
-    color:#FFF;
-}
-
-table {
-    font-size: 150%;
-}
-
-h1 {
-	font-size:800%;
-	font-family:BebasNeue;
-	color:#000;
-	text-align: center;
-	margin-top:0%;
-    margin-bottom:0%;
-}
-
-h2 {
-	font-size:250%;
-	font-family:BebasNeue;
-	color:#FFF;
-    text-decoration-line: underline;
-	margin-top:0%;
-    margin-bottom:0;
-	text-shadow:
-	-1px -1px 0 #000,
-	1px -1px 0 #000,
-	-1px 1px 0 #000,
-	1px 1px 0 #000;
-}
-
-h3 {
-	font-size:125%;
-	font-family:BebasNeue;
-	color:#FFF;
-	margin-top:0%;
-    margin-bottom:0;
-	text-shadow:
-	-1px -1px 0 #000,
-	1px -1px 0 #000,
-	-1px 1px 0 #000,
-	1px 1px 0 #000;
 }
