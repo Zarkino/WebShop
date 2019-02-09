@@ -4,16 +4,9 @@ include('database.php');
 session_start();
 
 //Skal bruges, når der skal søges efter kategori
-if(!empty($_GET)) {
-    //$sql = "SELECT * FROM webshop.produkter WHERE Produktkategori =" . $_GET["category"];
-}
+if(!empty($_GET['column'])) $column = $_GET['column'];
+if(!empty($_GET['item']))   $item = $_GET['item'];
 
-/*
- if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
-    header("location: signup.php");
-    exit;
-}
- */
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +15,11 @@ if(!empty($_GET)) {
 		<LINK rel="stylesheet" type="text/css" href="../Styles/Style.css">
 		<META charset="utf-8">
 		<TITLE>Webshop</TITLE>
-		<!--<LINK rel="icon" type="image/gif" href="../Icons/dollar.png"/> -->
+		<!--<LINK rel="icon" type="image/gif" href="../Icons/dollar.png"/>-->
     </head>
 
     <body>
-        <?php buttonHeader(); ?>
+        <?php banner(); ?>
         
         <h1>Webshop</h1>
 

@@ -1,11 +1,11 @@
  <?php
-$servername = "localhost";
+$server = "localhost";
 $username = "root";
 $password = "yes1";
 
 GLOBAL $conn;
 
-$conn = new mysqli($servername, $username, $password);
+$conn = new MySQLi($server, $username, $password);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -18,20 +18,22 @@ if(!$conn->select_db("webshop")) {
 }
 
 class Database {
-    private static $db;
+    private $server = "localhost";
+    private $username = "root";
+    private $password = "yes1";
+
     private $conn;
 
-    private function create() {
-        $this->conn = new MySQLi('localhost', 'root', 'yes1');
-        self::$db->conn->set_charset("utf8");
-    }
+    public function connect() {
+        if(empty($this->conn)) {
+            $this->conn = new MySQLi($this->server, $this->username, $this->password);
 
-    private function destroy() {
-        $this->conn->close();
-    }
+            if($this->conn->connect_error) {
+                connect();
+            }
+        }
 
-    public static function connection() {
-        return self::$db->conn;
+        return $this->conn;
     }
 }
 ?>

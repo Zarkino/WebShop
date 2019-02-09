@@ -1,69 +1,64 @@
 <?php
-//Brugere
-$sql = "CREATE TABLE webshop.brugere (
-brugerID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+//Users
+$sql = "CREATE TABLE webshop.users (
+userID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 firstname VARCHAR(50) NOT NULL,
 lastname VARCHAR(50) NOT NULL,
-Email VARCHAR(50) NOT NULL,
-Username VARCHAR(50) NOT NULL,
-Password VARCHAR(50) NOT NULL,
-Formue INT(50) NOT NULL)
+email VARCHAR(50) NOT NULL,
+username VARCHAR(50) NOT NULL,
+password VARCHAR(50) NOT NULL,
+balance INT(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
-if (!$GLOBALS['conn']->query($sql)) {
-    echo "Error creating table: " . $conn->error . "<br>";
-}
+createTable($sql);
 
-//Produkts
-$sql = "CREATE TABLE webshop.produkter (
-ProduktID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-Produktnavn VARCHAR(50) NOT NULL,
-Produktkategori VARCHAR(50) NOT NULL,
-Produktpris FLOAT(50) NOT NULL,
-Stock FLOAT(50) NOT NULL)
+//Products
+$sql = "CREATE TABLE webshop.products (
+productID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(50) NOT NULL,
+category VARCHAR(50) NOT NULL,
+price FLOAT(50) NOT NULL,
+stock FLOAT(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
-if (!$GLOBALS['conn']->query($sql)) {
-    echo "Error creating table: " . $conn->error . "<br>";
-}
+createTable($sql);
 
 //Transactions
-$sql = "CREATE TABLE webshop.transactioner (
-TransactionID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-FOREIGN KEY(BrugerID) REFERENCES webbruger(BrugerID),
-FOREIGN KEY(PRODUKTID) REFERENCES produkt(ProduktID),
-TranscationTime dateTime NOT NULL,
-Totalprice FLOAT(50) NOT NULL
-)
+$sql = "CREATE TABLE webshop.transactions (
+transactionID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+FOREIGN KEY(userID) REFERENCES users(BrugerID),
+FOREIGN KEY(productID) REFERENCES products(productID),
+time dateTime NOT NULL,
+price FLOAT(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
-if (!$GLOBALS['conn']->query($sql)) {
-    echo "Error creating table: " . $conn->error . "<br>";
-}
+createTable($sql);
 
-//Adresse
-$sql = "CREATE TABLE webshop.adresser (
-Name INT(50) NOT NULL,
-DeliveringAdress INT(50) NOT NULL,
-Postnumber FLOAT(4) NOT NULL,
-City INT(50) NOT NULL)
+//Adresses
+$sql = "CREATE TABLE webshop.addresses (
+name INT(50) NOT NULL,
+address INT(50) NOT NULL,
+postcode FLOAT(4) NOT NULL,
+city INT(50) NOT NULL)
 
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
-if (!$GLOBALS['conn']->query($sql)) {
-    echo "Error creating table: " . $conn->error . "<br>";
-}
+createTable($sql);
 
-//Garanti
-$sql = "CREATE TABLE webshop.garanti (
-GarantiID INT(50) UNSIGNED,
-FOREIGN KEY(TransactionID) REFERENCES transactoion(TransactionID),
-ProductList INT(50) NOT NULL,
-Timeexpire dateTime)
-
+//Warranty
+$sql = "CREATE TABLE webshop.warranty (
+warrantyID INT(50) UNSIGNED,
+FOREIGN KEY(transactionID) REFERENCES transactions(transactionID),
+productList INT(50) NOT NULL,
+expiration dateTime)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
-if (!$GLOBALS['conn']->query($sql)) {
-    echo "Error creating table: " . $conn->error . "<br>";
+
+createTable($sql);
+
+function createTable($sql) {
+    if (!$GLOBALS['conn']->query($sql)) {
+        echo "Error creating table: " . $GLOBALS['conn']->error . "<br>";
+    }
 }
 ?>
 

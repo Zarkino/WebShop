@@ -7,7 +7,7 @@ include('database.php');
 		<LINK rel="stylesheet" type="text/css" href="../Styles/Style.css">
 		<META charset="utf-8">
 		<TITLE>Webshop</TITLE>
-		<LINK rel="icon" type="image/gif" href="../Icons/dollar.png"/>
+		<!--<LINK rel="icon" type="image/gif" href="../Icons/dollar.png"/>-->
 
 		<SCRIPT>
 		</SCRIPT>
@@ -15,7 +15,7 @@ include('database.php');
 
 	<BODY>
 		<?php
-		buttonHeader();
+		banner();
 		?>
 
 		<H1>Webshop</H1>

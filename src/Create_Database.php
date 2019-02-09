@@ -7,8 +7,7 @@ if ($GLOBALS['conn']->query($sql)) {
     echo "Error creating database webshop: " . $conn->error;
 }
 
-$sql = "ALTER DATABASE webshop
-COLLATE latin1_danish_ci";
+$sql = "ALTER DATABASE webshop COLLATE latin1_danish_ci";
 
 if (!$GLOBALS['conn']->query($sql)) {
     echo "Error creating database: webshop: " . $conn->error;

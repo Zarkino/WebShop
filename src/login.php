@@ -1,9 +1,5 @@
 <?php
-include ('database.php');
-
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    login($_POST['username'], $_POST['password']);
-}
+include('database.php');
 ?>
 
 <!DOCTYPE HTML>
@@ -12,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<LINK rel="stylesheet" type="text/css" href="../Styles/Style.css">
 		<META charset="utf-8">
 		<TITLE>Webshop</TITLE>
-		<LINK rel="icon" type="image/gif" href="../Icon/dollar.png"/>
+		<!--<LINK rel="icon" type="image/gif" href="../Icon/dollar.png"/>-->
 		
 		<SCRIPT>
 		</SCRIPT>
@@ -20,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	<BODY>
 		<?php
-		buttonHeader();
+		banner();
 		?>
 		
 		<H1>Webshop</H1>
@@ -34,5 +30,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
 
         <a id="nohover">Har du ikke en bruger?</a> <a href="signup.php">Lav en her!</a>
+
+        <?php
+        echo '<br>';
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            login($_POST['username'], $_POST['password']);
+        }
+        ?>
 	</BODY>
 </HTML>

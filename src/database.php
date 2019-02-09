@@ -1,7 +1,7 @@
 <?php
 include('connect.php');
 
-function buttonHeader() {
+function banner() {
 	echo '<div style="width:100%; margin:auto;">';
         echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
 		echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
@@ -11,8 +11,14 @@ function buttonHeader() {
 	echo '</div>';
 }
 
+function footer() {
+    echo '<div style="width:100%">';
+    echo '</div>';
+}
+
 function login($username, $password) {
-    $sql = "SELECT * FROM webshop.brugere WHERE username = ?";
+    include('connect.php');
+    $sql = "SELECT * FROM webshop.brugere WHERE Username = ?";
 
     $stmt = $GLOBALS['conn']->prepare($sql);
 
@@ -27,19 +33,27 @@ function login($username, $password) {
             session_start();
             $_SESSION["loggedin"] = true;
             $_SESSION["brugerID"] = $row['BrugerID'];
-            $_SESSION["username"] = $username;
+            $_SESSION["username"] = $row['Username'];
             $_SESSION["formue"] = $row['Formue'];
 
-            //header("location: home.php");
+            header("location: home.php");
         } else {
-            echo $GLOBALS['conn']->connect_error . '<br>';
-            echo "Du har indtastet et forkert brugernavn eller password";
+            //Debug
+            echo 'You entered: ' . $username . ' & ' . $password . '<br>';
+            //echo "You have entered an incorrect username or password";
         }
     }
 }
 
 function listProducts() {
+    /* To get specific Items from Table 'Products'
+    if($column !== null && $item !== null) {
+        $sql = "SELECT * FROM webshop.produkter WHERE $column = $item";
+    }
+    */
+
     $sql = "SELECT * FROM webshop.produkter";
+
 
     $result = $GLOBALS['conn']->query($sql);
 

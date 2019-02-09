@@ -19,11 +19,11 @@ while($row = $result->fetch_assoc()) {
         <LINK rel="stylesheet" type="text/css" href="../Styles/Style.css">
         <META charset="utf-8">
         <TITLE>Webshop</TITLE>
-        <!--<LINK rel="icon" type="image/gif" href="../Icons/dollar.png"/> -->
+        <!--<LINK rel="icon" type="image/gif" href="../Icons/dollar.png"/>-->
     </head>
 
     <body>
-        <?php buttonHeader(); ?>
+        <?php banner(); ?>
 
         <h1>Webshop</h1>
 
@@ -31,13 +31,13 @@ while($row = $result->fetch_assoc()) {
 
         <br><br>
 
-        <div style="width:25%; background-color:white">
+        <div style="width:33%; background-color:white">
             <img class="image" style="width:100%;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">
         </div>
 
         <br>
 
-        <div style="width:25%; background-color:white">
+        <div style="width:33%; background-color:white">
             <h2 style="color:black"><?php echo $name; ?></h2>
 
             <a id="nohover" style="color:black">
@@ -47,7 +47,7 @@ while($row = $result->fetch_assoc()) {
 
         <br>
 
-        <div style="width:25%; background-color:white">
+        <div style="width:33%; background-color:white">
             <a id="nohover" style="color:black"><?php echo 'Price: ' . $price . ' kr.' . "<br>";
                 echo 'Stock: ' . $stock . ' stk.' . "<br>";
                 echo 'Category: ' . $category . "<br>" ?></a>
