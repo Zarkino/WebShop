@@ -1,6 +1,7 @@
 # WebShop
 
 TODO:
+* New Header/Navigation bar
 * New page background
 * Fix login
 * Fix database
