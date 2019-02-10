@@ -30,6 +30,6 @@ include('database.php');
                 <BUTTON type="submit" class="buttonHead" name="submit" >Opret Bruger</BUTTON>
             </form>
 
-            <a id="nohover">Har du allerede en bruger?</a> <a href="login.php">Log ind her!</a>
+            <a id="nohover">Already have an account?</a> <a href="login.php">Log in here!</a>
 	</BODY>
 </HTML>

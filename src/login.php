@@ -29,7 +29,7 @@ include('database.php');
             <BUTTON type="submit" class="buttonHead" name="submit" >Login</BUTTON>
         </form>
 
-        <a id="nohover">Har du ikke en bruger?</a> <a href="signup.php">Lav en her!</a>
+        <a id="nohover">Don't have an account yet?</a> <a href="signup.php">Register here!</a>
 
         <?php
         echo '<br>';

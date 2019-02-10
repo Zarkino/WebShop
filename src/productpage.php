@@ -23,7 +23,7 @@ while($row = $result->fetch_assoc()) {
     </head>
 
     <body>
-        <?php banner(); ?>
+        <?php banner2(); ?>
 
         <h1>Webshop</h1>
 
