@@ -2,13 +2,27 @@
 include('connect.php');
 
 function banner() {
-	echo '<div style="width:100%; margin:auto;">';
+	echo '<div style="width:100%; display:flex; justify-content: space-between;">';
         echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
 		echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
 		echo '<input class="button" style="width:19%" type="button" onclick="window.location = \'home.php\';" value="Home">';
 		echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
 		echo '<input class="button" style="width:19%" type="button" onclick="window.location = \'login.php\';" value="Login">';
 	echo '</div>';
+}
+
+function banner2() {
+    if(isset($_POST['item'])) {
+        search($_POST['item']);
+    }
+
+    echo '<ul class="bar">';
+        echo '<li><form action="" method="POST"><input type="text" placeholder="Search" name="item" required><input type="image" src="../Icons/Search.svg" alt="Go" style="filter:invert(1); vertical-align: middle; padding-left:5px" height="22px" width="22px"></form></li>';
+        echo '<li><a href=""></a></li>';
+        echo '<li><a href="home.php">Home</a></li>';
+        echo '<li><a href=""></a></li>';
+        echo '<li><a href="login.php">Login</a></li>';
+    echo '</ul>';
 }
 
 function footer() {
@@ -93,9 +107,7 @@ function search($item) {
     $result = $GLOBALS['conn']->query($sql);
 
     while($row = $result->fetch_assoc()) {
-        echo $row['Produktnavn'] . '<br>';
-        echo $row['Produktkategori'] . '<br>';
-        echo $row['Produktpris'] . '<br>';
+        product($row['ProduktID'], $row['Produktnavn'], $row['Produktpris']);
     }
 }
 ?>

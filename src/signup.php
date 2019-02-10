@@ -30,7 +30,7 @@ include('database.php');
                 <INPUT type="number" min="0" step="0.01"  placeholder="Formue" name="formue" required><br>
                 <BUTTON type="submit" class="buttonHead" name="submit" >Opret Bruger</BUTTON>
             </form>
-            <br>
+
             <a id="nohover">Har du allerede en bruger?</a> <a href="login.php">Log ind her!</a>
 	</BODY>
 </HTML>

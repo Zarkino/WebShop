@@ -19,7 +19,7 @@ if(!empty($_GET['item']))   $item = $_GET['item'];
     </head>
 
     <body>
-        <?php banner(); ?>
+        <?php banner2(); ?>
         
         <h1>Webshop</h1>
 

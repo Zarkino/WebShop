@@ -16,7 +16,7 @@ include('database.php');
 	
 	<BODY>
 		<?php
-		banner();
+		banner2();
 		?>
 		
 		<H1>Webshop</H1>
@@ -33,7 +33,7 @@ include('database.php');
 
         <?php
         echo '<br>';
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if(isset($_POST['username']) && isset($_POST['password'])) {
             login($_POST['username'], $_POST['password']);
         }
         ?>
