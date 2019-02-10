@@ -2,6 +2,7 @@
 include('database.php');
 ?>
 
+<!DOCTYPE HTML>
 <HTML>
 	<HEAD>
 		<LINK rel="stylesheet" type="text/css" href="../Styles/Style.css">
@@ -14,9 +15,7 @@ include('database.php');
 	</HEAD>
 
 	<BODY>
-		<?php
-		banner();
-		?>
+		<?php banner2(); ?>
 
 		<H1>Webshop</H1>
 

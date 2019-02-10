@@ -11,7 +11,7 @@ body {
 	background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-	background-size: cover;
+	background-size: initial;
 
     font-size: 100%;
     font-family: BebasNeue;
