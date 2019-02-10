@@ -83,4 +83,19 @@ function product($id, $name, $price) {
 	    echo '</div>';
 	echo '</div>';
 }
+
+function search($item) {
+    $sql = "SELECT * FROM webshop.produkter WHERE
+    (`Produktnavn` LIKE '%".$item."%') OR
+    (`Produktkategori` LIKE '%".$item."%') OR
+    (`Produktpris` LIKE '%".$item."%')";
+
+    $result = $GLOBALS['conn']->query($sql);
+
+    while($row = $result->fetch_assoc()) {
+        echo $row['Produktnavn'] . '<br>';
+        echo $row['Produktkategori'] . '<br>';
+        echo $row['Produktpris'] . '<br>';
+    }
+}
 ?>
