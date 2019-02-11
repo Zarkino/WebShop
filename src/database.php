@@ -38,7 +38,7 @@ function footer() {
 function login($username, $password) {
     $sql = "SELECT * FROM webshop.brugere WHERE Username = ?";
 
-    $stmt = $GLOBALS['conn']->prepare($sql);
+    $stmt = $_SESSION['conn']->prepare($sql);
 
     $stmt->bind_param('s', $username);
 

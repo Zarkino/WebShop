@@ -3,18 +3,17 @@ $server = "localhost";
 $username = "root";
 $password = "yes1";
 
-GLOBAL $conn;
+session_start();
+$_SESSION['conn'] = new MySQLi($server, $username, $password);
 
-$conn = new MySQLi($server, $username, $password);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($_SESSION['conn']->connect_error) {
+    die("Connection failed: " . $_SESSION['conn']->connect_error);
 }
 
-$conn->set_charset("utf8");
+ $_SESSION['conn']->set_charset("utf8");
 
-if(!$conn->select_db("webshop")) {
-    print('Error connecting' . $conn->connect_error);
+if(!$_SESSION['conn']->select_db("webshop")) {
+    print('Error connecting' . $_SESSION['conn']->connect_error);
 }
 
 class Database {
@@ -29,7 +28,7 @@ class Database {
             $this->conn = new MySQLi($this->server, $this->username, $this->password);
 
             if($this->conn->connect_error) {
-                connect();
+                $this->connect();
             }
         }
 

@@ -1,5 +1,5 @@
 <?php
-include ('connect.php');
+include('connect.php');
 
 $sql = "CREATE DATABASE webshop";
 
