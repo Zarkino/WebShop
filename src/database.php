@@ -1,5 +1,5 @@
 <?php
-include('connect.php');
+require_once('connect.php');
 
 function banner() {
 	echo '<div style="width:100%; display:flex; justify-content: space-between;">';
@@ -21,7 +21,12 @@ function banner2() {
         echo '<li><a href=""></a></li>';
         echo '<li><a href="home.php">Home</a></li>';
         echo '<li><a href=""></a></li>';
-        echo '<li><a href="login.php">Login</a></li>';
+
+        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === TRUE) {
+            echo '<li><a href="logout.php">Logout</a></li>';
+        } else {
+            echo '<li><a href="login.php">Login</a></li>';
+        }
     echo '</ul>';
 }
 
@@ -31,7 +36,6 @@ function footer() {
 }
 
 function login($username, $password) {
-    include('connect.php');
     $sql = "SELECT * FROM webshop.brugere WHERE Username = ?";
 
     $stmt = $GLOBALS['conn']->prepare($sql);

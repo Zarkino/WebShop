@@ -24,11 +24,5 @@ if(!empty($_GET['item']))   $item = $_GET['item'];
         <h1>Webshop</h1>
 
         <?php listProducts(); ?>
-
-        <p>
-            <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === TRUE) {
-                echo '<a href="logout.php">Logout</a>';
-            } ?>
-        </p>
     </body>
 </html>
