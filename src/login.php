@@ -1,5 +1,5 @@
 <?php
-require_once('database.php');
+include('database.php');
 ?>
 
 <!DOCTYPE HTML>

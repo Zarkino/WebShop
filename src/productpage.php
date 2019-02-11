@@ -1,15 +1,16 @@
 <?php
 include('database.php');
 
-$sql = "SELECT * FROM webshop.produkter WHERE ProduktID =".$_GET["id"];
+$sql = "SELECT * FROM webshop.products WHERE productID =".$_GET["id"];
 
-$result = $GLOBALS['conn']->query($sql);
+$result = connect()->query($sql);
 
 while($row = $result->fetch_assoc()) {
-    $name = $row['Produktnavn'];
-    $category = $row['Produktkategori'];
-    $price = $row['Produktpris'];
-    $stock = $row['Stock'];
+    $name = $row['name'];
+    $category = $row['category'];
+    $description = $row['description'];
+    $price = $row['price'];
+    $stock = $row['stock'];
 }
 ?>
 
@@ -41,7 +42,7 @@ while($row = $result->fetch_assoc()) {
             <h2 style="color:black"><?php echo $name; ?></h2>
 
             <a id="nohover" style="color:black">
-                <?php echo 'Description'; ?>
+                <?php echo $description; ?>
             </a>
         </div>
 

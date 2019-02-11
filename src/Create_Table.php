@@ -1,4 +1,6 @@
 <?php
+require_once('database.php');
+
 //Users
 $sql = "CREATE TABLE webshop.users (
 userID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -17,6 +19,7 @@ $sql = "CREATE TABLE webshop.products (
 productID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
 category VARCHAR(50) NOT NULL,
+description VARCHAR(50) NOT NULL,
 price FLOAT(50) NOT NULL,
 stock FLOAT(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
@@ -26,7 +29,7 @@ createTable($sql);
 //Transactions
 $sql = "CREATE TABLE webshop.transactions (
 transactionID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-FOREIGN KEY(userID) REFERENCES users(BrugerID),
+FOREIGN KEY(userID) REFERENCES users(userID),
 FOREIGN KEY(productID) REFERENCES products(productID),
 time dateTime NOT NULL,
 price FLOAT(50) NOT NULL)
@@ -40,7 +43,6 @@ name INT(50) NOT NULL,
 address INT(50) NOT NULL,
 postcode FLOAT(4) NOT NULL,
 city INT(50) NOT NULL)
-
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 createTable($sql);
@@ -56,8 +58,8 @@ CHARACTER SET latin1 COLLATE latin1_danish_ci";
 createTable($sql);
 
 function createTable($sql) {
-    if (!$GLOBALS['conn']->query($sql)) {
-        echo "Error creating table: " . $GLOBALS['conn']->error . "<br>";
+    if (!connect()->query($sql)) {
+        echo "Error creating table: " . connect()->error . "<br>";
     }
 }
 ?>

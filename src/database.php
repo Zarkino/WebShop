@@ -1,5 +1,15 @@
 <?php
-require_once('connect.php');
+//require_once('connect.php');
+
+function connect() {
+    static $conn;
+
+    if($conn === NULL) {
+        $conn = new MySQLi('localhost', 'root', 'yes1');
+        $conn->set_charset("utf8");
+    }
+    return $conn;
+}
 
 function banner() {
 	echo '<div style="width:100%; display:flex; justify-content: space-between;">';
@@ -36,9 +46,9 @@ function footer() {
 }
 
 function login($username, $password) {
-    $sql = "SELECT * FROM webshop.brugere WHERE Username = ?";
+    $sql = "SELECT * FROM webshop.users WHERE username = ?";
 
-    $stmt = $_SESSION['conn']->prepare($sql);
+    $stmt = connect()->prepare($sql);
 
     $stmt->bind_param('s', $username);
 
@@ -47,12 +57,12 @@ function login($username, $password) {
     $result = $stmt->get_result();
 
     while($row = $result->fetch_assoc()) {
-        if(password_verify($password, $row['Password'])) {
+        if(password_verify($password, $row['password'])) {
             session_start();
             $_SESSION["loggedin"] = true;
-            $_SESSION["brugerID"] = $row['BrugerID'];
-            $_SESSION["username"] = $row['Username'];
-            $_SESSION["formue"] = $row['Formue'];
+            $_SESSION["userID"] = $row['userID'];
+            $_SESSION["username"] = $row['username'];
+            $_SESSION["balance"] = $row['balance'];
 
             header("location: home.php");
         } else {
@@ -70,16 +80,15 @@ function listProducts() {
     }
     */
 
-    $sql = "SELECT * FROM webshop.produkter";
+    $sql = "SELECT * FROM webshop.products";
 
-
-    $result = $GLOBALS['conn']->query($sql);
+    $result = connect()->query($sql);
 
     echo '<div style="display: flex; justify-content: space-between;">';
 
     $i = 0;
     while($row = $result->fetch_assoc()) {
-        product($row['ProduktID'], $row['Produktnavn'], $row['Produktpris']);
+        product($row['productID'], $row['name'], $row['price']);
         $i++;
         if($i === 4) {
             $i = 0;
@@ -103,15 +112,15 @@ function product($id, $name, $price) {
 }
 
 function search($item) {
-    $sql = "SELECT * FROM webshop.produkter WHERE
-    (`Produktnavn` LIKE '%".$item."%') OR
-    (`Produktkategori` LIKE '%".$item."%') OR
-    (`Produktpris` LIKE '%".$item."%')";
+    $sql = "SELECT * FROM webshop.products WHERE
+    (`name` LIKE '%".$item."%') OR
+    (`category` LIKE '%".$item."%') OR
+    (`price` LIKE '%".$item."%')";
 
-    $result = $GLOBALS['conn']->query($sql);
+    $result = connect()->query($sql);
 
     while($row = $result->fetch_assoc()) {
-        product($row['ProduktID'], $row['Produktnavn'], $row['Produktpris']);
+        product($row['productID'], $row['name'], $row['price']);
     }
 }
 ?>

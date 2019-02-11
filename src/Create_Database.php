@@ -1,20 +1,20 @@
 <?php
-include('connect.php');
+require_once('database.php');
 
 $sql = "CREATE DATABASE webshop";
 
-if ($GLOBALS['conn']->query($sql)) {
+if (connect()->query($sql)) {
     echo "Error creating database webshop: " . $conn->error;
 }
 
 $sql = "ALTER DATABASE webshop COLLATE latin1_danish_ci";
 
-if (!$GLOBALS['conn']->query($sql)) {
+if (!connect()->query($sql)) {
     echo "Error creating database: webshop: " . $conn->error;
 }
 
 include('Create_Table.php');
 header("location: home.php");
 
-$conn->close();
+connect()->close();
 ?>

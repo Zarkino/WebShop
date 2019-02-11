@@ -3,17 +3,16 @@ $server = "localhost";
 $username = "root";
 $password = "yes1";
 
-session_start();
-$_SESSION['conn'] = new MySQLi($server, $username, $password);
+$conn = new MySQLi($server, $username, $password);
 
-if ($_SESSION['conn']->connect_error) {
+if ($conn->connect_error) {
     die("Connection failed: " . $_SESSION['conn']->connect_error);
 }
 
- $_SESSION['conn']->set_charset("utf8");
+ $conn->set_charset("utf8");
 
-if(!$_SESSION['conn']->select_db("webshop")) {
-    print('Error connecting' . $_SESSION['conn']->connect_error);
+if(!$conn->select_db("webshop")) {
+    print('Error connecting' . $conn->connect_error);
 }
 
 class Database {
