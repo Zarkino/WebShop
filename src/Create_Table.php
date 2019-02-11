@@ -8,7 +8,7 @@ firstname VARCHAR(50) NOT NULL,
 lastname VARCHAR(50) NOT NULL,
 email VARCHAR(50) NOT NULL,
 username VARCHAR(50) NOT NULL,
-password VARCHAR(50) NOT NULL,
+password CHAR(60) NOT NULL,
 balance INT(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
