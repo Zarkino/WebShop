@@ -2,13 +2,11 @@
 include('database.php');
 
 session_start();
- 
-/*
- if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
-    header("location: signup.php");
-    exit;
-}
- */
+
+//Skal bruges, når der skal søges efter kategori
+if(!empty($_GET['column'])) $column = $_GET['column'];
+if(!empty($_GET['item']))   $item = $_GET['item'];
+
 ?>
 
 <!DOCTYPE html>
@@ -17,20 +15,14 @@ session_start();
 		<LINK rel="stylesheet" type="text/css" href="../Styles/Style.css">
 		<META charset="utf-8">
 		<TITLE>Webshop</TITLE>
-		<!--<LINK rel="icon" type="image/gif" href="../Icons/dollar.png"/> -->
+		<!--<LINK rel="icon" type="image/gif" href="../Icons/dollar.png"/>-->
     </head>
 
     <body>
-        <?php buttonHeader(); ?>
+        <?php banner2(); ?>
         
         <h1>Webshop</h1>
 
         <?php listProducts(); ?>
-
-        <p>
-            <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === TRUE) {
-                echo '<a href="logout.php">Logout</a>';
-            } ?>
-        </p>
     </body>
 </html>

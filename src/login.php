@@ -1,9 +1,5 @@
 <?php
-include ('database.php');
-
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    login($_POST['username'], $_POST['password']);
-}
+include('database.php');
 ?>
 
 <!DOCTYPE HTML>
@@ -12,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<LINK rel="stylesheet" type="text/css" href="../Styles/Style.css">
 		<META charset="utf-8">
 		<TITLE>Webshop</TITLE>
-		<LINK rel="icon" type="image/gif" href="../Icon/dollar.png"/>
+		<!--<LINK rel="icon" type="image/gif" href="../Icon/dollar.png"/>-->
 		
 		<SCRIPT>
 		</SCRIPT>
@@ -20,16 +16,26 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	<BODY>
 		<?php
-		buttonHeader();
+		banner2();
 		?>
 		
 		<H1>Webshop</H1>
 		
-            <H2>Login</H2>    
-            <form method="POST">
-                <INPUT type="text" placeholder="Username" name="username" required><br>
-                <INPUT type="password" placeholder="Password" name="password" required><br>
-                <BUTTON type="submit" class="buttonHead" name="submit" >Login</BUTTON>
-            </form>
+        <H2>Login</H2>
+
+        <form method="POST">
+            <INPUT type="text" placeholder="Username" name="username" required><br>
+            <INPUT type="password" placeholder="Password" name="password" required><br>
+            <BUTTON type="submit" class="buttonHead" name="submit" >Login</BUTTON>
+        </form>
+
+        <a id="nohover">Don't have an account yet?</a> <a href="signup.php">Register here!</a>
+
+        <?php
+        echo '<br>';
+        if(isset($_POST['username']) && isset($_POST['password'])) {
+            login($_POST['username'], $_POST['password']);
+        }
+        ?>
 	</BODY>
 </HTML>

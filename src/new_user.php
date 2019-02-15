@@ -1,68 +1,57 @@
 <?php
-include('connect.php');
+include('database.php');
 
 if (isset($_POST['submit'])) {
-$firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
-$lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
-$email = mysqli_real_escape_string($conn, $_POST['email']);
-$username = mysqli_real_escape_string($conn, $_POST['username']);
-$password = mysqli_real_escape_string($conn, $_POST['password']);
-$formue = mysqli_real_escape_string($conn, $_POST['formue']);
+$firstname = mysqli_real_escape_string(connect(), $_POST['firstname']);
+$lastname = mysqli_real_escape_string(connect(), $_POST['lastname']);
+$email = mysqli_real_escape_string(connect(), $_POST['email']);
+$username = mysqli_real_escape_string(connect(), $_POST['username']);
+$password = mysqli_real_escape_string(connect(), $_POST['password']);
+$balance = mysqli_real_escape_string(connect(), $_POST['balance']);
 
-//Tjekker for tomme felter
 if (empty($firstname) || empty($lastname) || empty($email) || empty($username) || empty($password)) {
-    header("location: ./login.php?=empty");
+    header("location: ./signup.php?=empty");
     exit();
 } else if (!preg_match("/^[a-zA-Z]*$/", $firstname) || !preg_match("/^[a-zA-Z]*$/", $lastname)) {
-    header("Location: ./login.php?=invalidname");
+    header("Location: ./signup.php?=invalidname");
     exit();
 } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header("Location: ./login.php?signup=invalidemail");
+    header("Location: ./signup.php?signup=invalidemail");
     exit();
 } else if (preg_match("/(admin)/", $username)) {
-    header("Location: ./login.php?signup=invalidusername");
+    header("Location: ./signup.php?signup=invalidusername");
     exit();
-    // Får forbindels til databasen og får data med navne
 } else {
-    $sql = "SELECT * FROM webshop.brugere WHERE username='$username'";
-    $result = $conn->query($sql);
-    $resultCheck = mysqli_num_rows($result);
+    $sql = "SELECT * FROM webshop.users WHERE email='$email'";
+    $result = connect()->query($sql);
 
-    // Tjekker for om navnet er taget i databasen
-    if ($resultCheck > 0) {
-        header("location: ./login.php?singup=usertaken");
+    // Tjekker for om emailen er taget i databasen (om der er flere end 0)
+    if (mysqli_num_rows($result) > 0) {
+        header("location: ./signup.php?signup=usertaken");
         exit();
     } else {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        //Tilføj dataen i databasen
-        $sql = "INSERT INTO webshop.brugere (Firstname, Lastname, Email, Username, Password, Formue)
-        VALUES ('$firstname', '$lastname', '$email', '$username', '$hashed_password' , '$formue')";
-        // Efter oprettelsen af bruger logger man ind
-        if ($conn->query($sql) === false) {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+
+        $sql = "INSERT INTO webshop.users (firstname, lastname, email, username, password, balance)
+        VALUES ('$firstname', '$lastname', '$email', '$username', '$hashed_password' , '$balance')";
+
+        if (!connect()->query($sql)) {
+            echo "Error: " . $sql . "<br>" . connect()->error;
             exit();
         } else {
-            $sql = "SELECT * FROM webshop.brugere WHERE username='$username'";
-            if($result = $conn->query($sql)) {
-                while($row = $result->fetch_assoc()) {
-                    session_start();
-                    $_SESSION["loggedin"] = true;
-                    $_SESSION["brugerID"] = $row['BrugerID'];
-                    $_SESSION["firstname"] = $row['Firstname'];
-                    $_SESSION["lastname"] = $row['Lastname'];
-                    $_SESSION["username"] = $row['Username'];
-                    $_SESSION["formue"] = $row['Formue'];
-                    header("location: home.php");
-                }
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-                exit();
-            }
+            session_start();
+            $_SESSION["loggedin"] = true;
+            $_SESSION["firstname"] = $firstname;
+            $_SESSION["lastname"] = $lastname;
+            $_SESSION["username"] = $username;
+            $_SESSION["balance"] = $balance;
+
+            header("location: home.php");
         }
     }
 }
-// Hvis man går ind på koden via URL kommer man tilbage til login.php
+// Hvis man går ind på siden via URL kommer man tilbage til signup.php
 } else {
-  header("location: ./login.php");
+  header("location: signup.php");
   exit();
 }
