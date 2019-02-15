@@ -20,7 +20,8 @@ produktID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 produktName VARCHAR(50) NOT NULL,
 prdouktCatagory VARCHAR(50) NOT NULL,
 produktPrice FLOAT(50) NOT NULL,
-stock FLOAT(50) NOT NULL)
+stock FLOAT(50) NOT NULL,
+image IMAGE NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 if (!$GLOBALS['conn']->query($sql)) {
