@@ -26,7 +26,7 @@ function banner2() {
         search($_POST['item']);
     }
 
-    echo '<ul class="bar">';
+    echo '<ul class="bar" style="margin: 0 -50px 0 -50px; width:calc(100% + 100px)">';
         echo '<li><form action="" method="POST"><input type="text" placeholder="Search" name="item" required><input type="image" src="../Icons/Search.svg" alt="Go" style="filter:invert(1); vertical-align: middle; padding-left:5px" height="22px" width="22px"></form></li>';
         echo '<li><a href=""></a></li>';
         echo '<li><a href="home.php">Home</a></li>';
