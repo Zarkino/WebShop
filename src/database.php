@@ -72,16 +72,12 @@ function login($username, $password) {
     }
 }
 
-function listProducts() {
+function listProducts($result) {
     /* To get specific Items from Table 'Products'
     if($column !== null && $item !== null) {
         $sql = "SELECT * FROM webshop.produkter WHERE $column = $item";
     }
     */
-
-    $sql = "SELECT * FROM webshop.products";
-
-    $result = connect()->query($sql);
 
     echo '<div style="display: flex; justify-content: space-between;">';
 
@@ -118,8 +114,13 @@ function search($item) {
 
     $result = connect()->query($sql);
 
-    while($row = $result->fetch_assoc()) {
-        product($row['productID'], $row['name'], $row['price']);
-    }
+    listProducts($result);
+}
+
+function getProducts() {
+    $sql = "SELECT * FROM webshop.products";
+    $result = connect()->query($sql);
+
+    return $result;
 }
 ?>

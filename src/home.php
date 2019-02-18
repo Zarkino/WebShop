@@ -23,6 +23,6 @@ if(!empty($_GET['item']))   $item = $_GET['item'];
         
         <h1>Webshop</h1>
 
-        <?php listProducts(); ?>
+        <?php listProducts(getProducts()); ?>
     </body>
 </html>
