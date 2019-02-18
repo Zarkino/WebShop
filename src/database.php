@@ -12,13 +12,13 @@ function connect() {
 }
 
 function banner() {
-	echo '<div style="width:100%; display:flex; justify-content: space-between;">';
+	echo '<div style="width:100%; display:flex; justify-content: space-around">';
         echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
 		echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
 		echo '<input class="button" style="width:19%" type="button" onclick="window.location = \'home.php\';" value="Home">';
 		echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
 		echo '<input class="button" style="width:19%" type="button" onclick="window.location = \'login.php\';" value="Login">';
-	echo '</div>';
+    echo '</div>';
 }
 
 function banner2() {
@@ -32,7 +32,7 @@ function banner2() {
         echo '<li><a href="home.php">Home</a></li>';
         echo '<li><a href=""></a></li>';
 
-        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === TRUE) {
+        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
             echo '<li><a href="logout.php">Logout</a></li>';
         } else {
             echo '<li><a href="login.php">Login</a></li>';
