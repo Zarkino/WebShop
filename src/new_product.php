@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     if (empty($name) || empty($category) || empty($price) || empty($stock)) {
         header("location: ./new_product.php?=empty");
         exit();
-    } else if (!preg_match("/^[a-zA-Z]*$/", $name) || !preg_match("/^[a-zA-Z]*$/", $prorductCatagory)) {
+    } else if (!preg_match("/^[a-zA-Z]*$/", $name) || !preg_match("/^[a-zA-Z]*$/", $category)) {
         header("Location: ./ProductName.php?=invalidproduct");
         exit();
     } else if (!preg_match("/^[0-9]*$/", $price)) {
