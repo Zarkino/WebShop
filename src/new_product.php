@@ -47,8 +47,6 @@ if (empty($productName) || empty($prorductCatagory) || empty($productPrice) || e
             }
         }
     }
-}
-// Hvis man går ind på koden via URL kommer man tilbage til login.php
 } else {
   header("location: ./productname.php");
   exit();
