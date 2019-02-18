@@ -72,6 +72,13 @@ function login($username, $password) {
     }
 }
 
+function getProducts() {
+    $sql = "SELECT * FROM webshop.products";
+    $result = connect()->query($sql);
+
+    return $result;
+}
+
 function listProducts($result) {
     /* To get specific Items from Table 'Products'
     if($column !== null && $item !== null) {
@@ -115,12 +122,5 @@ function search($item) {
     $result = connect()->query($sql);
 
     listProducts($result);
-}
-
-function getProducts() {
-    $sql = "SELECT * FROM webshop.products";
-    $result = connect()->query($sql);
-
-    return $result;
 }
 ?>
