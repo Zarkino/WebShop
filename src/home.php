@@ -18,11 +18,11 @@ if(!empty($_GET['item']))   $item = $_GET['item'];
 		<!--<LINK rel="icon" type="image/gif" href="../Icons/dollar.png"/>-->
     </head>
 
+    <?php banner2(); ?>
+
     <body>
-        <?php banner2(); ?>
-        
         <h1>Webshop</h1>
 
-        <?php listProducts(); ?>
+        <?php listProducts(getProducts()); ?>
     </body>
 </html>
