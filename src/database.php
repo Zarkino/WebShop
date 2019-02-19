@@ -83,16 +83,16 @@ function listProducts($result) {
     }
     */
 
-    echo '<div style="display: flex; justify-content: space-between;">';
+    echo '<div style="display: flex; justify-content: flex-start;">';
 
     $i = 0;
     while($row = $result->fetch_assoc()) {
         product($row['productID'], $row['name'], $row['price']);
         $i++;
-        if($i === 4) {
+        if($i === 5) {
             $i = 0;
             echo '</div>';
-            echo '<div style="display: flex; justify-content: space-between;">';
+            echo '<div style="display: flex; justify-content: flex-start;">';
         }
     }
 
@@ -100,8 +100,8 @@ function listProducts($result) {
 }
 
 function product($id, $name, $price) {
-	echo '<div class="container" style="position:relative;" onclick="location.href=\'productpage.php?id='.$id.'\';">';
-        echo '<img class="image" style="width:250px; height:250px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
+	echo '<div class="container" style="position:relative; flex-basis:20%;" onclick="location.href=\'productpage.php?id='.$id.'\';">';
+        echo '<img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
 
 	    echo '<div class="overlay" style="text-align:center">';
 	        echo '<a id="nohover" style="font-size:200%">'.$name.'</a><br>';
