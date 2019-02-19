@@ -34,21 +34,15 @@ while($row = $result->fetch_assoc()) {
 
         <div style="width:30%; background-color:rgba(255, 255, 255, 0.7)">
             <img class="image" style="width:100%;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">
-        </div>
 
-        <br>
-
-        <div style="width:30%; background-color:rgba(255, 255, 255, 0.7)">
             <h2 style="color:black"><?php echo $name; ?></h2>
 
             <a id="nohover" style="color:black">
                 <?php echo $description; ?>
             </a>
-        </div>
 
-        <br>
+            <br><br>
 
-        <div style="width:30%; background-color:rgba(255, 255, 255, 0.7)">
             <a id="nohover" style="color:black"><?php echo 'Price: ' . $price . ' kr.' . "<br>";
                 echo 'Stock: ' . $stock . ' stk.' . "<br>";
                 echo 'Category: ' . $category . "<br>" ?></a>
