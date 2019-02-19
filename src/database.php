@@ -23,8 +23,8 @@ function banner() {
 
 function banner2() {
     echo '<ul class="bar" style="margin: 0 -50px 0 -50px; width:calc(100% + 100px)">';
-        echo '<li style="height:5%"><input type="image" src="../Icons/Globe.svg" alt="Home" style="filter:invert(1); padding-right:5px;" height="35px"><a href="home.php" style="font-size:300%;">Webshop</a></li>';
-        echo '<li><form action="home.php" method="POST"><input type="text" placeholder="Search" name="item" required><input type="image" src="../Icons/Search.svg" alt="Go" style="filter:invert(1); vertical-align: middle; padding: 3px 0 0 5px;" height="22px" width="22px"></form></li>';
+        echo '<li><input type="image" src="../Icons/Globe.svg" alt="Home" style="filter:invert(1); padding-right:5px;" height="35px"><a href="home.php" style="font-size:300%;">Webshop</a></li>';
+        echo '<li><form action="home.php" method="POST"><input type="text" style="color:black" placeholder="Search" name="item" required><input type="image" src="../Icons/Search.svg" alt="Go" style="filter:invert(1); vertical-align: middle; padding: 3px 0 0 5px;" height="22px" width="22px"></form></li>';
         echo '<li><a href=""></a></li>';
         echo '<li><a href=""></a></li>';
         echo '<li><a href=""></a></li>';
