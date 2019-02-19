@@ -23,6 +23,11 @@ if(!empty($_GET['item']))   $item = $_GET['item'];
 
         <h1>Webshop</h1>
 
-        <?php listProducts(getProducts()); ?>
+        <?php
+        if(isset($_POST['item'])) {
+            search($_POST['item']);
+        } else {
+            listProducts(getProducts());
+        }?>
     </body>
 </html>
