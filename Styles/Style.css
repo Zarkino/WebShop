@@ -104,6 +104,10 @@ h3 {
             1px 1px 0 #000;
 }
 
+input {
+    color:black;
+}
+
 .container {
     display: flex;
     justify-content: space-evenly;

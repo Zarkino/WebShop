@@ -24,7 +24,7 @@ function banner() {
 function banner2() {
     echo '<ul class="bar" style="margin: 0 -50px 0 -50px; width:calc(100% + 100px)">';
         echo '<li><input type="image" src="../Icons/Globe.svg" alt="Home" style="filter:invert(1); padding-right:5px;" height="35px"><a href="home.php" style="font-size:300%;">Webshop</a></li>';
-        echo '<li><form action="home.php" method="POST"><input type="text" style="color:black" placeholder="Search" name="item" required><input type="image" src="../Icons/Search.svg" alt="Go" style="filter:invert(1); vertical-align: middle; padding: 3px 0 0 5px;" height="22px" width="22px"></form></li>';
+        echo '<li><form action="home.php" method="POST"><input type="text" placeholder="Search" name="item" required><input type="image" src="../Icons/Search.svg" alt="Go" style="filter:invert(1); vertical-align: middle; padding: 3px 0 0 5px;" height="22px" width="22px"></form></li>';
         echo '<li><a href=""></a></li>';
         echo '<li><a href=""></a></li>';
         echo '<li><a href=""></a></li>';
@@ -87,7 +87,7 @@ function listProducts($result) {
 
     $i = 0;
     while($row = $result->fetch_assoc()) {
-        product($row['productID'], $row['name'], $row['price']);
+        product($row['productID'], $row['name'], $row['description'], $row['price']);
         $i++;
         if($i === 5) {
             $i = 0;
@@ -99,12 +99,15 @@ function listProducts($result) {
     echo '</div>';
 }
 
-function product($id, $name, $price) {
+function product($id, $name, $description, $price) {
 	echo '<div class="container" style="position:relative; flex-basis:20%;" onclick="location.href=\'productpage.php?id='.$id.'\';">';
         echo '<img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
 
 	    echo '<div class="overlay" style="text-align:center">';
-	        echo '<a id="nohover" style="font-size:200%">'.$name.'</a><br>';
+	        echo '<a id="nohover" style="font-size:200%">'.$name.'</a>';
+	        echo '<br><br>';
+	        echo '<a id="nohover">'.$description.'</a>';
+	        echo '<br><br>';
 	        echo '<a id="nohover">'.$price.' kr.</a>';
 	    echo '</div>';
 	echo '</div>';

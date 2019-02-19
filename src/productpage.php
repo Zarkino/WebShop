@@ -26,7 +26,7 @@ while($row = $result->fetch_assoc()) {
     <body>
         <?php banner2(); ?>
 
-        <h1>Webshop</h1>
+        <br>
 
         <a href="home.php">Home</a><a id="nohover">-></a><a href="home.php?category=<?php echo $category ?>"><?php echo $category ?></a>
 

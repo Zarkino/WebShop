@@ -15,18 +15,16 @@ include('database.php');
 	</HEAD>
 	
 	<BODY>
-		<?php
-		banner2();
-		?>
-		
-		<H1>Webshop</H1>
-		
+		<?php banner2(); ?>
+
+        <br>
+
         <H2>Login</H2>
 
         <form method="POST">
             <INPUT type="text" placeholder="Username" name="username" required><br>
             <INPUT type="password" placeholder="Password" name="password" required><br>
-            <BUTTON type="submit" class="buttonHead" name="submit" >Login</BUTTON>
+            <BUTTON type="submit" name="submit" >Login</BUTTON>
         </form>
 
         <a id="nohover">Don't have an account yet?</a> <a href="signup.php">Register here!</a>
