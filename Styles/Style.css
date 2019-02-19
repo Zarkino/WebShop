@@ -108,6 +108,10 @@ input {
     color:black;
 }
 
+button {
+    color: black;
+}
+
 .container {
     display: flex;
     justify-content: space-evenly;
