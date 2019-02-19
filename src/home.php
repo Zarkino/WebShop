@@ -21,8 +21,6 @@ if(!empty($_GET['item']))   $item = $_GET['item'];
     <body>
         <?php banner2(); ?>
 
-        <h1>Webshop</h1>
-
         <?php
         if(isset($_POST['item'])) {
             search($_POST['item']);

@@ -28,7 +28,7 @@ while($row = $result->fetch_assoc()) {
 
         <h1>Webshop</h1>
 
-        <a href="home.php">Home</a>-><a href="home.php?category=<?php echo $category ?>"><?php echo $category ?></a>
+        <a href="home.php">Home</a><a id="nohover">-></a><a href="home.php?category=<?php echo $category ?>"><?php echo $category ?></a>
 
         <br><br>
 

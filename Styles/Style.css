@@ -1,21 +1,20 @@
 @font-face {
-	font-family:BebasNeue;
+	font-family: BebasNeue;
 	src:url("../Fonts/BebasNeue Regular.otf");
+}
+
+body * {
+    font-size: 100%;
+    font-family: BebasNeue !important;
+    color:#FFF;
 }
 
 body {
 	margin: 0 50px 0 50px;
 	overflow-x:hidden;
-	
-	background:url(https://wallpaper-gallery.net/images/blue-geometric-wallpaper/blue-geometric-wallpaper-5.jpg);
-	background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-	background-size: initial;
 
-    font-size: 100%;
-    font-family: BebasNeue;
-    color:#FFF;
+    background: url(https://wallpaper-gallery.net/images/blue-geometric-wallpaper/blue-geometric-wallpaper-5.jpg) no-repeat fixed center;
+    background-size: initial;
 }
 
 #nohover {
@@ -30,8 +29,9 @@ body {
 .bar {
     display: flex;
     justify-content: space-evenly;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1));
-    color: #000000;
+    /*background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1));*/
+    background-color: #252b29;
+    align-items: center;
     list-style: none;
     text-align: right;
 
@@ -101,11 +101,8 @@ h3 {
 }
 
 .container {
-    position: relative;
     display: flex;
-    justify-content: center;
-    width: 300px;
-    height: 300px;
+    justify-content: space-evenly;
 }
 
 .container:hover .overlay {
