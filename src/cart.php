@@ -1,5 +1,20 @@
 <?php
 include('database.php');
+
+/* $_GET['id'] tager arrayet fra cart
+if(isset($_GET['id']))
+    $products = $_GET['id'];
+
+foreach($products as $productID) {
+    $sql = "SELECT name, description, price FROM webshop.products WHERE productID='%".$productID."%'";
+
+    $result = connect()->query($sql);
+
+    while($row = $result->fetch_assoc()) {
+        product($row['productID'], $row['name'], $row['description'], $row['price']);
+    }
+}
+*/
 ?>
 
 <!DOCTYPE html>
@@ -27,16 +42,12 @@ include('database.php');
                 <!--Function to list all products in shopping cart-->
                 <!--Sum all the items in the list-->
             </div>
-            <div>
-                <a>40 kr.</a>
-                <br>
-                <a>80 kr.</a>
-            </div>
 
             <br>
 
             <div style="display:flex; flex-direction:column-reverse; align-items:center; align-content:space-between; width:30%;">
                 <button>Proceed to checkout</button>
+
 
                 <a id="nohover" style="color:black;">Total: 120 kr.</a>
             </div>

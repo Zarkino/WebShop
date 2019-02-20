@@ -6,6 +6,7 @@ $sql = "SELECT * FROM webshop.products WHERE productID =".$_GET["id"];
 $result = connect()->query($sql);
 
 while($row = $result->fetch_assoc()) {
+    $id = $row['productID'];
     $name = $row['name'];
     $category = $row['category'];
     $description = $row['description'];
@@ -50,6 +51,6 @@ while($row = $result->fetch_assoc()) {
 
         <br>
 
-        <a href="">Add To Cart</a>
+        <input type="submit" name="add" value="Add to cart">
     </body>
 </html>

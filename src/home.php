@@ -1,8 +1,6 @@
 <?php
 include('database.php');
 
-session_start();
-
 //Skal bruges, når der skal søges efter kategori
 if(!empty($_GET['column'])) $column = $_GET['column'];
 if(!empty($_GET['item']))   $item = $_GET['item'];
