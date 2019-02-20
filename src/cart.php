@@ -35,6 +35,17 @@ foreach($products as $productID) {
 
         <br>
 
+        <div style="display:flex; justify-content:flex-end">
+            <form action="" method="post">
+                <input type="submit" name="reset" value="Reset shopping cart">
+            </form>
+
+            <?php
+            if(isset($_POST['reset']))
+                $_SESSION['cart'] = array();
+            ?>
+        </div>
+
         <div style="display:flex; justify-content:space-between; background-color:rgba(255, 255, 255, 0.7);">
             <div style="width:30%;">
                 <?php product(1, "Name", "Description", "40"); ?>

@@ -51,6 +51,13 @@ while($row = $result->fetch_assoc()) {
 
         <br>
 
-        <input type="submit" name="add" value="Add to cart">
+        <form action="" method="post">
+            <input type="submit" name="add" value="Add to cart">
+        </form>
+
+        <?php
+        if(isset($_POST['add']))
+            $_SESSION['cart'][] = $id;
+        ?>
     </body>
 </html>
