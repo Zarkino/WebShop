@@ -24,7 +24,7 @@ if(!empty($_GET['item']))   $item = $_GET['item'];
         <br>
 
         <?php
-        if(isset($_POST['item'])) {
+        if(isset($_POST['item']) && !empty($_POST['item'])) {
             search($_POST['item']);
         } else {
             listProducts(getProducts());
