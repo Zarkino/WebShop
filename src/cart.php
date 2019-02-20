@@ -35,7 +35,7 @@ foreach($products as $productID) {
 
         <br>
 
-        <div style="display:flex; justify-content:flex-end">
+        <div>
             <form action="" method="post">
                 <input type="submit" name="reset" value="Reset shopping cart">
             </form>
