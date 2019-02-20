@@ -21,11 +21,16 @@ include('database.php');
         <br>
 
         <div style="display:flex; justify-content:space-between; background-color:rgba(255, 255, 255, 0.7);">
-            <div style="width:30%">
-                <?php product(1, "Name", "Description", "Price"); ?>
-                <?php product(2, "Name", "Description", "Price"); ?>
+            <div style="width:30%;">
+                <?php product(1, "Name", "Description", "40"); ?>
+                <?php product(2, "Name", "Description", "80"); ?>
                 <!--Function to list all products in shopping cart-->
                 <!--Sum all the items in the list-->
+            </div>
+            <div>
+                <a>40 kr.</a>
+                <br>
+                <a>80 kr.</a>
             </div>
 
             <br>
