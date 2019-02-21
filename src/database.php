@@ -76,20 +76,18 @@ function login($username, $password) {
     }
 }
 
-function getProducts() {
-    $sql = "SELECT * FROM webshop.products";
+function getProducts($category) {
+    if(empty($category))
+        $sql = "SELECT * FROM webshop.products";
+    else
+        $sql = "SELECT * FROM webshop.products WHERE category='$category'";
+
     $result = connect()->query($sql);
 
     return $result;
 }
 
 function listProducts($result) {
-    /* To get specific Items from Table 'Products'
-    if($column !== null && $item !== null) {
-        $sql = "SELECT * FROM webshop.produkter WHERE $column = $item";
-    }
-    */
-
     echo '<div style="display: flex; justify-content: flex-start;">';
 
     $i = 0;
@@ -110,11 +108,9 @@ function product($id, $name, $description, $price) {
 	echo '<div class="container" style="position:relative; flex-basis:20%;" onclick="location.href=\'productpage.php?id='.$id.'\';">';
         echo '<img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
 
-	    echo '<div class="overlay" style="text-align:center">';
-	        echo '<a id="nohover" style="font-size:200%">'.$name.'</a>';
-	        echo '<br><br>';
+	    echo '<div class="overlay" style="display:flex; flex-direction:column; align-items:center; justify-content:space-evenly;">';
+	        echo '<a id="nohover" style="font-size:200%;">'.$name.'</a>';
 	        echo '<a id="nohover">'.$description.'</a>';
-	        echo '<br><br>';
 	        echo '<a id="nohover">'.$price.' kr.</a>';
 	    echo '</div>';
 	echo '</div>';

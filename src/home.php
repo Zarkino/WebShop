@@ -1,10 +1,5 @@
 <?php
 include('database.php');
-
-//Skal bruges, når der skal søges efter kategori
-if(!empty($_GET['column'])) $column = $_GET['column'];
-if(!empty($_GET['item']))   $item = $_GET['item'];
-
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +19,11 @@ if(!empty($_GET['item']))   $item = $_GET['item'];
         <?php
         if(isset($_POST['item']) && !empty($_POST['item'])) {
             search($_POST['item']);
+        } else if(!empty($_GET['category'])) {
+            listProducts(getProducts($_GET['category']));
         } else {
-            listProducts(getProducts());
-        }?>
+            listProducts(getProducts(""));
+        }
+        ?>
     </body>
 </html>
