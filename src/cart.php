@@ -56,11 +56,9 @@ foreach($products as $productID) {
 
             <br>
 
-            <div style="display:flex; flex-direction:column-reverse; align-items:center; align-content:space-between; width:30%;">
-                <button>Proceed to checkout</button>
-
-
+            <div style="display:flex; flex-direction:column; align-items:center; align-content:space-between; justify-content:flex-end; width:30%;">
                 <a id="nohover" style="color:black;">Total: 120 kr.</a>
+                <button>Proceed to checkout</button>
             </div>
         </div>
     </body>
