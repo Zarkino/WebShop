@@ -24,6 +24,17 @@ foreach($products as $productID) {
         <META charset="utf-8">
         <TITLE>Webshop</TITLE>
         <!--<LINK rel="icon" type="image/gif" href="../Icons/dollar.png"/>-->
+
+        <script>
+            function resetCart() {
+                <?php
+                if(isset($_POST['reset']))
+                    $_SESSION['cart'] = array();
+                ?>
+
+                document.getElementById('cart').innerHTML = <?php echo sizeof($_SESSION['cart']); ?>;
+            }
+        </script>
     </head>
 
     <body>
@@ -36,14 +47,9 @@ foreach($products as $productID) {
         <br>
 
         <div>
-            <form action="" method="post">
+            <form action="" method="post" onsubmit="resetCart()">
                 <input type="submit" name="reset" value="Reset shopping cart">
             </form>
-
-            <?php
-            if(isset($_POST['reset']))
-                $_SESSION['cart'] = array();
-            ?>
         </div>
 
         <div style="display:flex; justify-content:space-between; background-color:rgba(255, 255, 255, 0.7);">

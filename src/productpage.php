@@ -22,6 +22,17 @@ while($row = $result->fetch_assoc()) {
         <META charset="utf-8">
         <TITLE>Webshop</TITLE>
         <!--<LINK rel="icon" type="image/gif" href="../Icons/dollar.png"/>-->
+
+        <script>
+            function addToCart() {
+                <?php
+                if(isset($_POST['add']))
+                    $_SESSION['cart'][] = $id;
+                ?>
+
+                document.getElementById('cart').innerHTML = <?php echo sizeof($_SESSION['cart']); ?>;
+            }
+        </script>
     </head>
 
     <body>
@@ -51,13 +62,8 @@ while($row = $result->fetch_assoc()) {
 
         <br>
 
-        <form action="" method="post">
+        <form action="" method="post" onsubmit="addToCart()">
             <input type="submit" name="add" value="Add to cart">
         </form>
-
-        <?php
-        if(isset($_POST['add']))
-            $_SESSION['cart'][] = $id;
-        ?>
     </body>
 </html>
