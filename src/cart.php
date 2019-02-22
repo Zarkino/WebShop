@@ -71,11 +71,6 @@ $names = array();
                     }
                 }
                 ?>
-
-                <!--<?php product(1, "Name", "Description", "40"); ?>-->
-                <!--<?php product(2, "Name", "Description", "80"); ?>-->
-                <!--Function to list all products in shopping cart-->
-                <!--Sum all the items in the list-->
             </div>
 
             <div style="display:flex; flex-direction:column; align-items:center; align-content:space-between; justify-content:flex-start; height:5%; width:25%; background-color:rgba(255, 255, 255, 0.7);">

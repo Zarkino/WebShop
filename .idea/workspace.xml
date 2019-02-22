@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc31cbbc-8569-4dda-9e17-38f5c7cb2ae0" name="Default Changelist" comment="Remove unneccessary code">
+    <list default="true" id="fc31cbbc-8569-4dda-9e17-38f5c7cb2ae0" name="Default Changelist" comment="- New background&#10;- Order summary&#10;- Added information to cart items">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Styles/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Styles/Style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/cart.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -87,8 +86,8 @@
       <file leaf-file-name="cart.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="66" column="38" lean-forward="true" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+            <state relative-caret-position="510">
+              <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h2#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -141,8 +140,8 @@
         <option value="$PROJECT_DIR$/src/home.php" />
         <option value="$PROJECT_DIR$/src/database.php" />
         <option value="$PROJECT_DIR$/src/productpage.php" />
-        <option value="$PROJECT_DIR$/src/cart.php" />
         <option value="$PROJECT_DIR$/Styles/Style.css" />
+        <option value="$PROJECT_DIR$/src/cart.php" />
       </list>
     </option>
   </component>
@@ -239,14 +238,7 @@
       <workItem from="1550695128024" duration="2463000" />
       <workItem from="1550740113802" duration="1430000" />
       <workItem from="1550744732678" duration="1274000" />
-      <workItem from="1550862280906" duration="7858000" />
-    </task>
-    <task id="LOCAL-00015" summary="Fixed link to login on click on header">
-      <created>1549456843597</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1549456843597</updated>
+      <workItem from="1550862280906" duration="8084000" />
     </task>
     <task id="LOCAL-00016" summary="Minor change to lowercase">
       <created>1549457181876</created>
@@ -584,11 +576,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550866874489</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="- New background&#10;- Order summary&#10;- Added information to cart items">
+      <created>1550871111901</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1550871111901</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85969000" />
+    <option name="totallyTimeSpent" value="86195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -633,7 +632,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Set new width" />
     <MESSAGE value="Reset Table columns" />
     <MESSAGE value="Fix error" />
     <MESSAGE value="Fix the new_?.php" />
@@ -658,7 +656,8 @@
     <MESSAGE value="Udkast til javascript, der opdaterer sizeof($_SESSION['cart']) i headeren, når der trykkes på submit" />
     <MESSAGE value="Shopping cart now shows items in cart and updates the price." />
     <MESSAGE value="Remove unneccessary code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove unneccessary code" />
+    <MESSAGE value="- New background&#10;- Order summary&#10;- Added information to cart items" />
+    <option name="LAST_COMMIT_MESSAGE" value="- New background&#10;- Order summary&#10;- Added information to cart items" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1066,8 +1065,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="66" column="38" lean-forward="true" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+        <state relative-caret-position="510">
+          <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h2#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
