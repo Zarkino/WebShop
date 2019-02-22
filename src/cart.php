@@ -22,6 +22,14 @@ $names = array();
 
                 document.getElementById('cart').innerHTML = <?php echo sizeof($_SESSION['cart']); ?>;
             }
+
+            function removeFromCart(id) {
+                if(in_array(id, <?php $_SESSION['cart'] ?>)) {
+                    <?php
+                        unset($_SESSION['cart'][$id]);
+                    ?>
+                }
+            }
         </script>
     </head>
 
@@ -63,7 +71,7 @@ $names = array();
                         product($row['productID'], $row['name'], $row['description'], $row['price']);
                         echo '<a id="nohover" style="color:black;">'.$row['name'].'</a>';
                         echo '<a id="nohover" style="color:black;">'.$row['price'].' kr.</a>';
-                        echo '<input type="button" value="Remove from cart">';
+                        echo '<input onclick="" type="image" src="../Icons/Trashcan.svg" style="align-self:flex-end; width:4%;">';
                         echo '</div>';
 
                         $priceTotal += $row['price'];
