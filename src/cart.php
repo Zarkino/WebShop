@@ -88,7 +88,8 @@ $names = array();
                 }
                 ?>
 
-                <br>
+                <!-- Temporary Linebreak -->
+                <div style="height:10px;"></div>
 
                 <a id="nohover" style="color:black;">Order Total: <?php echo $priceTotal; ?> kr.</a>
                 <button>Proceed to checkout</button>
