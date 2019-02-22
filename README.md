@@ -6,4 +6,3 @@ TODO:
   * Add 'Image' to Products table
 * Your account page
 * Buy product
-  * Your shopping cart
