@@ -44,16 +44,14 @@ $names = array();
             <!-- Fix the position-->
         </div>
 
-        <br>
-
-        <div>
-            <form action="" method="post" onsubmit="resetCart()">
-                <input type="submit" name="reset" value="Reset shopping cart">
-            </form>
-        </div>
-
         <div style="display:flex; flex-wrap:nowrap; justify-content:space-between;">
             <div style="width:70%; background-color:rgba(255, 255, 255, 0.7);">
+                <div style="display:flex; justify-content:flex-end;">
+                    <form action="" method="post" onsubmit="resetCart()">
+                        <input type="submit" name="reset" value="Reset shopping cart">
+                    </form>
+                </div>
+
                 <?php
                 foreach($_SESSION['cart'] as $id) {
                     $sql = "SELECT * FROM webshop.products WHERE productID =$id";
@@ -73,6 +71,7 @@ $names = array();
                         echo '<a id="nohover" style="color:black;">'.$row['price'].' kr.</a>';
                         echo '<input onclick="" type="image" src="../Icons/Trashcan.svg" style="align-self:flex-end; width:4%;">';
                         echo '</div>';
+                        echo '<hr>';
 
                         $priceTotal += $row['price'];
                         $names[] = $row['name'];
