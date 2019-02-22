@@ -1,5 +1,8 @@
 <?php
 include('database.php');
+
+$priceTotal = 0;
+$names = array();
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +30,11 @@ include('database.php');
 
         <br>
 
-        <h2>Shopping Cart</h2>
+        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between;">
+            <h2>Shopping Cart</h2>
+            <h2 style="position:absolute; left:74%">Cart Summary</h2>
+            <!-- Fix the position-->
+        </div>
 
         <br>
 
@@ -37,10 +44,9 @@ include('database.php');
             </form>
         </div>
 
-        <div style="display:flex; justify-content:space-between; background-color:rgba(255, 255, 255, 0.7);">
-            <div style="width:25%;">
+        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between;">
+            <div style="width:70%; background-color:rgba(255, 255, 255, 0.7);">
                 <?php
-                $priceTotal = 0;
                 foreach($_SESSION['cart'] as $id) {
                     $sql = "SELECT * FROM webshop.products WHERE productID =$id";
 
@@ -53,8 +59,15 @@ include('database.php');
                         echo '<h2>'.$row['name'].'</h2><a>'.$row['price'].' kr.</a>';
                         echo '</div>';
                         */
+                        echo '<div style="display:flex; flex-wrap:nowrap; align-items:center; justify-content:space-between;">';
                         product($row['productID'], $row['name'], $row['description'], $row['price']);
+                        echo '<a id="nohover" style="color:black;">'.$row['name'].'</a>';
+                        echo '<a id="nohover" style="color:black;">'.$row['price'].' kr.</a>';
+                        echo '<input type="button" value="Remove from cart">';
+                        echo '</div>';
+
                         $priceTotal += $row['price'];
+                        $names[] = $row['name'];
                     }
                 }
                 ?>
@@ -65,10 +78,16 @@ include('database.php');
                 <!--Sum all the items in the list-->
             </div>
 
-            <br>
+            <div style="display:flex; flex-direction:column; align-items:center; align-content:space-between; justify-content:flex-start; height:5%; width:25%; background-color:rgba(255, 255, 255, 0.7);">
+                <?php
+                foreach($names as $name) {
+                    echo '<a id="nohover" style="color:black; align-self:flex-start;">1 x '.$name.'</a>';
+                }
+                ?>
 
-            <div style="display:flex; flex-direction:column; align-items:center; align-content:space-between; justify-content:flex-start; width:30%;">
-                <a id="nohover" style="color:black;"><?php echo $priceTotal; ?> kr.</a>
+                <br>
+
+                <a id="nohover" style="color:black;">Order Total: <?php echo $priceTotal; ?> kr.</a>
                 <button>Proceed to checkout</button>
             </div>
         </div>
