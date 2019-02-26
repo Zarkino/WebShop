@@ -18,6 +18,7 @@ include('database.php');
 
         <?php
         if(isset($_POST['item']) && !empty($_POST['item'])) {
+            echo '<h2>Search results for "'.$_POST['item'].'"</h2>';
             search($_POST['item']);
         } else if(!empty($_GET['category'])) {
             listProducts(getProducts($_GET['category']));

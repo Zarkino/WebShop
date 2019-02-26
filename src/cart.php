@@ -15,12 +15,17 @@ $names = array();
 
         <script>
             function resetCart() {
-                <?php
-                if(isset($_POST['reset']))
-                    $_SESSION['cart'] = array();
-                ?>
-
                 document.getElementById('cart').innerHTML = <?php echo sizeof($_SESSION['cart']); ?>;
+
+            <?php
+                if(isset($_POST['reset'])) {
+                    $_SESSION['cart'] = array();
+
+                    //Return to the same page and exit()
+                    header('location: '.$_SERVER[REQUEST_URI].'');
+                    exit();
+                }
+                ?>
             }
 
             function removeFromCart(id) {
@@ -71,6 +76,8 @@ $names = array();
                         echo '<a id="nohover" style="color:black;">'.$row['price'].' kr.</a>';
                         echo '<input onclick="" type="image" src="../Icons/Trashcan.svg" style="align-self:flex-end; width:4%;">';
                         echo '</div>';
+
+                        //Horizontal line to space items
                         echo '<hr>';
 
                         $priceTotal += $row['price'];

@@ -25,12 +25,17 @@ while($row = $result->fetch_assoc()) {
 
         <script>
             function addToCart() {
-                <?php
-                if(isset($_POST['add']))
-                    $_SESSION['cart'][] = $id;
-                ?>
-
                 document.getElementById('cart').innerHTML = <?php echo sizeof($_SESSION['cart']); ?>;
+
+                <?php
+                if(isset($_POST['add'])) {
+                    $_SESSION['cart'][] = $id;
+
+                    //Return to the same page and exit()
+                    header('location: '.$_SERVER[REQUEST_URI].'');
+                    exit();
+                }
+                ?>
             }
         </script>
     </head>
