@@ -29,9 +29,11 @@ $names = array();
             }
 
             function removeFromCart(id) {
+                setCookie("RemoveProduct", id, time() + (86400 / 24), "/"); //1 Hour Cookie
+
                 if(in_array(id, <?php $_SESSION['cart'] ?>)) {
                     <?php
-                        unset($_SESSION['cart'][$id]);
+                        unset($_SESSION['cart'][$_COOKIE["RemoveProduct"]]);
                     ?>
                 }
             }
@@ -43,14 +45,15 @@ $names = array();
 
         <br>
 
-        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between;">
-            <h2>Shopping Cart</h2>
-            <h2 style="position:absolute; left:74%">Cart Summary</h2>
+        <div style="display:flex; flex-wrap:nowrap;">
+            <!--<h2>Shopping Cart</h2>
+            <!--<h2 style="position:absolute; left:72.5%">Cart Summary</h2>
             <!-- Fix the position-->
         </div>
 
         <div style="display:flex; flex-wrap:nowrap; justify-content:space-between;">
             <div style="width:70%; background-color:rgba(255, 255, 255, 0.7);">
+                <h2 style="color:black; align-self:flex-start;">Shopping Cart</h2>
                 <div style="display:flex; justify-content:flex-end;">
                     <form action="" method="post" onsubmit="resetCart()">
                         <input type="submit" name="reset" value="Reset shopping cart">
@@ -74,7 +77,10 @@ $names = array();
                         product($row['productID'], $row['name'], $row['description'], $row['price']);
                         echo '<a id="nohover" style="color:black;">'.$row['name'].'</a>';
                         echo '<a id="nohover" style="color:black;">'.$row['price'].' kr.</a>';
-                        echo '<input onclick="" type="image" src="../Icons/Trashcan.svg" style="align-self:flex-end; width:4%;">';
+                        ?>
+                        <!-- Lav en form, med post, som refererer til en javascript funktion, som går videre til en php funktion-->
+                        <input onclick="removeFromCart(<?php echo $row['id']; ?>)" type="image" src="../Icons/Trashcan.svg" style="align-self:flex-end; width:4%;">
+                        <?php
                         echo '</div>';
 
                         //Horizontal line to space items
@@ -89,6 +95,8 @@ $names = array();
 
             <div style="display:flex; flex-direction:column; align-items:center; align-content:space-between; justify-content:flex-start; height:5%; width:25%; background-color:rgba(255, 255, 255, 0.7);">
                 <?php
+                echo '<h2 style="color:black; align-self:flex-start;">Cart Summary</h2>';
+
                 foreach($names as $name) {
                     echo '<a id="nohover" style="color:black; align-self:flex-start;">1 x '.$name.'</a>';
                 }
