@@ -28,14 +28,20 @@ $names = array();
                 ?>
             }
 
-            function removeFromCart(id) {
-                setCookie("RemoveProduct", id, time() + (86400 / 24), "/"); //1 Hour Cookie
+            function removeFromCart() {
+                document.getElementById('cart').innerHTML = <?php echo sizeof($_SESSION['cart'])-1; ?>;
 
-                if(in_array(id, <?php $_SESSION['cart'] ?>)) {
-                    <?php
-                        unset($_SESSION['cart'][$_COOKIE["RemoveProduct"]]);
-                    ?>
+                <?php
+                if(isset($_POST['remove'])) {
+                    if(array_search($_POST['item'], $_SESSION['cart'])) {
+                        unset($_SESSION['cart'][$_POST['item']]);
+
+                        //Return to the same page and exit()
+                        header('location: '. $_SERVER[REQUEST_URI] .'');
+                        exit();
+                    }
                 }
+                ?>
             }
         </script>
     </head>
@@ -45,16 +51,10 @@ $names = array();
 
         <br>
 
-        <div style="display:flex; flex-wrap:nowrap;">
-            <!--<h2>Shopping Cart</h2>
-            <!--<h2 style="position:absolute; left:72.5%">Cart Summary</h2>
-            <!-- Fix the position-->
-        </div>
-
         <div style="display:flex; flex-wrap:nowrap; justify-content:space-between;">
             <div style="width:70%; background-color:rgba(255, 255, 255, 0.7);">
-                <h2 style="color:black; align-self:flex-start;">Shopping Cart</h2>
-                <div style="display:flex; justify-content:flex-end;">
+                <div style="display:flex; justify-content:space-between;">
+                    <h2 style="color:black;">Shopping Cart</h2>
                     <form action="" method="post" onsubmit="resetCart()">
                         <input type="submit" name="reset" value="Reset shopping cart">
                     </form>
@@ -73,14 +73,16 @@ $names = array();
                         echo '<h2>'.$row['name'].'</h2><a>'.$row['price'].' kr.</a>';
                         echo '</div>';
                         */
+
                         echo '<div style="display:flex; flex-wrap:nowrap; align-items:center; justify-content:space-between;">';
                         product($row['productID'], $row['name'], $row['description'], $row['price']);
                         echo '<a id="nohover" style="color:black;">'.$row['name'].'</a>';
                         echo '<a id="nohover" style="color:black;">'.$row['price'].' kr.</a>';
-                        ?>
-                        <!-- Lav en form, med post, som refererer til en javascript funktion, som går videre til en php funktion-->
-                        <input onclick="removeFromCart(<?php echo $row['id']; ?>)" type="image" src="../Icons/Trashcan.svg" style="align-self:flex-end; width:4%;">
-                        <?php
+
+                        echo '<form action="" method="post" onsubmit="removeFromCart()">';
+                            echo '<input type="image" name="item" value="'.htmlspecialchars($row['productID']).'" src="../Icons/Trashcan.svg" style="align-self:flex-end; width:40px;">';
+                            echo '<input class="hidden" type="submit" name="remove" value="">';
+                        echo '</form>';
                         echo '</div>';
 
                         //Horizontal line to space items
