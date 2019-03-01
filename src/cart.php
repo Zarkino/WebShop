@@ -29,6 +29,7 @@ $names = array();
             }
 
             function removeFromCart() {
+                //Idk if this is necessary... Should probably just reload
                 document.getElementById('cart').innerHTML = <?php echo sizeof($_SESSION['cart'])-1; ?>;
 
                 <?php
