@@ -108,8 +108,20 @@ function product($id, $name, $description, $price) {
 	        echo '<a id="nohover" style="font-size:200%;">'.$name.'</a>';
 	        echo '<a id="nohover">'.$description.'</a>';
 	        echo '<a id="nohover">'.$price.' kr.</a>';
+	        echo '<form action="" method="post">';
+	            echo '<input type="hidden" value="'.$id.'" name="id">';
+	            echo '<input type="submit" value="Add to cart" name="buy">';
+	        echo '</form>';
 	    echo '</div>';
 	echo '</div>';
+
+	//Add the product to cart
+	if(isset($_POST['buy'])) {
+        $_SESSION['cart'][] = $_POST['id'];
+
+        header('location: '.$_SERVER[REQUEST_URI].'');
+        exit();
+    }
 }
 
 function search($item) {
