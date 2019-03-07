@@ -80,10 +80,6 @@ a:hover {
     color:#000;
 }
 
-table {
-    font-size: 150%;
-}
-
 h1 {
     font-size:800%;
     font-family:BebasNeue;
@@ -168,4 +164,28 @@ button {
 .button:hover {
 	color:#FFF;
     border-color:#000;
+}
+
+table#transactions {
+    width:100%;
+    border-collapse:collapse;
+}
+
+table#transactions tr {
+    font-size:150%;
+
+}
+
+table#transactions tr:nth-child(odd) {
+    background-color:rgba(0, 0, 0, 0.3);
+}
+
+table#transactions th {
+    background-color: #252b29;
+}
+
+table#transactions td {
+    text-align: center;
+    font-size:75%;
+    color:black;
 }
