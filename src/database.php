@@ -33,6 +33,7 @@ function banner2() {
         echo '<li><a id="cart" href="cart.php?id=">'.sizeof($_SESSION['cart']).'</a><input type="image" src="../Icons/Cart.svg" alt="Cart" style="filter:invert(1); vertical-align: middle; padding: 3px 0 0 5px;" height="35px" onclick="window.location = \'cart.php\';"></li>';
 
         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
+            echo '<li><a href="account.php">Your Account</a></li>';
             echo '<li><a href="logout.php">Logout</a></li>';
         } else {
             echo '<li><a href="login.php">Login</a></li>';
