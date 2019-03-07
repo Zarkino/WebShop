@@ -62,7 +62,7 @@ if(!isset($_SESSION['loggedin'])) {
                         echo '<td>'.$orderID.'</td>';
                         echo '<td>'.$row['name'].'</td>';
                         echo '<td>Good</td>';
-                        echo '<td>'.$row['price'].'</td>';
+                        echo '<td>'.$row['price'].' kr.</td>';
                         echo '<td>'.date('d-m/Y').'<br> '.date('H:i').'</td>';
                     echo '</tr>';
                     $orderID++;
