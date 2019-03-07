@@ -37,7 +37,7 @@ CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 createTable($sql);
 
-//Adresses
+//Addresses
 $sql = "CREATE TABLE webshop.addresses (
 name VARCHAR(50) NOT NULL,
 address VARCHAR(50) NOT NULL,

@@ -53,8 +53,8 @@ $names = array();
                     while($row = $result->fetch_assoc()) {
                         echo '<div style="display:flex; flex-wrap:nowrap; align-items:center; justify-content:space-between;" onclick="location.href=\'productpage.php?id='.$id.'\';">';
                         echo '<img style="width:100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
-                        echo '<a id="nohover" style="color:black;">'.$row['name'].'</a>';
-                        echo '<a id="nohover" style="color:black;">'.$row['price'].' kr.</a>';
+                        echo '<a style="color:black;">'.$row['name'].'</a>';
+                        echo '<a style="color:black;">'.$row['price'].' kr.</a>';
 
                         echo '<form action="" method="post">';
                             echo '<input type="image" src="../Icons/Trashcan.svg" style="align-self:flex-end; width:40px;">';
@@ -89,14 +89,14 @@ $names = array();
                 echo '<h2 style="color:black; align-self:flex-start;">Cart Summary</h2>';
 
                 foreach($names as $name) {
-                    echo '<a id="nohover" style="color:black; align-self:flex-start;">1 x '.$name.'</a>';
+                    echo '<a style="color:black; align-self:flex-start;">1 x '.$name.'</a>';
                 }
                 ?>
 
                 <!-- Temporary Linebreak -->
                 <div style="height:10px;"></div>
 
-                <a id="nohover" style="color:black;">Order Total: <?php echo $priceTotal; ?> kr.</a>
+                <a style="color:black;">Order Total: <?php echo $priceTotal; ?> kr.</a>
                 <button>Proceed to checkout</button>
             </div>
         </div>

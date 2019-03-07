@@ -54,13 +54,13 @@ while($row = $result->fetch_assoc()) {
 
             <h2 style="color:black"><?php echo $name; ?></h2>
 
-            <a id="nohover" style="color:black">
+            <a style="color:black">
                 <?php echo $description; ?>
             </a>
 
             <br><br>
 
-            <a id="nohover" style="color:black"><?php echo 'Price: ' . $price . ' kr.' . "<br>";
+            <a style="color:black"><?php echo 'Price: ' . $price . ' kr.' . "<br>";
                 echo 'Stock: ' . $stock . ' stk.' . "<br>";
                 echo 'Category: ' . $category . "<br>" ?></a>
         </div>

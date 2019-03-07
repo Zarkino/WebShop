@@ -29,10 +29,10 @@ if(!isset($_SESSION['loggedin'])) {
 
             if($result = connect()->query($sql)) {
                 while($row = $result->fetch_assoc()) {
-                    echo '<a id="nohover" style="color:black;">Name: '.$row['firstname'].' '.$row['lastname'].'</a><br>';
-                    echo '<a id="nohover" style="color:black;">Email: '.$row['email'].'</a><br>';
-                    echo '<a id="nohover" style="color:black;">Username: '.$row['username'].'</a><br>';
-                    echo '<a id="nohover" style="color:black;">Balance: '.$row['balance'].' kr.</a><br>';
+                    echo '<a style="color:black;">Name: '.$row['firstname'].' '.$row['lastname'].'</a><br>';
+                    echo '<a style="color:black;">Email: '.$row['email'].'</a><br>';
+                    echo '<a style="color:black;">Username: '.$row['username'].'</a><br>';
+                    echo '<a style="color:black;">Balance: '.$row['balance'].' kr.</a><br>';
                 }
             }
             ?>
