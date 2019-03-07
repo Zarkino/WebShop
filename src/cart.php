@@ -51,15 +51,8 @@ $names = array();
                     $result = connect()->query($sql);
 
                     while($row = $result->fetch_assoc()) {
-                        /*
-                        echo '<div class="container" style="width:100%; justify-content:space-between;" onclick="location.href=\'productpage.php?id='.$id.'\';">';
-                        echo '<img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png" width="15%">';
-                        echo '<h2>'.$row['name'].'</h2><a>'.$row['price'].' kr.</a>';
-                        echo '</div>';
-                        */
-
-                        echo '<div style="display:flex; flex-wrap:nowrap; align-items:center; justify-content:space-between;">';
-                        product($row['productID'], $row['name'], $row['description'], $row['price']);
+                        echo '<div style="display:flex; flex-wrap:nowrap; align-items:center; justify-content:space-between;" onclick="location.href=\'productpage.php?id='.$id.'\';">';
+                        echo '<img style="width:100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
                         echo '<a id="nohover" style="color:black;">'.$row['name'].'</a>';
                         echo '<a id="nohover" style="color:black;">'.$row['price'].' kr.</a>';
 
