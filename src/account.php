@@ -46,7 +46,7 @@ if(!isset($_SESSION['loggedin'])) {
                 <tr>
                     <th>Order ID</th>
                     <th>Product Name</th>
-                    <th>Status</th>>
+                    <th>Status</th>
                     <th>Amount</th>
                     <th>Date/Time</th>
                 </tr>
