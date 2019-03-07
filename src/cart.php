@@ -100,5 +100,7 @@ $names = array();
                 <button>Proceed to checkout</button>
             </div>
         </div>
+
+        <br>
     </body>
 </html>
