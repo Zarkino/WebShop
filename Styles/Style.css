@@ -173,7 +173,6 @@ table#transactions {
 
 table#transactions tr {
     font-size:150%;
-
 }
 
 table#transactions tr:nth-child(odd) {
