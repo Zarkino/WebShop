@@ -27,23 +27,6 @@ $names = array();
                 }
                 ?>
             }
-
-            function removeFromCart() {
-                //Idk if this is necessary... Should probably just reload
-                document.getElementById('cart').innerHTML = <?php echo sizeof($_SESSION['cart'])-1; ?>;
-
-                <?php
-                if(isset($_POST['remove']) && isset($_POST['item'])) {
-                    $key = array_search($_POST['item'], $_SESSION['cart']);
-                    unset($_SESSION['cart'][$key]);
-                    $_SESSION['cart'] = array_values($_SESSION['cart']);
-
-                    //Return to the same page and exit()
-                    //header('location: '. $_SERVER[REQUEST_URI] .'');
-                    //exit();
-                }
-                ?>
-            }
         </script>
     </head>
 
@@ -80,11 +63,23 @@ $names = array();
                         echo '<a id="nohover" style="color:black;">'.$row['name'].'</a>';
                         echo '<a id="nohover" style="color:black;">'.$row['price'].' kr.</a>';
 
-                        echo '<form action="" method="post" onsubmit="removeFromCart()">';
-                            echo '<input type="image" name="item" value="'.$row['productID'].'" src="../Icons/Trashcan.svg" style="align-self:flex-end; width:40px;">';
-                            echo '<input class="hidden" type="submit" name="remove" value="">';
+                        echo '<form action="" method="post">';
+                            echo '<input type="image" src="../Icons/Trashcan.svg" style="align-self:flex-end; width:40px;">';
+                            echo '<input type="hidden" name="removeItem" value="'.$row['productID'].'">';
+                            echo '<input class="hidden" type="submit" value="">';
                         echo '</form>';
                         echo '</div>';
+
+                        //Remove the item from cart if the trash-can is clicked
+                        if(isset($_POST['removeItem'])) {
+                            $key = array_search($_POST['removeItem'], $_SESSION['cart']);
+                            unset($_SESSION['cart'][$key]);
+                            $_SESSION['cart'] = array_values($_SESSION['cart']);
+
+                            //Return to the same page and exit()
+                            header('location: '. $_SERVER[REQUEST_URI] .'');
+                            exit();
+                        }
 
                         //Horizontal line to space items
                         echo '<hr>';
