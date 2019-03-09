@@ -30,7 +30,7 @@ function banner2() {
         echo '<li><input type="image" src="../Icons/Globe.svg" alt="Home" style="filter:invert(1); padding-right:5px;" height="35px"><a href="home.php" style="font-size:300%;">Webshop</a></li>';
         echo '<li><form action="home.php" method="POST"><input type="text" placeholder="Search" name="item"><input type="image" src="../Icons/Search.svg" alt="Go" style="filter:invert(1); vertical-align: middle; padding: 3px 0 0 5px;" height="22px" width="22px"></form></li>';
 
-        echo '<li><a id="cart" href="cart.php?id=">'.sizeof($_SESSION['cart']).'</a><input type="image" src="../Icons/Cart.svg" alt="Cart" style="filter:invert(1); vertical-align: middle; padding: 3px 0 0 5px;" height="35px" onclick="window.location = \'cart.php\';"></li>';
+        echo '<li><a id="cart" href="cart.php">'.sizeof($_SESSION['cart']).'</a><input type="image" src="../Icons/Cart.svg" alt="Cart" style="filter:invert(1); vertical-align: middle; padding: 3px 0 0 5px;" height="35px" onclick="window.location = \'cart.php\';"></li>';
 
         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
             echo '<li><a href="account.php">Your Account</a></li>';
