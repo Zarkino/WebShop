@@ -19,7 +19,7 @@ $sql = "CREATE TABLE webshop.products (
 productID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
 category VARCHAR(50) NOT NULL,
-description NTEXT() NOT NULL,
+description VARCHAR(50) NOT NULL,
 price FLOAT(50,2) NOT NULL,
 stock int(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
@@ -29,10 +29,12 @@ createTable($sql);
 //Transactions
 $sql = "CREATE TABLE webshop.transactions (
 transactionID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+orderID INT(50) NOT NULL,
+productID INT(50) UNSIGNED,
+userID INT(50) UNSIGNED,
+FOREIGN KEY(productID) REFERENCES webshop.products(productID),
 FOREIGN KEY(userID) REFERENCES users(userID),
-FOREIGN KEY(productID) REFERENCES products(productID),
-time TIMESTAMP() NOT NULL,
-price FLOAT(50) NOT NULL)
+time TIMESTAMP NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 createTable($sql);
@@ -52,7 +54,7 @@ $sql = "CREATE TABLE webshop.warranty (
 warrantyID INT(50) UNSIGNED,
 FOREIGN KEY(transactionID) REFERENCES transactions(transactionID),
 productList INT(50) NOT NULL,
-expiration DATETIME() NOT NULL)
+expiration DATETIME NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 createTable($sql);

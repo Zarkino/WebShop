@@ -45,28 +45,69 @@ if(!isset($_SESSION['loggedin'])) {
             <table id="transactions">
                 <tr>
                     <th>Order ID</th>
-                    <th>Product Name</th>
+                    <th>Products</th>
                     <th>Status</th>
                     <th>Amount</th>
                     <th>Date/Time</th>
                 </tr>
                 <?php
                 //Code to list all transactions
-                $sql = "SELECT * FROM webshop.products";
+                $userID = $_SESSION['userID'];
+                $sql = "SELECT * FROM webshop.transactions WHERE userID='$userID'";
 
                 $result = connect()->query($sql);
 
-                $orderID = 0;
                 while($row = $result->fetch_assoc()) {
                     echo '<tr>';
-                        echo '<td>'.$orderID.'</td>';
-                        echo '<td>'.$row['name'].'</td>';
+                        echo '<td>'.$row['orderID'].'</td>';
+                        echo '<td>'.$row['productID'].'</td>';
                         echo '<td>Good</td>';
-                        echo '<td>'.$row['price'].' kr.</td>';
-                        echo '<td>'.date('d-m/Y').'<br> '.date('H:i').'</td>';
+                        echo '<td>0 kr.</td>';
+                        echo '<td>'.$row['time'].'</td>';
                     echo '</tr>';
-                    $orderID++;
+                    //Format date('d-m/Y').'<br> '.date('H:i')
                 }
+
+                /*
+                echo '<tr>';
+                echo '<td>';
+                echo '<td>';
+                echo '<td>';
+                echo '<td>';
+                echo '<td>';
+
+                $i = 0;
+                while($row = $result->fetch_assoc()) {
+                    if($row['orderID'] != $i) {
+                        echo $row['orderID'];
+                        echo $row['productID'];
+                        echo 'Good';
+                        echo '0 kr.';
+                        echo $row['time'];
+                        //Format date('d-m/Y').'<br> '.date('H:i')
+                    } else {
+                        echo '</td>';
+                        echo '</td>';
+                        echo '</td>';
+                        echo '</td>';
+                        echo '</td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td>';
+                        echo '<td>';
+                        echo '<td>';
+                        echo '<td>';
+                        echo '<td>';
+                        $i = $row['orderID'];
+                        echo $row['orderID'];
+                        echo $row['productID'];
+                        echo 'Good';
+                        echo '0 kr.';
+                        echo $row['time'];
+                        //Format date('d-m/Y').'<br> '.date('H:i')
+                    }
+                }
+                */
                 ?>
             </table>
         </div>

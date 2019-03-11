@@ -97,7 +97,15 @@ $names = array();
                 <div style="height:10px;"></div>
 
                 <a style="color:black;">Order Total: <?php echo $priceTotal; ?> kr.</a>
-                <button>Proceed to checkout</button>
+                <form action="" method="post">
+                    <input type="submit" name="buy" value="Proceed to checkout">
+                </form>
+
+                <?php
+                if(isset($_POST['buy']))
+                    buy($_SESSION['userID'], $_SESSION['cart']);
+                ?>
+
             </div>
         </div>
 

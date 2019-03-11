@@ -135,4 +135,21 @@ function search($item) {
 
     listProducts($result);
 }
+
+function buy($userID, $products) {
+    $sql = "SELECT MAX(orderID) AS MAKS FROM webshop.transactions";
+
+    $result = connect()->query($sql);
+
+    $order = ($result->fetch_assoc())['MAKS'] + 1;
+
+    foreach($products as $productID) {
+        $sql = "INSERT INTO webshop.transactions (orderID, productID, userID, time)
+          VALUES ('$order', '$productID', '$userID', CURRENT_TIMESTAMP)";
+
+        if(!connect()->query($sql)) {
+            echo "Error" . connect()->error . "<br>";
+        }
+    }
+}
 ?>
