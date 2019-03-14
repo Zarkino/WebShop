@@ -102,8 +102,10 @@ $names = array();
                 </form>
 
                 <?php
-                if(isset($_POST['buy']))
+                if(isset($_POST['buy'])) {
                     buy($_SESSION['userID'], $_SESSION['cart']);
+                    header('location: ' . $_SERVER[REQUEST_URI] . '');
+                }
                 ?>
 
             </div>

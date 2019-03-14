@@ -144,12 +144,27 @@ function buy($userID, $products) {
     $order = ($result->fetch_assoc())['MAKS'] + 1;
 
     foreach($products as $productID) {
-        $sql = "INSERT INTO webshop.transactions (orderID, productID, userID, time)
-          VALUES ('$order', '$productID', '$userID', CURRENT_TIMESTAMP)";
+        $sql = "INSERT INTO webshop.transactions (orderID, productID, userID)
+          VALUES ('$order', '$productID', '$userID')";
 
         if(!connect()->query($sql)) {
-            echo "Error" . connect()->error . "<br>";
+            echo connect()->error . "<br>";
         }
     }
+    $_SESSION['cart'] = array();
+}
+
+function listOrder($lastOrderID, $products, $price, $time){
+    echo '<tr>';
+    echo '<td>'.$lastOrderID.'</td>';
+    echo '<td>';
+    foreach($products as $product) {
+        echo '1x ' . $product . ', ';
+    }
+    echo '</td>';
+    echo '<td>Good</td>';
+    echo '<td>'.$price.' kr.</td>';
+    echo '<td>'.$time->format('d-m/Y H:i').'</td>';
+    echo '</tr>';
 }
 ?>

@@ -1,6 +1,8 @@
 <?php
 include('database.php');
 
+session_destroy();
+
 if (isset($_POST['submit'])) {
     $firstname = mysqli_real_escape_string(connect(), $_POST['firstname']);
     $lastname = mysqli_real_escape_string(connect(), $_POST['lastname']);
@@ -27,7 +29,7 @@ if (isset($_POST['submit'])) {
 
     // Tjekker for om emailen er taget i databasen (om der er flere end 0)
         if (mysqli_num_rows($result) > 0) {
-            header("location: ./signup.php?signup=usertaken");
+            header("location: ./signup.php?signup=emailtaken");
             exit();
         } else {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -41,6 +43,7 @@ if (isset($_POST['submit'])) {
             } else {
                 session_start();
                 $_SESSION["loggedin"] = true;
+                $_SESSION["userID"] = connect()->insert_id;
                 $_SESSION["firstname"] = $firstname;
                 $_SESSION["lastname"] = $lastname;
                 $_SESSION["username"] = $username;

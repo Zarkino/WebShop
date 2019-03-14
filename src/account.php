@@ -24,8 +24,7 @@ if(!isset($_SESSION['loggedin'])) {
         <div style="background-color:rgba(255, 255, 255, 0.7);">
             <h2 style="color:black;">Your Account</h2>
             <?php
-            $userID = $_SESSION['userID'];
-            $sql = "SELECT * FROM webshop.users WHERE userID='$userID'";
+            $sql = "SELECT * FROM webshop.users WHERE userID=".$_SESSION['userID'];
 
             if($result = connect()->query($sql)) {
                 while($row = $result->fetch_assoc()) {
@@ -51,63 +50,46 @@ if(!isset($_SESSION['loggedin'])) {
                     <th>Date/Time</th>
                 </tr>
                 <?php
-                //Code to list all transactions
-                $userID = $_SESSION['userID'];
-                $sql = "SELECT * FROM webshop.transactions WHERE userID='$userID'";
+                $sql = "SELECT
+	                      transactions.*, products.*
+                        FROM
+	                      webshop.transactions
+                        INNER JOIN
+	                      webshop.products
+                        ON 
+	                      transactions.productID = products.productID
+                        WHERE
+	                      transactions.userID=".$_SESSION['userID']."
+	                    ORDER BY transactionID";
 
                 $result = connect()->query($sql);
 
-                while($row = $result->fetch_assoc()) {
-                    echo '<tr>';
-                        echo '<td>'.$row['orderID'].'</td>';
-                        echo '<td>'.$row['productID'].'</td>';
-                        echo '<td>Good</td>';
-                        echo '<td>0 kr.</td>';
-                        echo '<td>'.$row['time'].'</td>';
-                    echo '</tr>';
-                    //Format date('d-m/Y').'<br> '.date('H:i')
-                }
+                $lastOrderID = null;
+                $products = array();
+                $price = 0;
+                $time = new DateTime();
 
-                /*
-                echo '<tr>';
-                echo '<td>';
-                echo '<td>';
-                echo '<td>';
-                echo '<td>';
-                echo '<td>';
-
-                $i = 0;
                 while($row = $result->fetch_assoc()) {
-                    if($row['orderID'] != $i) {
-                        echo $row['orderID'];
-                        echo $row['productID'];
-                        echo 'Good';
-                        echo '0 kr.';
-                        echo $row['time'];
-                        //Format date('d-m/Y').'<br> '.date('H:i')
+                    if($lastOrderID === NULL) {
+                        $lastOrderID = $row['orderID'];
+                    }
+
+                    if($row['orderID'] == $lastOrderID) {
+                        $products[] = $row['name'];
+                        $price += $row['price'];
+                        $time = new DateTime($row['time']);
                     } else {
-                        echo '</td>';
-                        echo '</td>';
-                        echo '</td>';
-                        echo '</td>';
-                        echo '</td>';
-                        echo '</tr>';
-                        echo '<tr>';
-                        echo '<td>';
-                        echo '<td>';
-                        echo '<td>';
-                        echo '<td>';
-                        echo '<td>';
-                        $i = $row['orderID'];
-                        echo $row['orderID'];
-                        echo $row['productID'];
-                        echo 'Good';
-                        echo '0 kr.';
-                        echo $row['time'];
-                        //Format date('d-m/Y').'<br> '.date('H:i')
+                        listOrder($lastOrderID, $products, $price, $time);
+
+                        //Reset values after listing an order
+                        $products = array();
+                        $products[] = $row['name'];
+                        $lastOrderID = $row['orderID'];
+                        $price = $row['price'];
                     }
                 }
-                */
+                if(mysqli_num_rows($result) > 0)
+                        listOrder($lastOrderID, $products, $price, $time);
                 ?>
             </table>
         </div>

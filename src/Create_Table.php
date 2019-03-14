@@ -34,7 +34,7 @@ productID INT(50) UNSIGNED,
 userID INT(50) UNSIGNED,
 FOREIGN KEY(productID) REFERENCES webshop.products(productID),
 FOREIGN KEY(userID) REFERENCES users(userID),
-time TIMESTAMP NOT NULL)
+time TIMESTAMP DEFAULT CURRENT_TIMESTAMP())
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 createTable($sql);
