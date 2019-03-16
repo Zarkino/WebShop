@@ -158,8 +158,12 @@ function listOrder($lastOrderID, $products, $price, $time){
     echo '<tr>';
     echo '<td>'.$lastOrderID.'</td>';
     echo '<td>';
-    foreach($products as $product) {
-        echo '1x ' . $product . ', ';
+    for($i = 0; $i < sizeof($products); $i++) {
+        echo '1x ' . $products[$i];
+
+        if($i < sizeof($products)-1) {
+            echo ', ';
+        }
     }
     echo '</td>';
     echo '<td>Good</td>';

@@ -82,9 +82,9 @@ if(!isset($_SESSION['loggedin'])) {
                         listOrder($lastOrderID, $products, $price, $time);
 
                         //Reset values after listing an order
+                        $lastOrderID = $row['orderID'];
                         $products = array();
                         $products[] = $row['name'];
-                        $lastOrderID = $row['orderID'];
                         $price = $row['price'];
                     }
                 }
