@@ -3,7 +3,7 @@ include('database.php');
 ?>
 
 <!DOCTYPE HTML>
-<HTML>
+<HTML lang="en">
 	<HEAD>
 		<LINK rel="stylesheet" type="text/css" href="../Styles/Style.css">
 		<META charset="utf-8">
