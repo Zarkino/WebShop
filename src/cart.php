@@ -22,7 +22,7 @@ $names = array();
                     $_SESSION['cart'] = array();
 
                     //Return to the same page and exit()
-                    header('location: '.$_SERVER[REQUEST_URI].'');
+                    header('location: '.$_SERVER['REQUEST_URI'].'');
                     exit();
                 }
                 ?>
@@ -70,7 +70,7 @@ $names = array();
                             $_SESSION['cart'] = array_values($_SESSION['cart']);
 
                             //Return to the same page and exit()
-                            header('location: '. $_SERVER[REQUEST_URI] .'');
+                            header('location: '. $_SERVER['REQUEST_URI'] .'');
                             exit();
                         }
 
@@ -104,7 +104,7 @@ $names = array();
                 <?php
                 if(isset($_POST['buy'])) {
                     buy($_SESSION['userID'], $_SESSION['cart']);
-                    header('location: ' . $_SERVER[REQUEST_URI] . '');
+                    header('location: '.$_SERVER['REQUEST_URI'].'');
                 }
                 ?>
 

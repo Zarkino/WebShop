@@ -37,7 +37,7 @@ if(isset($_GET['id'])) {
                     $_SESSION['cart'][] = $id;
 
                     //Return to the same page and exit()
-                    header('location: '.$_SERVER[REQUEST_URI].'');
+                    header('location: '.$_SERVER['REQUEST_URI'].'');
                     exit();
                 }
                 ?>
