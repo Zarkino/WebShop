@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
             exit();
         } else {
             $sql = "INSERT INTO webshop.products (name, category, price, stock)
-          VALUES ('$name', '$category', '$price', '$Stock')";
+          VALUES ('$name', '$category', '$price', '$stock')";
 
             if (!connect()->query($sql)) {
                 echo "Error: " . $sql . "<br>" . $conn->error;

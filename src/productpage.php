@@ -1,17 +1,22 @@
 <?php
 include('database.php');
 
-$sql = "SELECT * FROM webshop.products WHERE productID =".$_GET["id"];
+if(isset($_GET['id'])) {
+    $sql = "SELECT * FROM webshop.products WHERE productID =".$_GET['id'];
 
-$result = connect()->query($sql);
+    $result = connect()->query($sql);
 
-while($row = $result->fetch_assoc()) {
-    $id = $row['productID'];
-    $name = $row['name'];
-    $category = $row['category'];
-    $description = $row['description'];
-    $price = $row['price'];
-    $stock = $row['stock'];
+    while ($row = $result->fetch_assoc()) {
+        $id = $row['productID'];
+        $name = $row['name'];
+        $category = $row['category'];
+        $description = $row['description'];
+        $price = $row['price'];
+        $stock = $row['stock'];
+    }
+} else {
+    header('location: home.php');
+    exit();
 }
 ?>
 

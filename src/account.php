@@ -47,7 +47,7 @@ if(!isset($_SESSION['loggedin'])) {
                     <th>Products</th>
                     <th>Status</th>
                     <th>Amount</th>
-                    <th>Date/Time</th>
+                    <th>Date & Time</th>
                 </tr>
                 <?php
                 $sql = "SELECT
@@ -67,7 +67,6 @@ if(!isset($_SESSION['loggedin'])) {
                 $lastOrderID = null;
                 $products = array();
                 $price = 0;
-                $time = new DateTime();
 
                 while($row = $result->fetch_assoc()) {
                     if($lastOrderID === NULL) {
