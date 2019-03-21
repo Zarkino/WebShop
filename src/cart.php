@@ -46,7 +46,7 @@ $names = array();
 
                 <?php
                 foreach($_SESSION['cart'] as $id) {
-                    $sql = "SELECT * FROM webshop.products WHERE productID ='$id'";
+                    $sql = "SELECT * FROM webshop.products WHERE productID =".$id;
 
                     $result = connect()->query($sql);
 
@@ -102,7 +102,7 @@ $names = array();
                 </form>
 
                 <?php
-                if(isset($_POST['buy'])) {
+                if(isset($_POST['buy']) && $_SESSION['loggedin'] && sizeof($_SESSION['cart']) > 0) {
                     buy($_SESSION['userID'], $_SESSION['cart']);
                     header('location: '.$_SERVER['REQUEST_URI'].'');
                 }
