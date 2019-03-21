@@ -2,7 +2,8 @@
 include('database.php');
 
 $priceTotal = 0;
-$names = array();
+$products = array();
+$quantity = array();
 ?>
 
 <!DOCTYPE html>
@@ -45,14 +46,17 @@ $names = array();
                 </div>
 
                 <?php
-                foreach($_SESSION['cart'] as $id) {
+                foreach(array_unique($_SESSION['cart']) as $id) {
                     $sql = "SELECT * FROM webshop.products WHERE productID =".$id;
 
                     $result = connect()->query($sql);
 
+                    $amount = array_count_values($_SESSION['cart'])[$id];
+
                     while($row = $result->fetch_assoc()) {
                         echo '<div style="display:flex; flex-wrap:nowrap; align-items:center; justify-content:space-between;" onclick="location.href=\'productpage.php?id='.$id.'\';">';
                         echo '<img style="width:100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
+                        echo '<a style="color:black;">'.$amount.'x</a>';
                         echo '<a style="color:black;">'.$row['name'].'</a>';
                         echo '<a style="color:black;">'.$row['price'].' kr.</a>';
 
@@ -77,8 +81,9 @@ $names = array();
                         //Horizontal line to space items
                         echo '<hr>';
 
-                        $priceTotal += $row['price'];
-                        $names[] = $row['name'];
+                        $priceTotal += $row['price']*$amount;
+                        $products[] = $row['name'];
+                        $quantity[] = $amount;
                     }
                 }
                 ?>
@@ -88,8 +93,8 @@ $names = array();
                 <?php
                 echo '<h2 style="color:black; align-self:flex-start;">Cart Summary</h2>';
 
-                foreach($names as $name) {
-                    echo '<a style="color:black; align-self:flex-start;">1 x '.$name.'</a>';
+                for($i = 0; $i < sizeof($products); $i++) {
+                    echo '<a style="color:black; align-self:flex-start;">'.$quantity[$i].'x '.$products[$i].'</a>';
                 }
                 ?>
 
