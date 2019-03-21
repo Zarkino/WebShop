@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
 
     //For guests
     if(!isset($_POST['password'])) {
-        $password = randomPassword();
+        $password = generateRandomPassword();
     } else {
         $password = mysqli_real_escape_string(connect(), $_POST['password']);
     }
