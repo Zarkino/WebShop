@@ -1,27 +1,51 @@
 <?php
 include('database.php');
 
-session_destroy();
-
 if (isset($_POST['submit'])) {
+    $url = $_POST['url'];
+
+    //For guests
+    if(!isset($_POST['username'])) {
+        $username = $_POST['firstname'];
+    } else {
+        $username = mysqli_real_escape_string(connect(), $_POST['username']);
+    }
+
+    //For guests
+    if(!isset($_POST['balance'])) {
+        $balance = 1000;
+    } else {
+        $balance = mysqli_real_escape_string(connect(), $_POST['balance']);
+    }
+
+    //For guests
+    if(!isset($_POST['password'])) {
+        $password = randomPassword();
+    } else {
+        $password = mysqli_real_escape_string(connect(), $_POST['password']);
+    }
+
     $firstname = mysqli_real_escape_string(connect(), $_POST['firstname']);
     $lastname = mysqli_real_escape_string(connect(), $_POST['lastname']);
     $email = mysqli_real_escape_string(connect(), $_POST['email']);
-    $username = mysqli_real_escape_string(connect(), $_POST['username']);
-    $password = mysqli_real_escape_string(connect(), $_POST['password']);
-    $balance = mysqli_real_escape_string(connect(), $_POST['balance']);
 
     if (empty($firstname) || empty($lastname) || empty($email) || empty($username) || empty($password)) {
-        header("location: ./signup.php?=empty");
+        //header('location: '.$url.'?=empty');
+        echo $firstname;
+        echo $lastname;
+        echo $email;
+        echo $username;
+        echo $password;
+        echo $balance;
         exit();
     } else if (!preg_match("/^[a-zA-Z]*$/", $firstname) || !preg_match("/^[a-zA-Z]*$/", $lastname)) {
-        header("Location: ./signup.php?=invalidname");
+        header('location: '.$url.'?=invalidname');
         exit();
     } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        header("Location: ./signup.php?signup=invalidemail");
+        header('location: '.$url.'?=invalidemail');
         exit();
     } else if (preg_match("/(admin)/", $username)) {
-        header("Location: ./signup.php?signup=invalidusername");
+        header('location: '.$url.'?=invalidusername');
         exit();
     } else {
         $sql = "SELECT * FROM webshop.users WHERE email='$email'";
@@ -29,7 +53,7 @@ if (isset($_POST['submit'])) {
 
     // Tjekker for om emailen er taget i databasen (om der er flere end 0)
         if (mysqli_num_rows($result) > 0) {
-            header("location: ./signup.php?signup=emailtaken");
+            header('location: '.$url.'?=emailtaken');
             exit();
         } else {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -42,19 +66,20 @@ if (isset($_POST['submit'])) {
                 exit();
             } else {
                 session_start();
-                $_SESSION["loggedin"] = true;
-                $_SESSION["userID"] = connect()->insert_id;
-                $_SESSION["firstname"] = $firstname;
-                $_SESSION["lastname"] = $lastname;
-                $_SESSION["username"] = $username;
-                $_SESSION["balance"] = $balance;
+                $_SESSION['loggedin'] = true;
+                $_SESSION['userID'] = connect()->insert_id;
+                $_SESSION['firstname'] = $firstname;
+                $_SESSION['lastname'] = $lastname;
+                $_SESSION['username'] = $username;
+                $_SESSION['balance'] = $balance;
 
-                header("location: home.php");
+                header('location: '.$url.'');
             }
         }
     }
 }
-
+/*
 header("location: signup.php");
 exit();
+*/
 ?>

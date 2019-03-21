@@ -102,9 +102,13 @@ $names = array();
                 </form>
 
                 <?php
-                if(isset($_POST['buy']) && $_SESSION['loggedin'] && sizeof($_SESSION['cart']) > 0) {
-                    buy($_SESSION['userID'], $_SESSION['cart']);
-                    header('location: '.$_SERVER['REQUEST_URI'].'');
+                if(isset($_POST['buy']) && sizeof($_SESSION['cart']) > 0) {
+                    if(isset($_SESSION['loggedin'])) {
+                        buy($_SESSION['userID'], $_SESSION['cart']);
+                        header('location: ' . $_SERVER['REQUEST_URI'] . '');
+                    } else {
+                        header('location: checkout.php');
+                    }
                 }
                 ?>
 
