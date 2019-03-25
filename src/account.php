@@ -1,6 +1,6 @@
 <?php
 include('database.php');
-
+//test
 if(!isset($_SESSION['loggedin'])) {
     header('location: home.php');
     exit();
