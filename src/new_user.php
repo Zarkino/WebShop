@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) {
           // use wordwrap() if lines are longer than 70 characters
           $msg = wordwrap($msg,70);
 
-          // send email
+          // send email 
           mail($email,"Account created",$msg);
 
             if (!connect()->query($sql)) {
