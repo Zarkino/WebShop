@@ -1,19 +1,29 @@
 <?php
 include('database.php');
 
-if($_POST['subbmit'])
+  $username=$_SESSION['username'] ;
+
+//if   ($username){
+
+if (isset($_POST['submit']))
 {
+echo"test";
 
-  $password = mysqli_real_escape_string(connect(), $_POST['password']);
+  $oldpassword = mysqli_real_escape_string(connect(), $_POST['oldpassword']);
   $newpassword = mysqli_real_escape_string(connect(), $_POST['newpassword']);
-  $checkpassword = mysqli_real_escape_string(connect(), $_post['checkpassword']);
+  $test = mysqli_real_escape_string(connect(), $_post['test']);
 
-  $queryget = mysql_query("SELECT password FROM webshop.users WHERE username='$username'");
+  echo"$oldpassword/+ $newpassword/+ $test /+";
+  echo"$confirmpassword/virker ik";
+
+}
+  /*$queryget = mysql_query("SELECT password FROM webshop.users WHERE username='$username'");
 
   $row = mysql_fetch_assoc($queryget);
 
   $oldpassword = $row['password'];
-
+  echo"$password";
+  echo"$newpassword";
   if ($password == $oldpassword)
 {
   if ($newpassword==$checkpassword){
@@ -33,8 +43,7 @@ session_destroy();
 }
 
 }
-} else {
-    die;
+*/ else {
+    echo("failed");
   }
-}
  ?>
