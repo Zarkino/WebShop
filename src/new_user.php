@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
           $msg = "Welcome to our webshop
           \nyour username and password is
           \nUsername: $username
-          \nPassword: $password ;
+          \nPassword: $password" ;
 
           // use wordwrap() if lines are longer than 70 characters
           $msg = wordwrap($msg,70);
