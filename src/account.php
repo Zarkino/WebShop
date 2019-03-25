@@ -56,7 +56,7 @@ if(!isset($_SESSION['loggedin'])) {
 	                      webshop.transactions
                         INNER JOIN
 	                      webshop.products
-                        ON 
+                        ON
 	                      transactions.productID = products.productID
                         WHERE
 	                      transactions.userID=".$_SESSION['userID']."
