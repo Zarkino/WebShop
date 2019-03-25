@@ -23,6 +23,7 @@ if(!isset($_SESSION['loggedin'])) {
 
         <div style="background-color:rgba(255, 255, 255, 0.7);">
             <h2 style="color:black;">Your Account</h2>
+            <a href="newpassword.php">Change Password </a>
             <?php
             $sql = "SELECT * FROM webshop.users WHERE userID=".$_SESSION['userID'];
 
@@ -56,7 +57,7 @@ if(!isset($_SESSION['loggedin'])) {
 	                      webshop.transactions
                         INNER JOIN
 	                      webshop.products
-                        ON 
+                        ON
 	                      transactions.productID = products.productID
                         WHERE
 	                      transactions.userID=".$_SESSION['userID']."
