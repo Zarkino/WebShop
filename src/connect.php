@@ -1,7 +1,7 @@
  <?php
 $server = "localhost";
 $username = "root";
-$password = "yes1";
+$password = "Yes1";
 
 $conn = new MySQLi($server, $username, $password);
 
