@@ -1,34 +1,36 @@
 <?php
 include('database.php');
 
-$password = mysqli_real_escape_string(connect(), $_POST['password']);
-$newpassword = mysqli_real_escape_string(connect(), $_POST['newpassword']);
-$checkpassword = mysqli_real_escape_string(connect(), $_post['checkpassword']);
+if($_POST['subbmit'])
+{
 
+  $password = mysqli_real_escape_string(connect(), $_POST['password']);
+  $newpassword = mysqli_real_escape_string(connect(), $_POST['newpassword']);
+  $checkpassword = mysqli_real_escape_string(connect(), $_post['checkpassword']);
 
-if{
-    $_SESSION['loggedin'] = true;
-    $_SESSION["userID"] = $row['userID'];
+  $queryget = mysql_query("SELECT password FROM webshop.users WHERE username='$username'");
 
-function password($password) {
-  $sql = "SELECT * FROM webshop.users WHERE ID = ".$_SESSION['userID']." LIMIT 1";
+  $row = mysql_fetch_assoc($queryget);
 
-  $stmt = connect()->prepare($sql);
+  $oldpassword = $row['password'];
 
-  $stmt->bind_param('s', $username);
+  if ($password == $oldpassword)
+{
+  if ($newpassword==$checkpassword){
 
-  $stmt->execute();
-
-  $result = $stmt->get_result();
-
-  while($row = $result->fetch_assoc()) {
-      if(password_verify($password, $row['password'])) {
-
-
-     $sql = "UPDATE webshop.users
-     SET password ='$newpassword'
-     WHERE userID = $row['userID']";
-
+    $querychange = mysql_query("
+    UPDATE webshop.users
+    SET password='$newpassword'
+    WHERE username='$username'
+");
+session_destroy();
+  echo"You have changed your password";
+  }else{
+    die("new password did'nt match");
+  }
+} else {
+  die("Current password is wrong");
+}
 
 }
 } else {
