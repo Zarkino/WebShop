@@ -164,17 +164,28 @@ function buy($userID, $products) {
     $_SESSION['cart'] = array();
 }
 
-function listOrder($lastOrderID, $products, $price, $time){
+function listOrder($lastOrderID, $products, $price, $time) {
+    $uniqueProducts = array_values(array_unique($products));
     echo '<tr>';
     echo '<td>'.$lastOrderID.'</td>';
     echo '<td>';
+    for($i = 0; $i < sizeof($uniqueProducts); $i++) {
+        //Count identical values in $products with $uni queProducts[$i] as key
+        echo  array_count_values($products)[$uniqueProducts[$i]] . 'x ' . $uniqueProducts[$i];
+
+        if($i < sizeof($uniqueProducts) - 1) {
+            echo ', ';
+        }
+    }
+
+    /*
     for($i = 0; $i < sizeof($products); $i++) {
         echo '1x ' . $products[$i];
 
         if($i < sizeof($products)-1) {
             echo ', ';
         }
-    }
+    }*/
     echo '</td>';
     echo '<td>Good</td>';
     echo '<td>'.$price.' kr.</td>';

@@ -110,7 +110,7 @@ $quantity = array();
                 if(isset($_POST['buy']) && sizeof($_SESSION['cart']) > 0) {
                     if(isset($_SESSION['loggedin'])) {
                         buy($_SESSION['userID'], $_SESSION['cart']);
-                        header('location: ' . $_SERVER['REQUEST_URI'] . '');
+                        header('location: ' . $_SERVER['REQUEST_URI']);
                     } else {
                         header('location: checkout.php');
                     }
