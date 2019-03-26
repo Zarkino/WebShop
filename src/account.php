@@ -23,7 +23,6 @@ if(!isset($_SESSION['loggedin'])) {
 
         <div style="background-color:rgba(255, 255, 255, 0.7);">
             <h2 style="color:black;">Your Account</h2>
-            <a href="newpassword.php">Change Password </a>
             <?php
             $sql = "SELECT * FROM webshop.users WHERE userID=".$_SESSION['userID'];
 
@@ -36,6 +35,8 @@ if(!isset($_SESSION['loggedin'])) {
                 }
             }
             ?>
+            <br>
+            <a style="color:black;" href="changepassword.php">Change Password</a>
         </div>
 
         <br>

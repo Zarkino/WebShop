@@ -61,16 +61,11 @@ if (isset($_POST['submit'])) {
             $sql = "INSERT INTO webshop.users (firstname, lastname, email, username, password, balance)
           VALUES ('$firstname', '$lastname', '$email', '$username', '$hashed_password' , '$balance')";
 
-          $msg = "Welcome to our webshop
-          \nyour username and password is
-          \nUsername: $username
-          \nPassword: $password" ;
 
-          // use wordwrap() if lines are longer than 70 characters
-          $msg = wordwrap($msg,70);
-
-          // send email 
-          mail($email,"Account created",$msg);
+            sendMail("Welcome to our webshop
+            \nyour username and password is
+            \nUsername: $username
+            \nPassword: $password", "Account Created", $email);
 
             if (!connect()->query($sql)) {
                 echo "Error: " . $sql . "<br>" . connect()->error;

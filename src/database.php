@@ -62,13 +62,15 @@ function login($username, $password) {
             session_start();
             $_SESSION["loggedin"] = true;
             $_SESSION["userID"] = $row['userID'];
+            $_SESSION['firstname'] = $row['firstname'];
+            $_SESSION['lastname'] = $row['lastname'];
             $_SESSION["username"] = $row['username'];
             $_SESSION["balance"] = $row['balance'];
 
             header("location: home.php");
         } else {
-            echo 'You entered: ' . $username . ' & ' . $password . '<br>';
-            //echo "You have entered an incorrect username or password";
+            //echo 'You entered: ' . $username . ' & ' . $password . '<br>';
+            echo '<p>'."You have entered an incorrect username or password".'</p>';
         }
     }
 }
@@ -191,5 +193,13 @@ function listOrder($lastOrderID, $products, $price, $time) {
     echo '<td>'.$price.' kr.</td>';
     echo '<td>'.$time->format('d-m/Y H:i').'</td>';
     echo '</tr>';
+}
+
+function sendMail($msg, $subject, $email) {
+    //Use wordwrap() if lines are longer than 70 characters
+    $msg = wordwrap($msg,70);
+
+    //Send email
+    mail($email, $subject, $msg);
 }
 ?>
