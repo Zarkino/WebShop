@@ -8,26 +8,26 @@ if (isset($_POST['submit'])) {
     if(!isset($_POST['username'])) {
         $username = $_POST['firstname'];
     } else {
-        $username = mysqli_real_escape_string(connect(), $_POST['username']);
+        $username = connect()->real_escape_string($_POST['username']);
     }
 
     //For guests
     if(!isset($_POST['balance'])) {
         $balance = 1000;
     } else {
-        $balance = mysqli_real_escape_string(connect(), $_POST['balance']);
+        $balance = connect()->real_escape_string($_POST['balance']);
     }
 
     //For guests
     if(!isset($_POST['password'])) {
         $password = generateRandomPassword();
     } else {
-        $password = mysqli_real_escape_string(connect(), $_POST['password']);
+        $password = connect()->real_escape_string($_POST['password']);
     }
 
-    $firstname = mysqli_real_escape_string(connect(), $_POST['firstname']);
-    $lastname = mysqli_real_escape_string(connect(), $_POST['lastname']);
-    $email = mysqli_real_escape_string(connect(), $_POST['email']);
+    $firstname = connect()->real_escape_string($_POST['firstname']);
+    $lastname = connect()->real_escape_string($_POST['lastname']);
+    $email = connect()->real_escape_string($_POST['email']);
 
     if (empty($firstname) || empty($lastname) || empty($email) || empty($username) || empty($password)) {
         //header('location: '.$url.'?=empty');

@@ -2,10 +2,10 @@
 include('database.php');
 
 if (isset($_POST['submit'])) {
-    $name = mysqli_real_escape_string(connect(), $_POST['name']);
-    $category = mysqli_real_escape_string(connect(), $_POST['category']);
-    $price = mysqli_real_escape_string(connect(), $_POST['price']);
-    $stock = mysqli_real_escape_string(connect(), $_POST['stock']);
+    $name = connect()->real_escape_string($_POST['name']);
+    $category = connect()->real_escape_string($_POST['category']);
+    $price = connect()->real_escape_string($_POST['price']);
+    $stock = connect()->real_escape_string($_POST['stock']);
 
     //Tjekker for tomme felter
     if (empty($name) || empty($category) || empty($price) || empty($stock)) {
