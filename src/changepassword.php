@@ -41,12 +41,14 @@ include('database.php');
 
                         $sql = "UPDATE webshop.users SET `password`= '$hashed_password' WHERE userID=".$row['userID'];
 
-                        if(!connect()->query($sql)) {
-                            echo '<p>You have entered some wrong information!</p>';
-                        } else {
+                        if(connect()->query($sql)) {
                             echo '<p>You have successfully changed your password!</p>';
                         }
+                    } else {
+                        echo '<p>Your new password and confirmed password don\'t match!</p>';
                     }
+                } else {
+                    echo '<p>Your old password isn\'t correct!</p>';
                 }
             }
         }
