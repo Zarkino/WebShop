@@ -11,10 +11,10 @@ echo"test";
 
   $oldpassword = mysqli_real_escape_string(connect(), $_POST['oldpassword']);
   $newpassword = mysqli_real_escape_string(connect(), $_POST['newpassword']);
-  $test = mysqli_real_escape_string(connect(), $_post['test']);
+  $mewpassword = mysqli_real_escape_string(connect(), $_POST['mewpassword']);
 
-  echo"$oldpassword/+ $newpassword/+ $test /+";
-  echo"$confirmpassword/virker ik";
+  echo"$oldpassword/+ $newpassword/+ $mewpassword /+";
+  echo"$mewpassword/virker ik";
 
 }
   /*$queryget = mysql_query("SELECT password FROM webshop.users WHERE username='$username'");

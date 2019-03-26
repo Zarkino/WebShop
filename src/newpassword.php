@@ -22,7 +22,7 @@ include('database.php');
         <form action="changepassword.php" method="POST">
             <INPUT type="password" placeholder="Current Password" name="oldpassword"><br>
             <INPUT type="password" placeholder="New Password" name="newpassword" ><br>
-            <INPUT type="password" placeholder="New Password" name="test" ><br>
+            <INPUT type="password" placeholder="New Password" name="mewpassword" ><br>
               <BUTTON type="submit" name="submit" >Change password</BUTTON>
         </form>
 
