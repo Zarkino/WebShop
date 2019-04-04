@@ -106,9 +106,9 @@ if(isset($_GET['id'])) {
                         $date = new DateTime($row['date']);
 
                         echo '<div style="display:flex; flex-direction:column; flex-wrap:nowrap;">';
-                        echo '<a style="color:black;">By ' . $row['username'] . '</a><br>';
-                        echo '<a style="font-size:100%; color:black;">' . $row['review'] . '</a><br>';
-                        echo '<a style="font-size:100%; color:black; align-self:flex-end;">On ' . $date->format('jS F, Y') . '</a>';
+                        echo '<a style="color:black;">By '.$row['username'].'</a><br>';
+                        echo '<a style="font-size:100%; color:black;">'.$row['review'].'</a>';
+                        echo '<a style="font-size:100%; color:black; align-self:flex-end; margin-top:10px">On ' . $date->format('jS F, Y') . '</a>';
                         echo '</div>';
                         echo '<hr>';
                     }

@@ -102,10 +102,7 @@ $quantity = array();
                 }
                 ?>
 
-                <!-- Temporary Linebreak -->
-                <div style="height:10px;"></div>
-
-                <a style="color:black;">Order Total: <?php echo $priceTotal; ?> kr.</a>
+                <a style="color:black; margin-top:10px;">Order Total: <?php echo $priceTotal; ?> kr.</a>
                 <form action="" method="post">
                     <input type="submit" name="buy" value="Proceed to checkout">
                 </form>
