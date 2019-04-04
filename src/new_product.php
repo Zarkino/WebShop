@@ -12,13 +12,13 @@ if (isset($_POST['submit'])) {
         header("location: ./new_product.php?=empty");
         exit();
     } else if (!preg_match("/^[a-zA-Z]*$/", $name) || !preg_match("/^[a-zA-Z]*$/", $category)) {
-        header("Location: ./ProductName.php?=invalidproduct");
+        header("location: ./ProductName.php?=invalidproduct");
         exit();
     } else if (!preg_match("/^[0-9]*$/", $price)) {
-        header("Location: ./new_product?price=Invalidprice");
+        header("location: ./new_product?price=Invalidprice");
         exit();
     } else if (!preg_match("/^[0-9]*$/", $stock)) {
-        header("Location: ./new_product?price=Invalidprice");
+        header("location: ./new_product?price=Invalidprice");
         exit();
         // Får forbindels til databasen og får data med navne
     } else {

@@ -18,6 +18,7 @@ createTable($sql);
 $sql = "CREATE TABLE webshop.products (
 productID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
+image VARCHAR(255),
 category VARCHAR(50) NOT NULL,
 description VARCHAR(50) NOT NULL,
 price FLOAT(50,2) NOT NULL,
