@@ -136,7 +136,7 @@ if(isset($_GET['id'])) {
 
                     if(mysqli_num_rows($result) > 0) {
                         $sql = "UPDATE webshop.reviews SET
-                                    review=".$_POST['review'].",
+                                    review='".$_POST['review']."',
                                     date=CURRENT_TIMESTAMP()
                                 WHERE userID=".$_SESSION['userID']." AND productID=".$id;
 
@@ -148,8 +148,8 @@ if(isset($_GET['id'])) {
                         connect()->query($sql);
                     }
 
-                    //header('location: ' . $_SERVER['REQUEST_URI'] . '');
-                    //exit();
+                    header('location: ' . $_SERVER['REQUEST_URI'] . '');
+                    exit();
                 }
             }
             ?>
