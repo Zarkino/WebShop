@@ -124,7 +124,7 @@ if(isset($_GET['id'])) {
 
                     <form action="" method="POST" id="review_form">
                         <textarea form="review_form" name="review" maxlength="250" rows="4" placeholder="Write Here!" style="color:black; width:calc(100% - 30px)"></textarea>
-                        <button type="submit" name="submit_review">Submit review</button>
+                        <button type="submit" name="submit_review">Submit Review</button>
                     </form>
                 </div><?php
                 if(isset($_POST['submit_review']) && isset($_POST['review'])) {
