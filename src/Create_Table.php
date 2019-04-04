@@ -33,21 +33,21 @@ transactionID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 orderID INT(50) NOT NULL,
 productID INT(50) UNSIGNED,
 userID INT(50) UNSIGNED,
-FOREIGN KEY(productID) REFERENCES webshop.products(productID),
+FOREIGN KEY(productID) REFERENCES products(productID),
 FOREIGN KEY(userID) REFERENCES users(userID),
 time TIMESTAMP DEFAULT CURRENT_TIMESTAMP())
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 createTable($sql);
 
-//Transactions
+//Reviews
 $sql = "CREATE TABLE IF NOT EXISTS webshop.reviews (
 reviewID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 review TEXT NOT NULL,
 date DATETIME DEFAULT CURRENT_TIMESTAMP(),
 productID INT(50) UNSIGNED,
 userID INT(50) UNSIGNED,
-FOREIGN KEY(productID) REFERENCES webshop.products(productID),
+FOREIGN KEY(productID) REFERENCES products(productID),
 FOREIGN KEY(userID) REFERENCES users(userID))
 CHARACTER SET latin1 COLLATE latin1_danish_ci";
 

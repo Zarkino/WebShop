@@ -88,22 +88,30 @@ if(isset($_GET['id'])) {
             <div style="width:50%; background-color:rgba(255, 255, 255, 0.7)">
                 <h2 style="color:black;">Costumer Reviews</h2>
                 <?php
-                $sql = "SELECT webshop.reviews.review, webshop.reviews.date, webshop.users.username
-                        FROM webshop.reviews
-                        INNER JOIN webshop.users on webshop.reviews.userID=webshop.users.userID
-                        WHERE webshop.reviews.productID=".$id;
+                $sql = "SELECT * FROM webshop.reviews WHERE productID=".$id;
 
                 $result = connect()->query($sql);
 
-                while($row = $result->fetch_assoc()) {
-                    $date = new DateTime($row['date']);
+                if(mysqli_num_rows($result) < 1) {
+                    echo '<a style="font-size:100%; color:black;">Be the first to review this product!</a>';
+                } else {
+                    $sql = "SELECT reviews.review, reviews.date, users.username
+                        FROM webshop.reviews
+                        INNER JOIN webshop.users ON reviews.userID=users.userID
+                        WHERE reviews.productID=" . $id;
 
-                    echo '<div style="display:flex; flex-direction:column; flex-wrap:nowrap;">';
-                        echo '<a style="color:black;">By '.$row['username'].'</a><br>';
-                        echo '<a style="font-size:100%; color:black;">'.$row['review'].'</a><br>';
-                        echo '<a style="font-size:100%; color:black; align-self:flex-end;">On '.$date->format('jS F, Y').'</a>';
-                    echo '</div>';
-                    echo '<hr>';
+                    $result = connect()->query($sql);
+
+                    while ($row = $result->fetch_assoc()) {
+                        $date = new DateTime($row['date']);
+
+                        echo '<div style="display:flex; flex-direction:column; flex-wrap:nowrap;">';
+                        echo '<a style="color:black;">By ' . $row['username'] . '</a><br>';
+                        echo '<a style="font-size:100%; color:black;">' . $row['review'] . '</a><br>';
+                        echo '<a style="font-size:100%; color:black; align-self:flex-end;">On ' . $date->format('jS F, Y') . '</a>';
+                        echo '</div>';
+                        echo '<hr>';
+                    }
                 }
                 ?>
             </div>
@@ -120,13 +128,28 @@ if(isset($_GET['id'])) {
                     </form>
                 </div><?php
                 if(isset($_POST['submit_review']) && isset($_POST['review'])) {
-                    $sql = "INSERT INTO webshop.reviews (review, productID, userID)
-                        VALUES ('".$_POST['review']."', '$id', '".$_SESSION['userID']."')";
+                    $sql = "SELECT userID, productID
+                            FROM webshop.reviews
+                            WHERE userID=".$_SESSION['userID']." AND productID=".$id;
 
-                    connect()->query($sql);
+                    $result = connect()->query($sql);
 
-                    header('location: '. $_SERVER['REQUEST_URI'] .'');
-                    exit();
+                    if(mysqli_num_rows($result) > 0) {
+                        $sql = "UPDATE webshop.reviews SET
+                                    review=".$_POST['review'].",
+                                    date=CURRENT_TIMESTAMP()
+                                WHERE userID=".$_SESSION['userID']." AND productID=".$id;
+
+                        connect()->query($sql);
+                    } else if($_POST['review'] != "Write Here!") {
+                        $sql = "INSERT INTO webshop.reviews (review, productID, userID)
+                        VALUES ('" . $_POST['review'] . "', '$id', '" . $_SESSION['userID'] . "')";
+
+                        connect()->query($sql);
+                    }
+
+                    //header('location: ' . $_SERVER['REQUEST_URI'] . '');
+                    //exit();
                 }
             }
             ?>
