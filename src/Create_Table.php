@@ -2,7 +2,7 @@
 require_once('database.php');
 
 //Users
-$sql = "CREATE TABLE webshop.users (
+$sql = "CREATE TABLE IF NOT EXISTS webshop.users (
 userID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 firstname VARCHAR(50) NOT NULL,
 lastname VARCHAR(50) NOT NULL,
@@ -15,7 +15,7 @@ CHARACTER SET latin1 COLLATE latin1_danish_ci";
 createTable($sql);
 
 //Products
-$sql = "CREATE TABLE webshop.products (
+$sql = "CREATE TABLE IF NOT EXISTS webshop.products (
 productID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
 image VARCHAR(255),
@@ -28,7 +28,7 @@ CHARACTER SET latin1 COLLATE latin1_danish_ci";
 createTable($sql);
 
 //Transactions
-$sql = "CREATE TABLE webshop.transactions (
+$sql = "CREATE TABLE IF NOT EXISTS webshop.transactions (
 transactionID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 orderID INT(50) NOT NULL,
 productID INT(50) UNSIGNED,

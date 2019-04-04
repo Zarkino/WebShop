@@ -1,7 +1,7 @@
 <?php
 require_once('database.php');
 
-$sql = "CREATE DATABASE webshop";
+$sql = "CREATE DATABASE IF NOT EXISTS webshop";
 
 if (connect()->query($sql)) {
     echo "Error creating database webshop: " . $conn->error;
