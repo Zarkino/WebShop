@@ -81,5 +81,57 @@ if(isset($_GET['id'])) {
         <form action="" method="post" onsubmit="addToCart()">
             <input type="submit" name="add" value="Add to cart">
         </form>
+
+        <br>
+
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="width:50%; background-color:rgba(255, 255, 255, 0.7)">
+                <h2 style="color:black;">Costumer Reviews</h2>
+                <?php
+                $sql = "SELECT webshop.reviews.review, webshop.reviews.date, webshop.users.username
+                        FROM webshop.reviews
+                        INNER JOIN webshop.users on webshop.reviews.userID=webshop.users.userID
+                        WHERE webshop.reviews.productID=".$id;
+
+                $result = connect()->query($sql);
+
+                while($row = $result->fetch_assoc()) {
+                    $date = new DateTime($row['date']);
+
+                    echo '<div style="display:flex; flex-direction:column; flex-wrap:nowrap;">';
+                        echo '<a style="color:black;">By '.$row['username'].'</a><br>';
+                        echo '<a style="font-size:100%; color:black;">'.$row['review'].'</a><br>';
+                        echo '<a style="font-size:100%; color:black; align-self:flex-end;">On '.$date->format('d F, Y').'</a>';
+                    echo '</div>';
+                    echo '<hr>';
+                }
+                ?>
+            </div>
+
+            <?php
+            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']) { ?>
+                <div style="width:45%; background-color:rgba(255, 255, 255, 0.7)">
+                    <h2 style="color:black;">Write a review</h2>
+                    <a style="font-size:100%; color:black;">Share your thoughts about this product.</a>
+
+                    <form action="" method="POST" id="review_form">
+                        <textarea form="review_form" name="review" maxlength="250" rows="4" style="color:black; width:calc(100% - 30px)">Write Here!</textarea>
+                        <button type="submit" name="submit_review">Submit review</button>
+                    </form>
+                </div><?php
+                if(isset($_POST['submit_review']) && isset($_POST['review'])) {
+                    $sql = "INSERT INTO webshop.reviews (review, productID, userID)
+                        VALUES ('".$_POST['review']."', '$id', '".$_SESSION['userID']."')";
+
+                    connect()->query($sql);
+
+                    header('location: '. $_SERVER['REQUEST_URI'] .'');
+                    exit();
+                }
+            }
+            ?>
+        </div>
+
+        <br>
     </body>
 </html>

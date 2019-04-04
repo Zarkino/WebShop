@@ -40,6 +40,19 @@ CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 createTable($sql);
 
+//Transactions
+$sql = "CREATE TABLE IF NOT EXISTS webshop.reviews (
+reviewID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+review TEXT NOT NULL,
+date DATETIME DEFAULT CURRENT_TIMESTAMP(),
+productID INT(50) UNSIGNED,
+userID INT(50) UNSIGNED,
+FOREIGN KEY(productID) REFERENCES webshop.products(productID),
+FOREIGN KEY(userID) REFERENCES users(userID))
+CHARACTER SET latin1 COLLATE latin1_danish_ci";
+
+createTable($sql);
+
 function createTable($sql) {
     if (!connect()->query($sql)) {
         echo "Error creating table: " . connect()->error . "<br>";
