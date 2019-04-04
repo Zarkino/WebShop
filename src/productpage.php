@@ -123,7 +123,7 @@ if(isset($_GET['id'])) {
                     <a style="font-size:100%; color:black;">Share your thoughts about this product.</a>
 
                     <form action="" method="POST" id="review_form">
-                        <textarea form="review_form" name="review" maxlength="250" rows="4" style="color:black; width:calc(100% - 30px)">Write Here!</textarea>
+                        <textarea form="review_form" name="review" maxlength="250" rows="4" placeholder="Write Here!" style="color:black; width:calc(100% - 30px)"></textarea>
                         <button type="submit" name="submit_review">Submit review</button>
                     </form>
                 </div><?php
