@@ -55,7 +55,11 @@ $quantity = array();
 
                     while($row = $result->fetch_assoc()) {
                         echo '<div style="display:flex; flex-wrap:nowrap; align-items:center; justify-content:space-between;" onclick="location.href=\'productpage.php?id='.$id.'\';">';
-                        echo '<img style="width:100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
+                        if($row['image'] != null) {
+                            echo '<img style="width:100px;" src="'.$row['image'].'">';
+                        } else {
+                            echo '<img style="width:100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
+                        }
                         echo '<a style="color:black;">'.$amount.'x</a>';
                         echo '<a style="color:black;">'.$row['name'].'</a>';
                         echo '<a style="color:black;">'.$row['price'].' kr.</a>';
