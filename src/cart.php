@@ -32,7 +32,7 @@ $quantity = array();
     </head>
 
     <body>
-        <?php banner2(); ?>
+        <?php banner(); ?>
 
         <br>
 

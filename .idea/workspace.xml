@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="fc31cbbc-8569-4dda-9e17-38f5c7cb2ae0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/changepassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/changepassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/productpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/productpage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/signup.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,24 +36,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="103" column="60" selection-start-line="103" selection-start-column="60" selection-end-line="103" selection-end-column="60" />
+            <state relative-caret-position="289">
+              <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#ul#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#1;n#form#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -56,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/productpage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="60" column="74" selection-start-line="60" selection-start-column="74" selection-end-line="60" selection-end-column="74" />
+            <state relative-caret-position="357">
+              <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
               </folding>
@@ -80,8 +80,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/account.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="323">
+              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="98" column="18" lean-forward="true" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
+            <state relative-caret-position="526">
+              <caret line="114" column="52" selection-start-line="114" selection-start-column="52" selection-end-line="114" selection-end-column="52" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
@@ -138,7 +144,6 @@
         <option value="$PROJECT_DIR$/src/logout.php" />
         <option value="$PROJECT_DIR$/src/login.php" />
         <option value="$PROJECT_DIR$/src/checkout.php" />
-        <option value="$PROJECT_DIR$/src/cart.php" />
         <option value="$PROJECT_DIR$/src/home.php" />
         <option value="$PROJECT_DIR$/src/account.php" />
         <option value="$PROJECT_DIR$/src/changepassword.php" />
@@ -146,8 +151,9 @@
         <option value="$PROJECT_DIR$/src/new_user.php" />
         <option value="$PROJECT_DIR$/src/Create_Table.php" />
         <option value="$PROJECT_DIR$/src/new_product.php" />
-        <option value="$PROJECT_DIR$/src/database.php" />
         <option value="$PROJECT_DIR$/src/productpage.php" />
+        <option value="$PROJECT_DIR$/src/cart.php" />
+        <option value="$PROJECT_DIR$/src/database.php" />
       </list>
     </option>
   </component>
@@ -269,21 +275,7 @@
       <workItem from="1554349531189" duration="276000" />
       <workItem from="1554350289597" duration="20000" />
       <workItem from="1554350319627" duration="1604000" />
-      <workItem from="1554357378966" duration="449000" />
-    </task>
-    <task id="LOCAL-00054" summary="Add Icons to Github">
-      <created>1550662406870</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1550662406870</updated>
-    </task>
-    <task id="LOCAL-00055" summary="- Added $_SESSION['cart']&#10;- Added sizeof($_SESSION['cart']) to banner2()&#10;- Added session_start() to database.php (to make sure session variables can be used on all pages that uses database.php)&#10;- Added $_SESSION['cart'] after sesstion_start()">
-      <created>1550684000671</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1550684000672</updated>
+      <workItem from="1554357378966" duration="2438000" />
     </task>
     <task id="LOCAL-00056" summary="Fix the cart counter a bit">
       <created>1550696832615</created>
@@ -614,11 +606,25 @@
       <option name="project" value="LOCAL" />
       <updated>1554352095932</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="Added images when displaying products on home.php and productpage.php">
+      <created>1554357877042</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1554357877042</updated>
+    </task>
+    <task id="LOCAL-00104" summary="Added image to cart">
+      <created>1554358557066</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1554358557066</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174347000" />
+    <option name="totallyTimeSpent" value="176336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -648,7 +654,7 @@
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.32932165" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24945295" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Database" order="4" weight="0.32881" />
       <window_info anchor="right" id="Maven" order="5" />
@@ -696,8 +702,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Small typo fix" />
-    <MESSAGE value="Temporary option to access 'Your Account' page when logged in" />
     <MESSAGE value="Added kr. to Transactions table prices" />
     <MESSAGE value="Edited cart appearance" />
     <MESSAGE value="Added a little break after all products are listed" />
@@ -721,7 +725,9 @@
     <MESSAGE value="Convert PDO to OOP way of real_escape_string()" />
     <MESSAGE value="- Remove unused tables&#10;- Remove 'balance' when signing up&#10;- Add image to product function" />
     <MESSAGE value="Added image column to 'products' table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added image column to 'products' table" />
+    <MESSAGE value="Added images when displaying products on home.php and productpage.php" />
+    <MESSAGE value="Added image to cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added image to cart" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/src/index" />
@@ -758,13 +764,6 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ff55cc35-7964-44e5-ac71-39262643014d/console.sql" />
-    <entry file="file://$PROJECT_DIR$/src/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/checkout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -778,31 +777,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/newpassword.php" />
-    <entry file="file://$PROJECT_DIR$/src/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="58" lean-forward="true" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Styles/Style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2958">
           <caret line="174" column="1" selection-start-line="174" selection-start-column="1" selection-end-line="174" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/signup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="239" selection-start-line="27" selection-start-column="239" selection-end-line="27" selection-end-column="239" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/new_user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="55" column="63" lean-forward="true" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -834,17 +812,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/account.php">
+    <entry file="file://$PROJECT_DIR$/src/signup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="459">
+          <caret line="27" column="239" selection-start-line="27" selection-start-column="239" selection-end-line="27" selection-end-column="239" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/new_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="66" column="50" lean-forward="true" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="98" column="18" lean-forward="true" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
+        <state relative-caret-position="526">
+          <caret line="114" column="52" selection-start-line="114" selection-start-column="52" selection-end-line="114" selection-end-column="52" />
           <folding>
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
@@ -857,17 +842,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="58" lean-forward="true" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productpage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="103" column="60" selection-start-line="103" selection-start-column="60" selection-end-line="103" selection-end-column="60" />
+        <state relative-caret-position="289">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ul#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
@@ -876,18 +892,7 @@
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productpage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="60" column="74" selection-start-line="60" selection-start-column="74" selection-end-line="60" selection-end-column="74" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -47,7 +47,7 @@ if(isset($_GET['id'])) {
     </head>
 
     <body>
-        <?php banner2(); ?>
+        <?php banner(); ?>
 
         <br>
 

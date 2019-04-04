@@ -15,7 +15,7 @@ include('database.php');
 	</HEAD>
 	
 	<BODY>
-		<?php banner2(); ?>
+		<?php banner(); ?>
 
         <br>
 

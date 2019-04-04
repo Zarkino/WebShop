@@ -17,7 +17,7 @@ if(!isset($_SESSION['loggedin'])) {
     </head>
 
     <body>
-        <?php banner2(); ?>
+        <?php banner(); ?>
 
         <br>
 

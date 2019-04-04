@@ -12,7 +12,7 @@ include('database.php');
     </head>
 
     <body>
-        <?php banner2(); ?>
+        <?php banner(); ?>
 
         <br>
 

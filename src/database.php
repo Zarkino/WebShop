@@ -16,16 +16,6 @@ function connect() {
 }
 
 function banner() {
-	echo '<div style="width:100%; display:flex; justify-content: space-around;">';
-        echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
-		echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
-		echo '<input class="button" style="width:19%" type="button" onclick="window.location = \'home.php\';" value="Home">';
-		echo '<input class="button" style="width:19%" type="button" onclick="window.location = ;" value="">';
-		echo '<input class="button" style="width:19%" type="button" onclick="window.location = \'login.php\';" value="Login">';
-    echo '</div>';
-}
-
-function banner2() {
     echo '<ul class="bar" style="margin: 0 -50px 0 -50px; width:calc(100% + 100px)">';
         echo '<li><input type="image" src="../Icons/Globe.svg" alt="Home" style="filter:invert(1); padding-right:5px;" height="35px"><a href="home.php" style="font-size:300%;">Webshop</a></li>';
         echo '<li><form action="home.php" method="POST"><input type="text" placeholder="Search" name="item"><input type="image" src="../Icons/Search.svg" alt="Go" style="filter:invert(1); vertical-align: middle; padding: 3px 0 0 5px;" height="22px" width="22px"></form></li>';
@@ -39,11 +29,6 @@ function banner2() {
             echo '<li><a href="login.php">Login</a></li>';
         }
     echo '</ul>';
-}
-
-function footer() {
-    echo '<div style="width:100%">';
-    echo '</div>';
 }
 
 function login($username, $password) {
