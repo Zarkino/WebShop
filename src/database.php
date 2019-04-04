@@ -101,7 +101,7 @@ function listProducts($result) {
 
     $i = 0;
     while($row = $result->fetch_assoc()) {
-        product($row['productID'], $row['name'], $row['description'], $row['price']);
+        product($row['productID'], $row['name'], null, $row['description'], $row['price']);
         $i++;
         if($i === 5) {
             $i = 0;
@@ -113,9 +113,13 @@ function listProducts($result) {
     echo '</div>';
 }
 
-function product($id, $name, $description, $price) {
+function product($id, $name, $image, $description, $price) {
 	echo '<div class="container" style="position:relative; flex-basis:20%;" onclick="location.href=\'productpage.php?id='.$id.'\';">';
-        echo '<img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
+	    if($image != null) {
+            echo '<img class="image" src="'.$image.'">';
+        } else {
+            echo '<img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
+        }
 
 	    echo '<div class="overlay" style="display:flex; flex-direction:column; align-items:center; justify-content:space-evenly;">';
 	        echo '<a id="nohover" style="font-size:200%;">'.$name.'</a>';
@@ -179,15 +183,6 @@ function listOrder($lastOrderID, $products, $price, $time) {
             echo ', ';
         }
     }
-
-    /*
-    for($i = 0; $i < sizeof($products); $i++) {
-        echo '1x ' . $products[$i];
-
-        if($i < sizeof($products)-1) {
-            echo ', ';
-        }
-    }*/
     echo '</td>';
     echo '<td>Good</td>';
     echo '<td>'.$price.' kr.</td>';

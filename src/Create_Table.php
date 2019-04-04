@@ -39,26 +39,6 @@ CHARACTER SET latin1 COLLATE latin1_danish_ci";
 
 createTable($sql);
 
-//Addresses
-$sql = "CREATE TABLE webshop.addresses (
-name VARCHAR(50) NOT NULL,
-address VARCHAR(50) NOT NULL,
-postcode FLOAT(4) NOT NULL,
-city VARCHAR(50) NOT NULL)
-CHARACTER SET latin1 COLLATE latin1_danish_ci";
-
-createTable($sql);
-
-//Warranty
-$sql = "CREATE TABLE webshop.warranty (
-warrantyID INT(50) UNSIGNED,
-FOREIGN KEY(transactionID) REFERENCES transactions(transactionID),
-productList INT(50) NOT NULL,
-expiration DATETIME NOT NULL)
-CHARACTER SET latin1 COLLATE latin1_danish_ci";
-
-createTable($sql);
-
 function createTable($sql) {
     if (!connect()->query($sql)) {
         echo "Error creating table: " . connect()->error . "<br>";

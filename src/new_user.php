@@ -12,13 +12,6 @@ if (isset($_POST['submit'])) {
     }
 
     //For guests
-    if(!isset($_POST['balance'])) {
-        $balance = 1000;
-    } else {
-        $balance = connect()->real_escape_string($_POST['balance']);
-    }
-
-    //For guests
     if(!isset($_POST['password'])) {
         $password = generateRandomPassword();
     } else {
@@ -28,15 +21,10 @@ if (isset($_POST['submit'])) {
     $firstname = connect()->real_escape_string($_POST['firstname']);
     $lastname = connect()->real_escape_string($_POST['lastname']);
     $email = connect()->real_escape_string($_POST['email']);
+    $balance = 5000;
 
     if (empty($firstname) || empty($lastname) || empty($email) || empty($username) || empty($password)) {
-        //header('location: '.$url.'?=empty');
-        echo $firstname;
-        echo $lastname;
-        echo $email;
-        echo $username;
-        echo $password;
-        echo $balance;
+        header('location: '.$url.'?=empty');
         exit();
     } else if (!preg_match("/^[a-zA-Z]*$/", $firstname) || !preg_match("/^[a-zA-Z]*$/", $lastname)) {
         header('location: '.$url.'?=invalidname');
