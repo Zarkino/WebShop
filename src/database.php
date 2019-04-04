@@ -140,6 +140,7 @@ function search($item) {
 function buy($userID, $products) {
     $validStock = true;
 
+    //Check if stock is above buying amount
     foreach($products as $productID) {
         $sql = "SELECT stock FROM webshop.products WHERE productID=".$productID;
 
@@ -153,6 +154,7 @@ function buy($userID, $products) {
         }
     }
 
+    //Make the transactions
     if($validStock) {
         $sql = "SELECT MAX(orderID) AS MAKS FROM webshop.transactions";
 
