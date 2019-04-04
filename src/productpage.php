@@ -9,6 +9,7 @@ if(isset($_GET['id'])) {
     while ($row = $result->fetch_assoc()) {
         $id = $row['productID'];
         $name = $row['name'];
+        $image = $row['image'];
         $category = $row['category'];
         $description = $row['description'];
         $price = $row['price'];
@@ -55,7 +56,12 @@ if(isset($_GET['id'])) {
         <br><br>
 
         <div style="width:30%; background-color:rgba(255, 255, 255, 0.7)">
-            <img class="image" style="width:100%;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">
+            <?php
+            if($image != null) {
+                echo '<img class="image" style="width:100%;" src="'.$image.'">';
+            } else {
+                echo '<img class="image" style="width:100%;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Antu_draw-cuboid.svg/500px-Antu_draw-cuboid.svg.png">';
+            }?>
 
             <h2 style="color:black"><?php echo $name; ?></h2>
 

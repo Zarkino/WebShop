@@ -101,7 +101,7 @@ function listProducts($result) {
 
     $i = 0;
     while($row = $result->fetch_assoc()) {
-        product($row['productID'], $row['name'], null, $row['description'], $row['price']);
+        product($row['productID'], $row['name'], $row['image'], $row['description'], $row['price']);
         $i++;
         if($i === 5) {
             $i = 0;
