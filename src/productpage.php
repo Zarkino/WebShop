@@ -85,7 +85,7 @@ if(isset($_GET['id'])) {
         <br>
 
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-            <div style="width:50%; background-color:rgba(255, 255, 255, 0.7)">
+            <div style="width:calc(50% - 25px); background-color:rgba(255, 255, 255, 0.7)">
                 <h2 style="color:black;">Costumer Reviews</h2>
                 <?php
                 $sql = "SELECT * FROM webshop.reviews WHERE productID=".$id;
@@ -118,7 +118,7 @@ if(isset($_GET['id'])) {
 
             <?php
             if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']) { ?>
-                <div style="width:45%; background-color:rgba(255, 255, 255, 0.7)">
+                <div style="width:calc(50% - 25px); background-color:rgba(255, 255, 255, 0.7)">
                     <h2 style="color:black;">Write a review</h2>
                     <a style="font-size:100%; color:black;">Share your thoughts about this product.</a>
 
