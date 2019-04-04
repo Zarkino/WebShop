@@ -138,21 +138,44 @@ function search($item) {
 }
 
 function buy($userID, $products) {
-    $sql = "SELECT MAX(orderID) AS MAKS FROM webshop.transactions";
-
-    $result = connect()->query($sql);
-
-    $order = ($result->fetch_assoc())['MAKS'] + 1;
+    $validStock = true;
 
     foreach($products as $productID) {
-        $sql = "INSERT INTO webshop.transactions (orderID, productID, userID)
-          VALUES ('$order', '$productID', '$userID')";
+        $sql = "SELECT stock FROM webshop.products WHERE productID=".$productID;
 
-        if(!connect()->query($sql)) {
-            echo connect()->error . "<br>";
+        $result = connect()->query($sql);
+
+        while($row = $result->fetch_assoc()) {
+            if($row['stock'] < array_count_values($products)[$productID]) {
+                $validStock = false;
+                break;
+            }
         }
     }
-    $_SESSION['cart'] = array();
+
+    if($validStock) {
+        $sql = "SELECT MAX(orderID) AS MAKS FROM webshop.transactions";
+
+        $result = connect()->query($sql);
+
+        $order = ($result->fetch_assoc())['MAKS'] + 1;
+
+        foreach ($products as $productID) {
+            //Remove 1 of item from stock
+            $sql = "UPDATE webshop.products
+                    SET stock=stock-1
+                    WHERE productID=".$productID;
+
+            connect()->query($sql);
+
+            //Make transaction
+            $sql = "INSERT INTO webshop.transactions (orderID, productID, userID)
+                    VALUES ('$order', '$productID', '$userID')";
+
+            connect()->query($sql);
+        }
+        $_SESSION['cart'] = array();
+    }
 }
 
 function listOrder($lastOrderID, $products, $price, $time) {
