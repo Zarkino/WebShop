@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fc31cbbc-8569-4dda-9e17-38f5c7cb2ae0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/new_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/new_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/new_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/new_product.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,20 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/new_product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/new_user.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="74" column="31" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+            <state relative-caret-position="85">
+              <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -112,15 +103,6 @@
                 <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/changepassword.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -189,7 +171,6 @@
         <option value="$PROJECT_DIR$/src/home.php" />
         <option value="$PROJECT_DIR$/src/changepassword.php" />
         <option value="$PROJECT_DIR$/src/signup.php" />
-        <option value="$PROJECT_DIR$/src/new_product.php" />
         <option value="$PROJECT_DIR$/src/Create_Database.php" />
         <option value="$PROJECT_DIR$/src/Create_Table.php" />
         <option value="$PROJECT_DIR$/src/checkout.php" />
@@ -199,6 +180,7 @@
         <option value="$PROJECT_DIR$/src/productpage.php" />
         <option value="$PROJECT_DIR$/src/database.php" />
         <option value="$PROJECT_DIR$/src/new_user.php" />
+        <option value="$PROJECT_DIR$/src/new_product.php" />
       </list>
     </option>
   </component>
@@ -325,14 +307,7 @@
       <workItem from="1554388050064" duration="260000" />
       <workItem from="1554388455068" duration="4000000" />
       <workItem from="1554540114611" duration="3571000" />
-      <workItem from="1554558476755" duration="2549000" />
-    </task>
-    <task id="LOCAL-00077" summary="Udkast til Account page">
-      <created>1551968860052</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1551968860053</updated>
+      <workItem from="1554558476755" duration="2773000" />
     </task>
     <task id="LOCAL-00078" summary="Small typo fix">
       <created>1551968917469</created>
@@ -670,17 +645,24 @@
       <option name="project" value="LOCAL" />
       <updated>1554560972370</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="Re-added header when failing to sign up">
+      <created>1554561046043</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1554561046043</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201422000" />
+    <option name="totallyTimeSpent" value="201646000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.4463895" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23632385" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="simpleUML" order="3" />
@@ -752,7 +734,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- Remove unused tables&#10;- Remove 'balance' when signing up&#10;- Add image to product function" />
     <MESSAGE value="Added image column to 'products' table" />
     <MESSAGE value="Added images when displaying products on home.php and productpage.php" />
     <MESSAGE value="Added image to cart" />
@@ -777,7 +758,8 @@
     <MESSAGE value="Function Buy now checks price and balance" />
     <MESSAGE value="Fixed small security issue when creating user" />
     <MESSAGE value="Useless stuff removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Useless stuff removed" />
+    <MESSAGE value="Re-added header when failing to sign up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-added header when failing to sign up" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/src/index" />
@@ -923,13 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/new_product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
@@ -949,6 +924,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
           <caret line="74" column="31" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/new_product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
         </state>
       </provider>
     </entry>
