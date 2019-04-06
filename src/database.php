@@ -139,14 +139,16 @@ function search($item) {
 
 function buy($userID, $products) {
     $validStock = true;
+    $totalPrice = 0;
 
-    //Check if stock is above buying amount
+    //Check if stock is above buying amount and calculate total price
     foreach($products as $productID) {
-        $sql = "SELECT stock FROM webshop.products WHERE productID=".$productID;
+        $sql = "SELECT stock, price FROM webshop.products WHERE productID=".$productID;
 
         $result = connect()->query($sql);
 
         while($row = $result->fetch_assoc()) {
+            $totalPrice += $row['price'];
             if($row['stock'] < array_count_values($products)[$productID]) {
                 $validStock = false;
                 break;
@@ -154,8 +156,8 @@ function buy($userID, $products) {
         }
     }
 
-    //Make the transactions
-    if($validStock) {
+    //Make the transactions if the stock is valid and balance is higher than the total price
+    if($validStock && $totalPrice <= $_SESSION['balance']) {
         $sql = "SELECT MAX(orderID) AS MAKS FROM webshop.transactions";
 
         $result = connect()->query($sql);
