@@ -105,9 +105,9 @@ function product($id, $name, $image, $description, $price) {
         }
 
 	    echo '<div class="overlay" style="display:flex; flex-direction:column; align-items:center; justify-content:space-evenly;">';
-	        echo '<a id="nohover" style="font-size:200%;">'.$name.'</a>';
-	        echo '<a id="nohover">'.$description.'</a>';
-	        echo '<a id="nohover">'.$price.' kr.</a>';
+	        echo '<a style="color:white; font-size:3vw;">'.$name.'</a>';
+	        echo '<a style="color:white; font-size:2vw;">'.$description.'</a>';
+	        echo '<a style="color:white; font-size:2vw;">'.$price.' kr.</a>';
 	        echo '<form action="" method="post">';
 	            echo '<input type="hidden" value="'.$id.'" name="id">';
 	            echo '<input type="submit" value="Add to cart" name="buy">';
