@@ -4,9 +4,14 @@ include('database.php');
 if (isset($_POST['submit'])) {
     $url = $_POST['url'];
 
+    $firstname = connect()->real_escape_string($_POST['firstname']);
+    $lastname = connect()->real_escape_string($_POST['lastname']);
+    $email = connect()->real_escape_string($_POST['email']);
+    $balance = 5000;
+
     //For guests
     if(!isset($_POST['username'])) {
-        $username = $_POST['firstname'];
+        $username = $firstname;
     } else {
         $username = connect()->real_escape_string($_POST['username']);
     }
@@ -17,11 +22,6 @@ if (isset($_POST['submit'])) {
     } else {
         $password = connect()->real_escape_string($_POST['password']);
     }
-
-    $firstname = connect()->real_escape_string($_POST['firstname']);
-    $lastname = connect()->real_escape_string($_POST['lastname']);
-    $email = connect()->real_escape_string($_POST['email']);
-    $balance = 5000;
 
     if (empty($firstname) || empty($lastname) || empty($email) || empty($username) || empty($password)) {
         header('location: '.$url.'?=empty');
@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
         $sql = "SELECT * FROM webshop.users WHERE email='$email'";
         $result = connect()->query($sql);
 
-    // Tjekker for om emailen er taget i databasen (om der er flere end 0)
+        // Tjekker for om emailen er taget i databasen (om der er flere end 0)
         if (mysqli_num_rows($result) > 0) {
             header('location: '.$url.'?=emailtaken');
             exit();
