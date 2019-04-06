@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
             \nPassword: $password", "Account Created", $email);
 
             if (!connect()->query($sql)) {
-                echo "Error: " . $sql . "<br>" . connect()->error;
+                echo 'Error: ' . connect()->error;
                 exit();
             } else {
                 session_start();
