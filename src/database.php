@@ -1,6 +1,4 @@
 <?php
-//require_once('connect.php');
-
 session_start();
 if(!isset($_SESSION['cart']))
     $_SESSION['cart'] = array();
@@ -188,7 +186,7 @@ function listOrder($lastOrderID, $products, $price, $time) {
     echo '<td>'.$lastOrderID.'</td>';
     echo '<td>';
     for($i = 0; $i < sizeof($uniqueProducts); $i++) {
-        //Count identical values in $products with $uni queProducts[$i] as key
+        //Count identical values in $products with $uniqueProducts[$i] as key
         echo  array_count_values($products)[$uniqueProducts[$i]] . 'x ' . $uniqueProducts[$i];
 
         if($i < sizeof($uniqueProducts) - 1) {

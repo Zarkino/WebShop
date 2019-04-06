@@ -1,12 +1,13 @@
 <?php
-include('connect.php');
+include('database.php');
 
-$sql = 'DROP DATABASE webshop';
-if (!$conn->query($sql)) {
-    echo 'Error dropping database: ' . $conn->error();
+$sql = "DROP DATABASE webshop";
+
+if (!connect()->query($sql)) {
+    echo 'Error dropping database: ' . connect()->error();
 }
 
-header("location: home.php");
+header('location: home.php');
 
-$conn->close();
+connect()->close();
 ?>
