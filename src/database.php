@@ -121,7 +121,7 @@ function product($id, $name, $image, $description, $price) {
 	if(isset($_POST['buy'])) {
         $_SESSION['cart'][] = $_POST['id'];
 
-        header('location: '.$_SERVER['REQUEST_URI'].'');
+        header('location: '.$_SERVER['REQUEST_URI']);
         exit();
     }
 }

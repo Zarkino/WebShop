@@ -23,7 +23,7 @@ $quantity = array();
                     $_SESSION['cart'] = array();
 
                     //Return to the same page and exit()
-                    header('location: '.$_SERVER['REQUEST_URI'].'');
+                    header('location: '.$_SERVER['REQUEST_URI']);
                     exit();
                 }
                 ?>
@@ -78,7 +78,7 @@ $quantity = array();
                             $_SESSION['cart'] = array_values($_SESSION['cart']);
 
                             //Return to the same page and exit()
-                            header('location: '. $_SERVER['REQUEST_URI'] .'');
+                            header('location: '. $_SERVER['REQUEST_URI']);
                             exit();
                         }
 
