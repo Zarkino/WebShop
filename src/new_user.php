@@ -67,13 +67,11 @@ if (isset($_POST['submit'])) {
                 $_SESSION['username'] = $username;
                 $_SESSION['balance'] = $balance;
 
-                header('location: '.$url.'');
+                header('location: '.$url);
             }
         }
     }
 }
-/*
 header("location: signup.php");
 exit();
-*/
 ?>

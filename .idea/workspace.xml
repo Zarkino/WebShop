@@ -65,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/new_user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="58" column="50" lean-forward="true" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+            <state relative-caret-position="713">
+              <caret line="74" column="31" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -325,14 +325,7 @@
       <workItem from="1554388050064" duration="260000" />
       <workItem from="1554388455068" duration="4000000" />
       <workItem from="1554540114611" duration="3571000" />
-      <workItem from="1554558476755" duration="2474000" />
-    </task>
-    <task id="LOCAL-00076" summary="Finally got the trash-can to work">
-      <created>1551964302736</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1551964302737</updated>
+      <workItem from="1554558476755" duration="2549000" />
     </task>
     <task id="LOCAL-00077" summary="Udkast til Account page">
       <created>1551968860052</created>
@@ -670,11 +663,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554560825619</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="Useless stuff removed">
+      <created>1554560972370</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1554560972370</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201347000" />
+    <option name="totallyTimeSpent" value="201422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -752,7 +752,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Convert PDO to OOP way of real_escape_string()" />
     <MESSAGE value="- Remove unused tables&#10;- Remove 'balance' when signing up&#10;- Add image to product function" />
     <MESSAGE value="Added image column to 'products' table" />
     <MESSAGE value="Added images when displaying products on home.php and productpage.php" />
@@ -777,7 +776,8 @@
     <MESSAGE value="Removed extensive code" />
     <MESSAGE value="Function Buy now checks price and balance" />
     <MESSAGE value="Fixed small security issue when creating user" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed small security issue when creating user" />
+    <MESSAGE value="Useless stuff removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Useless stuff removed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/src/index" />
@@ -947,8 +947,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/new_user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="58" column="50" lean-forward="true" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+        <state relative-caret-position="713">
+          <caret line="74" column="31" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
         </state>
       </provider>
     </entry>
