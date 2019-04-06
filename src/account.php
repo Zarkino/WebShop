@@ -96,5 +96,28 @@ if(!isset($_SESSION['loggedin'])) {
         </div>
 
         <br>
+
+        <div style="background-color:rgba(255, 255, 255, 0.7);">
+            <h2 style="color:black;">Reviews</h2>
+            <?php
+            $sql = "SELECT reviews.review, reviews.date, products.productID, products.name
+                    FROM webshop.reviews
+                    INNER JOIN webshop.products ON reviews.productID=products.productID
+                    WHERE reviews.userID=".$_SESSION['userID'];
+
+            $result = connect()->query($sql);
+
+            while($row = $result->fetch_assoc()) {
+                $date = new DateTime($row['date']);
+
+                echo '<div style="display:flex; flex-direction:column; flex-wrap:nowrap;" onclick="location.href=\'productpage.php?id='.$row['productID'].'\';">';
+                echo '<a style="color:black;">'.$row['name'].'</a><br>';
+                echo '<a style="font-size:100%; color:black;">'.$row['review'].'</a>';
+                echo '<a style="font-size:100%; color:black; align-self:flex-end; margin-top:10px">On ' . $date->format('jS F, Y') . '</a>';
+                echo '</div>';
+                echo '<hr>';
+            }
+            ?>
+        </div>
     </body>
 </html>
