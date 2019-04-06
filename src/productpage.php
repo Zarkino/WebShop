@@ -128,6 +128,8 @@ if(isset($_GET['id'])) {
                     </form>
                 </div><?php
                 if(isset($_POST['submit_review']) && isset($_POST['review'])) {
+                    $review = connect()->real_escape_string($_POST['review']);
+
                     $sql = "SELECT userID, productID
                             FROM webshop.reviews
                             WHERE userID=".$_SESSION['userID']." AND productID=".$id;
@@ -136,14 +138,14 @@ if(isset($_GET['id'])) {
 
                     if(mysqli_num_rows($result) > 0) {
                         $sql = "UPDATE webshop.reviews SET
-                                    review='".$_POST['review']."',
+                                    review='".$review."',
                                     date=CURRENT_TIMESTAMP()
                                 WHERE userID=".$_SESSION['userID']." AND productID=".$id;
 
                         connect()->query($sql);
-                    } else if($_POST['review'] != "Write Here!") {
+                    } else {
                         $sql = "INSERT INTO webshop.reviews (review, productID, userID)
-                        VALUES ('" . $_POST['review'] . "', '$id', '" . $_SESSION['userID'] . "')";
+                        VALUES ('".$review."', '$id', '" . $_SESSION['userID'] . "')";
 
                         connect()->query($sql);
                     }
