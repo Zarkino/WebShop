@@ -5,11 +5,13 @@ if (isset($_POST['submit'])) {
     $name = connect()->real_escape_string($_POST['name']);
     $image = connect()->real_escape_string($_POST['image']);
     $category = connect()->real_escape_string($_POST['category']);
+    $description = connect()->real_escape_string($_POST['description']);
     $price = connect()->real_escape_string($_POST['price']);
     $stock = connect()->real_escape_string($_POST['stock']);
+    echo"$image";
 
     //Tjekker for tomme felter
-    if (empty($name) || empty($category) || empty($price) || empty($stock)) {
+if (empty($name) || empty($image) || empty($category) || empty($price) || empty($stock)) {
         header("location: ./new_product.php?=empty");
         exit();
     } else if (!preg_match("/^[a-zA-Z]*$/", $name) || !preg_match("/^[a-zA-Z]*$/", $category)) {
@@ -30,8 +32,8 @@ if (isset($_POST['submit'])) {
             header("location: ./new_product.php?product=exist");
             exit();
         } else {
-            $sql = "INSERT INTO webshop.products (name, image, category, price, stock)
-          VALUES ('$name', null, '$category', '$price', '$stock')";
+            $sql = "INSERT INTO webshop.products (name, image, category, price, description, stock)
+          VALUES ('$name', '$image', '$category', '$price', '$description', '$stock')";
 
             if (!connect()->query($sql)) {
                 echo 'Error: ' . connect()->error;
