@@ -4,6 +4,7 @@ include('database.php');
 $priceTotal = 0;
 $products = array();
 $quantity = array();
+$email = $_SESSION['email'];
 ?>
 
 <!DOCTYPE html>
@@ -111,7 +112,11 @@ $quantity = array();
                 if(isset($_POST['buy']) && sizeof($_SESSION['cart']) > 0) {
                     if(isset($_SESSION['loggedin'])) {
                         buy($_SESSION['userID'], $_SESSION['cart']);
-                        header('location: cart.php');
+                        // header('location: cart.php');
+                        sendMail("Welcome to our webshop
+                        \nYou bought a product 
+                        \nUsername:
+                        \nPassword: ", "Account Created", $email);
                     } else {
                         header('location: checkout.php');
                     }
