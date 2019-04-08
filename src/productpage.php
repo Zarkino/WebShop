@@ -7,15 +7,15 @@ if(isset($_GET['id'])) {
     $result = connect()->query($sql);
 
     if(mysqli_num_rows($result) > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $id = $row['productID'];
-            $name = $row['name'];
-            $image = $row['image'];
-            $category = $row['category'];
-            $description = $row['description'];
-            $price = $row['price'];
-            $stock = $row['stock'];
-        }
+        $row = $result->fetch_row();
+
+        $id = $row[0];
+        $name = $row[1];
+        $image = $row[2];
+        $category = $row[3];
+        $description = $row[4];
+        $price = $row[5];
+        $stock = $row[6];
     } else {
         header('location: home.php');
         exit();
