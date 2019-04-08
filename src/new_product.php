@@ -8,10 +8,9 @@ if (isset($_POST['submit'])) {
     $description = connect()->real_escape_string($_POST['description']);
     $price = connect()->real_escape_string($_POST['price']);
     $stock = connect()->real_escape_string($_POST['stock']);
-    echo"$image";
 
     //Tjekker for tomme felter
-if (empty($name) || empty($image) || empty($category) || empty($price) || empty($stock)) {
+if (empty($name) || empty($category) || empty($price) || empty($stock)) {
         header("location: ./new_product.php?=empty");
         exit();
     } else if (!preg_match("/^[a-zA-Z]*$/", $name) || !preg_match("/^[a-zA-Z]*$/", $category)) {

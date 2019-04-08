@@ -6,14 +6,19 @@ if(isset($_GET['id'])) {
 
     $result = connect()->query($sql);
 
-    while ($row = $result->fetch_assoc()) {
-        $id = $row['productID'];
-        $name = $row['name'];
-        $image = $row['image'];
-        $category = $row['category'];
-        $description = $row['description'];
-        $price = $row['price'];
-        $stock = $row['stock'];
+    if(mysqli_num_rows($result) > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $id = $row['productID'];
+            $name = $row['name'];
+            $image = $row['image'];
+            $category = $row['category'];
+            $description = $row['description'];
+            $price = $row['price'];
+            $stock = $row['stock'];
+        }
+    } else {
+        header('location: home.php');
+        exit();
     }
 } else {
     header('location: home.php');
