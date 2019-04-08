@@ -122,8 +122,8 @@ if(isset($_GET['id'])) {
                     <h2 style="color:black;">Write a review</h2>
                     <a style="font-size:100%; color:black;">Share your thoughts about this product.</a>
 
-                    <form action="" method="POST" id="review_form">
-                        <textarea form="review_form" name="review" maxlength="250" rows="4" placeholder="Write Here!" style="color:black; width:calc(100% - 30px); resize:vertical;"></textarea>
+                    <form action="" method="POST">
+                        <textarea name="review" maxlength="250" rows="4" placeholder="Write Here!" style="color:black; width:calc(100% - 30px); resize:vertical;"></textarea>
                         <button type="submit" name="submit_review">Submit Review</button>
                     </form>
                 </div><?php

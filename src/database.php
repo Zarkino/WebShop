@@ -110,7 +110,7 @@ function product($id, $name, $image, $description, $price) {
 	        echo '<a style="color:white; font-size:2vw;">'.$price.' kr.</a>';
 	        echo '<form action="" method="post">';
 	            echo '<input type="hidden" value="'.$id.'" name="id">';
-	            echo '<input type="submit" value="Add to cart" name="buy">';
+	            echo '<input class="button" type="submit" value="Add to cart" name="buy">';
 	        echo '</form>';
 	    echo '</div>';
 	echo '</div>';
