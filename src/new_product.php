@@ -20,7 +20,7 @@ if (empty($name) || empty($category) || empty($price) || empty($stock)) {
         header("location: ./new_product?price=Invalidprice");
         exit();
     } else if (!preg_match("/^[0-9]*$/", $stock)) {
-        header("location: ./new_product?price=Invalidprice");
+        header("location: ./new_product?price=Invalidstock");
         exit();
     } else {
         $sql = "INSERT INTO webshop.products (name, image, category, price, description, stock)
