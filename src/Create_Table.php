@@ -20,7 +20,7 @@ productID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
 image VARCHAR(255),
 category VARCHAR(50) NOT NULL,
-description VARCHAR(50) NOT NULL,
+description VARCHAR(255) NOT NULL,
 price FLOAT(50,2) NOT NULL,
 stock int(50) NOT NULL)
 CHARACTER SET latin1 COLLATE latin1_danish_ci";

@@ -10,7 +10,9 @@ body {
 	margin: 0 50px 0 50px;
 	overflow-x:hidden;
 
-    background: url(https://images.unsplash.com/photo-1549778578-430925ab8c23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9) no-repeat fixed center;
+    background-image: url(https://images.unsplash.com/photo-1549778578-430925ab8c23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9);
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: initial;
 }
 
