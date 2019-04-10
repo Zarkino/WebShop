@@ -42,7 +42,7 @@ $email = $_SESSION['email'];
                 <div style="display:flex; justify-content:space-between;">
                     <h2 style="color:black;">Shopping Cart</h2>
                     <form action="" method="post" onsubmit="resetCart()">
-                        <input type="submit" name="reset" value="Reset shopping cart">
+                        <input type="submit" name="reset" value="Empty Cart">
                     </form>
                 </div>
 
