@@ -64,6 +64,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION['userID'] = connect()->insert_id;
                 $_SESSION['firstname'] = $firstname;
                 $_SESSION['lastname'] = $lastname;
+                $_SESSION['email'] = $row['email'];
                 $_SESSION['username'] = $username;
                 $_SESSION['balance'] = $balance;
 

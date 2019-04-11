@@ -46,8 +46,8 @@ function login($username, $password) {
             $_SESSION["loggedin"] = true;
             $_SESSION["userID"] = $row['userID'];
             $_SESSION['firstname'] = $row['firstname'];
-            $_SESSION['email'] = $row['email'];
             $_SESSION['lastname'] = $row['lastname'];
+            $_SESSION['email'] = $row['email'];
             $_SESSION["username"] = $row['username'];
             $_SESSION["balance"] = $row['balance'];
 
