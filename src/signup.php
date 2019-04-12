@@ -20,7 +20,7 @@ include('database.php');
         <br>
 
         <H2>Sign Up</H2>
-        <form action="new_user.php" method="POST">
+        <form action="new_User.php" method="POST">
             <INPUT type="text" placeholder="Firstname" name="firstname" required><br>
             <INPUT type="text" placeholder="Lastname" name="lastname" required><br>
             <INPUT type="text" placeholder="E-mail" name="email" required><br>

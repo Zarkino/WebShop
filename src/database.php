@@ -53,7 +53,6 @@ function login($username, $password) {
 
             header("location: home.php");
         } else {
-            //echo 'You entered: ' . $username . ' & ' . $password . '<br>';
             echo '<p>'."You have entered an incorrect username or password".'</p>';
         }
     }

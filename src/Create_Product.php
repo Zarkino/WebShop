@@ -17,7 +17,7 @@ include('database.php');
         <br>
 
         <H2>New Product</H2>
-        <form action="new_product.php" method="POST">
+        <form action="new_Product.php" method="POST">
             <INPUT type="text" placeholder="Name" name="name" ><br>
             <INPUT type="text" placeholder="Image URL" name="image" ><br>
             <INPUT type="text" placeholder="Category" name="category" ><br>

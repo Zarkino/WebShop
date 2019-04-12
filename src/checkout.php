@@ -23,7 +23,7 @@ include('database.php');
             <h2 style="color:black;">Your Information</h2>
 
             <a style="color:black">Account</a><br>
-            <form action="new_user.php" method="POST">
+            <form action="new_User.php" method="POST">
                 <input type="text" name="firstname" placeholder="Firstname" required>
                 <input type="text" name="lastname" placeholder="Lastname" required><br>
                 <input type="email" name="email" placeholder="Email" required>

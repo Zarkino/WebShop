@@ -11,16 +11,16 @@ if (isset($_POST['submit'])) {
 
     //Tjekker for tomme felter
 if (empty($name) || empty($category) || empty($price) || empty($stock)) {
-        header("location: ./new_product.php?=empty");
+        header("location: ./new_Product.php?=empty");
         exit();
     } else if (!preg_match("/^[a-zA-Z]*$/", $name) || !preg_match("/^[a-zA-Z]*$/", $category)) {
         header("location: ./ProductName.php?=Invalidproduct");
         exit();
     } else if (!preg_match("/^[0-9]*$/", $price)) {
-        header("location: ./new_product?price=Invalidprice");
+        header("location: ./new_Product?price=Invalidprice");
         exit();
     } else if (!preg_match("/^[0-9]*$/", $stock)) {
-        header("location: ./new_product?price=Invalidstock");
+        header("location: ./new_Product?price=Invalidstock");
         exit();
     } else {
         $sql = "INSERT INTO webshop.products (name, image, category, price, description, stock)

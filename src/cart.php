@@ -114,9 +114,7 @@ $email = $_SESSION['email'];
                         buy($_SESSION['userID'], $_SESSION['cart']);
                         // header('location: cart.php');
                         sendMail("Welcome to our webshop
-                        \nYou bought a product 
-                        \nUsername:
-                        \nPassword: ", "Account Created", $email);
+                        \nYou bought a product", "Here's your order", $email);
                     } else {
                         header('location: checkout.php');
                     }

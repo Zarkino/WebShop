@@ -144,16 +144,24 @@ if(isset($_GET['id'])) {
 
                     if(mysqli_num_rows($result) > 0) {
                         $sql = "UPDATE webshop.reviews SET
-                                    review='".$review."',
+                                    review=?,
                                     date=CURRENT_TIMESTAMP()
                                 WHERE userID=".$_SESSION['userID']." AND productID=".$id;
 
-                        connect()->query($sql);
+                        $stmt = connect()->prepare($sql);
+
+                        $stmt->bind_param('s', $review);
+
+                        $stmt->execute();
                     } else {
                         $sql = "INSERT INTO webshop.reviews (review, productID, userID)
-                        VALUES ('".$review."', '$id', '" . $_SESSION['userID'] . "')";
+                        VALUES (?, ?, ?)";
 
-                        connect()->query($sql);
+                        $stmt = connect()->prepare($sql);
+
+                        $stmt->bind_param('sss', $review, $id, $_SESSION['userID']);
+
+                        $stmt->execute();
                     }
 
                     header('location: '.$_SERVER['REQUEST_URI']);
